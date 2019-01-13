@@ -1,3 +1,160 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body,h1,h2,ul{
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+body{
+  background-color: white;
+}
+
+.pc-header{
+  height: 130px;
+  background-color: white;
+}
+.pc-header-inner{
+  height: 100%;
+  width: 71vw;
+  margin: 0 auto;
+}
+.clearfix{
+  height:40%;
+  background-color: white;
+  padding-top: 10px;
+}
+h1{
+  float: left;
+  padding-right: 10px;
+}
+.input{
+  position: relative;
+  width:calc(100% - (134px + 16px));
+  height:35px;
+  background-color: #fafafa;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.input::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+}
+.fa-search{
+  position: absolute;
+  top:20px;
+  right: 16vw;
+  cursor: pointer;
+}
+
+
+
+
+.clearfix-box{
+  background-color: white;
+  height: 60px;
+}
+.head-left{
+  float: left;
+  height: 100%;
+  width:auto;
+
+}
+h2{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.pull-left{
+    float: left;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+ul.menu li{
+    float: left;
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    width: 20vw;
+    background-color: white;
+    display: block;
+}
+ul.pull-left{
+    display: none;
+    position: absolute;
+    margin-left: -5px;
+    padding: 0;
+}
+ul.pull-left li a{
+    padding: 5px 10px;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    display: block;
+    color: black;
+}
+li a:hover{
+    background:#EE0000;
+}
+
+.pull-right{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+ul.pull-right{
+    display: none;
+    position: absolute;
+    margin-left: -5px;
+    padding: 0;
+}
+ul.pull-right li a{
+    padding: 5px 10px;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    display: block;
+    color: black;
+}
+
+
+
+.head-right{
+  float: right;
+  background-color:white;
+  height: 100%;
+  width: auto;
+}
+.btn-case{
+float: right;
+height: 50px;
+width: auto;
+}
+.log-btn{
+  color: white;
+  font-size: 15px;
+  border: 1px solid red;
+  background-color: red;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.new-btn{
+  color: #0099e8;
+  background-color: white;
+  border: 1px solid #0099e8;
+  cursor: pointer;
+  font-size: 13px;
+  height: 33px;
+  width: 100px;
+  border-radius: 5px;
+}
