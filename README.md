@@ -249,3 +249,11 @@
 ### Association
 + belongs_to :user
 + belongs_to :item
+
+
+
+## creditcards table
+| column             | type        | options                        |
+|:------------------ |------------:|:------------------------------:|
+| card_number        | integer     | null: false                    |
+
