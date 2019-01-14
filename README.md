@@ -20,15 +20,14 @@
 + has_many :reviews, thorough: items
 + has_many :likes, thorough: items
 + has_many :items
-+ has_many :transaction_messages, thorough: items
-+ has_many :todos, thorough: items
-+ has_many :notifications, thorough: items
++ has_many :transactions, thorough: items
++ has_many :creditcards
 
 
 
 ## addresses table
 | column           | type        | options                        |
-|:---------------- |------------:|:------------------------------:|
+|:-----------------|------------:|:------------------------------:|
 | user_id          | integer     | null: false, foreign_key: true |
 | postal_code      | integer     | null: false                    |
 | prefectures      | string      | null: false                    |
@@ -43,7 +42,7 @@
 
 ## reviews table
 | column           | type        | options                        |
-|:---------------- |------------:|:------------------------------:|
+|:-----------------|------------:|:------------------------------:|
 | user_id          | integer     | null: false, foreign_key: true |
 | item_id          | integer     | null: false, foreign_key: true |
 
@@ -55,7 +54,7 @@
 
 ## likes table
 | column           | type        | options                        |
-|:---------------- |------------:|:------------------------------:|
+|:-----------------|------------:|:------------------------------:|
 | user_id          | integer     | null: false, foreign_key: true |
 | item_id          | integer     | null: false, foreign_key: true |
 
@@ -67,7 +66,7 @@
 
 ## comments table
 | column           | type        | options                        |
-|:---------------- |------------:|:------------------------------:|
+|:-----------------|------------:|:------------------------------:|
 | user_id          | integer     | null: false, foreign_key: true |
 | item_id          | integer     | null: false, foreign_key: true |
 | body             | text        | null: false                    |
@@ -84,9 +83,7 @@
 | brand_id           | integer     | null: false, foreign_key: true |
 | name               | text        | null: false, index: true       |
 | introduction       | text        | null: false                    |
-| top_category_id    | integer     | null: false, foreign_key: true |
-| middle_category_id | integer     | null: false, foreign_key: true |
-| bottom_category_id | integer     | null: false, foreign_key: true |
+| type               | string      |                                |
 | condition          | text        | null: false                    |
 | size_id            | integer     | null: false, foreign_key: true |
 | brand_id           | integer     | null: false, foreign_key: true |
@@ -94,7 +91,6 @@
 | ship_from          | string      | null: false                    |
 | shipping_date      | string      | null: false                    |
 | price              | integer     | null: false                    |
-| user_id            | integer     | null: false, foreign_key: true |
 | buyer_id           | integer     | null: false, foreign_key: true |
 | seller_id          | integer     | null: false, foreign_key: true |
 
@@ -103,17 +99,13 @@
 + has_many :likes, through: users
 + has_many :comments, thorough: users
 + has_many :item_images
-+ has_many :notifications, thorough: users
-+ has_many :todos, thorough: users
 + has_many :sizes
-+ has_many :transaction_messages, thorough: users
++ has_many :transactions, thorough: users
 
-+ belongs_to :top_category
-+ belongs_to :middle_category
-+ belongs_to :bottom_category
 + belongs_to :size
 + belongs_to :brand
 
++ Top_category,Middle_category,bottom_categoryと単一クラス継承を行う
 
 
 ## item_images table
@@ -128,42 +120,33 @@
 
 
 ## top_categories table
-| column           | type        | options                        |
-|:---------------- |------------:|:------------------------------:|
-| name             | string      | null: false                    |
+| column            | type        | options                        |
+|:----------------- |------------:|:------------------------------:|
+| top_category_name | string      | null: false                    |
+| item_id           | integer     | null: false, foreign_key: true |
 
-### Association
-+ has_many :items
-+ has_many :middle_categories
++ ItemよりSTIを行う
 
 
 
 ## middle_categories table
-| column           | type        | options                        |
-|:---------------- |------------:|:------------------------------:|
-| name             | string      | null: false                    |
-| top_category_id  | integer     | null: false, foreign_key: true |
-| size_type_id     | integer     | null: false, foreign_key: true |
+| column               | type        | options                        |
+|:---------------------|------------:|:------------------------------:|
+| middle_category_name | string      | null: false                    |
+| item_id              | integer     | null: false, foreign_key: true |
 
-### Association
-+ has_many :items
-+ has_many :bottom_categories
 
-+ belongs_to :top_category
-+ belongs_to :size-type
++ ItemよりSTIを行う
 
 
 
 ## bottom_categories table
-| column             | type        | options                        |
-|:------------------ |------------:|:------------------------------:|
-| name               | string      | null: false                    |
-| middle_category_id | integer     | null: false, foreign_key: true |
+| column               | type        | options                        |
+|:---------------------|------------:|:------------------------------:|
+| bottom_category_name | string      | null: false                    |
+| item_id              | integer     | null: false, foreign_key: true |
 
-### Association
-+ has_many :items
-
-+ belongs_to :middle_category
++ ItemよりSTIを行う
 
 
 
@@ -209,7 +192,22 @@
 
 ### Association
 + belongs_to :size
-+ belongs_to :middle_category
+
+
+
+## transactions table
+| column             | type        | options                        |
+|:------------------ |------------:|:------------------------------:|
+| user_id            | integer     | null: false, foreign_key: true |
+| item_id            | integer     | null: false, foreign_key: true |
+
+### Association
++ has_many :todos
++ has_many :transaction_messages
++ has_many :notifications
+
++ belongs_to :user
++ belongs_to :item
 
 
 
@@ -217,12 +215,10 @@
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
 | message            | text        | null: false                    |
-| user_id            | integer     | null: false, foreign_key: true |
-| item_id            | integer     | null: false, foreign_key: true |
+| transaction_id     | integer     | null: false, foreign_key: true |
 
 ### Association
-+ belongs_to :user
-+ belongs_to :item
++ belongs_to :transaction
 
 
 
@@ -230,12 +226,10 @@
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
 | todo               | string      | null: false, default: ""       |
-| user_id            | integer     | null: false, foreign_key: true |
-| item_id            | integer     | null: false, foreign_key: true |
+| transaction_id     | integer     | null: false, foreign_key: true |
 
 ### Association
-+ belongs_to :user
-+ belongs_to :item
++ belongs_to :transaction
 
 
 
@@ -243,12 +237,10 @@
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
 | notification       | string      | null: false, default: ""       |
-| user_id            | integer     | null: false, foreign_key: true |
-| item_id            | integer     | null: false, foreign_key: true |
+| transaction_id     | integer     | null: false, foreign_key: true |
 
 ### Association
-+ belongs_to :user
-+ belongs_to :item
++ belongs_to :transaction
 
 
 
@@ -257,3 +249,5 @@
 |:------------------ |------------:|:------------------------------:|
 | card_number        | integer     | null: false                    |
 
+### Association
++ belongs_to :user
