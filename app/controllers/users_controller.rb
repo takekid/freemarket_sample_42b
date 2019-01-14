@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-	def signin_form;end
+  def signin_form; end
 
-	def adress;end
+  def adress; end
 
-	def credit;end
+  def credit; end
 
-	def finish;	end
+  def finish; end
+
 end
