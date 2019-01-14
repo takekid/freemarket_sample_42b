@@ -1,0 +1,121 @@
+.mercari{
+	height:756px;
+	width:1440px;
+  background: rgb(245, 245, 245);
+}
+
+.mercari-header{
+ 	width: 1440px;
+ 	height: 128px;
+ }
+
+.mercari-header h1 {
+ 	height: 49px;
+ 	width: 193px;
+ 	margin: 0 auto;
+ 	padding: 30px;
+
+ }
+
+ .main-regstration {
+ 	height: 408px;
+ 	width: 1440px;
+ 	text-align: center;
+
+ }
+ .main-regstration_header {
+  background-color: white;
+  height: 33px;
+  width: 668px;
+  padding: 32px 16px;
+  margin:0 auto;
+  border-bottom: 1px ridge grey;
+ }
+ .main-regstration_header h1 {
+  font-size: 23px;
+ }
+
+ .main-regstration_body {
+    width: 572px;
+    height: 187px;
+    padding: 64px;
+    margin: 0 auto;
+    background-color: white;
+   
+ }
+
+
+
+.main-regstration_body a {
+  font-size: 12px;
+}
+
+
+.main-regstration_body_bottun {
+	height: 182px;
+	width: 320px;
+	margin: 0 126px;
+	padding-left: 22px;
+}
+.main-registration_body_bottun a {
+   margin-top: 15px;
+}
+
+ img{
+ 	vertical-align: middle;
+ }
+ 
+ 
+ .email {
+  background-color: #eee;
+  color: #000;
+}
+
+.facebook {
+  background-color: #385185;
+  color: white;
+ 
+}
+
+.google {
+  background-color: #dc4e41;
+  color: white;
+}
+
+.btn {
+  padding: 14px 72px;
+  float: left;
+  height: 24px;
+  width:160px;
+  margin-top: 15px;
+}
+
+.mercari-footer {
+ 	height: 140px;
+ 	width: 456px;
+ 	margin: 0 492px;
+ 	padding:70px 0 ;
+ }
+.mercari-footer_contents {
+	height: 65px;
+	width: 80px;
+	margin: 0 auto;
+}
+
+.mercari-footer_contents p {
+	font-size: 12px;
+}
+
+.mercari-footer li {
+	display: inline-block;
+	font-size: 12px;
+	margin-right: 15px;
+}
+
+.main-regstration_body_bottun span {
+ 
+  height: 16px;
+  width: 20px;
+
+}
+
