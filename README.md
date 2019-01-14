@@ -8,10 +8,7 @@
 | nickname     | string      | index: true, null: false, unique: true  |
 | avater       | text        | null: false, default ""                 |
 | phonenumber  | string      | null: false, unique: true               |
-| proceed      | integer     | null: false, default 0                  |
-| point        | integer     | null: false, default 0                  |
-| good_count   | integer     | null: false, default 0                  |
-| normal_count | string      | null: false, default 0                  |
+
 
 + 上記の他にgem deviseによるカラム。
 
@@ -85,6 +82,7 @@
 | introduction       | text        | null: false                    |
 | type               | string      |                                |
 | condition          | text        | null: false                    |
+| category_id        | integer     | null: false, foreign_key: true |
 | size_id            | integer     | null: false, foreign_key: true |
 | brand_id           | integer     | null: false, foreign_key: true |
 | shippingfee        | string      | null: false                    |
@@ -101,11 +99,11 @@
 + has_many :item_images
 + has_many :sizes
 + has_many :transactions, thorough: users
++ has_many :categories
 
 + belongs_to :size
 + belongs_to :brand
 
-+ Top_category,Middle_category,bottom_categoryと単一クラス継承を行う
 
 
 ## item_images table
@@ -119,34 +117,16 @@
 
 
 
-## top_categories table
+## categories table
 | column            | type        | options                        |
 |:----------------- |------------:|:------------------------------:|
-| top_category_name | string      | null: false                    |
-| item_id           | integer     | null: false, foreign_key: true |
+| category_name     | string      | null: false                    |
+| parent_id         | integer     | null: false, foreign_key: true |
 
-+ ItemよりSTIを行う
++ has_many :items
++ has_many :categories
 
-
-
-## middle_categories table
-| column               | type        | options                        |
-|:---------------------|------------:|:------------------------------:|
-| middle_category_name | string      | null: false                    |
-| item_id              | integer     | null: false, foreign_key: true |
-
-
-+ ItemよりSTIを行う
-
-
-
-## bottom_categories table
-| column               | type        | options                        |
-|:---------------------|------------:|:------------------------------:|
-| bottom_category_name | string      | null: false                    |
-| item_id              | integer     | null: false, foreign_key: true |
-
-+ ItemよりSTIを行う
++ belongs_to :category
 
 
 
@@ -156,11 +136,11 @@
 | name               | string      | null: false                    |
 
 ### Association
-+ belongs_to :brand
++ has_many :brand_groups
 
 
 
-## brandgroups table
+## brand_groups table
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
 | brand_id           | integer     | null: false, foreign_key: true |
@@ -168,7 +148,7 @@
 ### Association
 + has_many :items
 
-+ belongs_to :brandgroup
++ belongs_to :brand
 
 
 
@@ -196,10 +176,16 @@
 
 
 ## transactions table
-| column             | type        | options                        |
-|:------------------ |------------:|:------------------------------:|
-| user_id            | integer     | null: false, foreign_key: true |
-| item_id            | integer     | null: false, foreign_key: true |
+| column       | type        | options                        |
+|:------------ |------------:|:------------------------------:|
+| proceed      | integer     | null: false, default 0         |
+| point        | integer     | null: false, default 0         |
+| good_count   | integer     | null: false, default 0         |
+| normal_count | string      | null: false, default 0         |
+| bad_count    | string      | null: false, default 0         |
+| user_id      | integer     | null: false, foreign_key: true |
+| item_id      | integer     | null: false, foreign_key: true |
+
 
 ### Association
 + has_many :todos
@@ -247,7 +233,7 @@
 ## creditcards table
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
-| card_number        | integer     | null: false                    |
+| token_id           | integer     | null: false                    |
 
 ### Association
 + belongs_to :user
