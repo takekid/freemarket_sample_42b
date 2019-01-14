@@ -40,6 +40,9 @@
 ## reviews table
 | column           | type        | options                        |
 |:-----------------|------------:|:------------------------------:|
+| good_count       | integer     | null: false, default 0         |
+| normal_count     | integer     | null: false, default 0         |
+| bad_count        | integer     | null: false, default 0         |
 | user_id          | integer     | null: false, foreign_key: true |
 | item_id          | integer     | null: false, foreign_key: true |
 
@@ -180,9 +183,6 @@
 |:------------ |------------:|:------------------------------:|
 | proceed      | integer     | null: false, default 0         |
 | point        | integer     | null: false, default 0         |
-| good_count   | integer     | null: false, default 0         |
-| normal_count | string      | null: false, default 0         |
-| bad_count    | string      | null: false, default 0         |
 | user_id      | integer     | null: false, foreign_key: true |
 | item_id      | integer     | null: false, foreign_key: true |
 
