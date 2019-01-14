@@ -78,22 +78,22 @@
 
 
 ## items table
-| column             | type        | options                        |
-|:-------------------|------------:|:------------------------------:|
-| brand_id           | integer     | null: false, foreign_key: true |
-| name               | text        | null: false, index: true       |
-| introduction       | text        | null: false                    |
-| type               | string      |                                |
-| condition          | text        | null: false                    |
-| category_id        | integer     | null: false, foreign_key: true |
-| size_id            | integer     | null: false, foreign_key: true |
-| brand_id           | integer     | null: false, foreign_key: true |
-| shippingfee        | string      | null: false                    |
-| ship_from          | string      | null: false                    |
-| shipping_date      | string      | null: false                    |
-| price              | integer     | null: false                    |
-| buyer_id           | integer     | null: false, foreign_key: true |
-| seller_id          | integer     | null: false, foreign_key: true |
+| column             | type        | options                             |
+|:-------------------|------------:|:-----------------------------------:|
+| brand_id           | integer     | null: false, foreign_key: true      |
+| name               | text        | null: false, index: true            |
+| introduction       | text        | null: false                         |
+| type               | string      |                                     |
+| condition          | text        | null: false                         |
+| category_id        | integer     | null: false, foreign_key: true      |
+| size_id            | integer     | null: false, foreign_key: true      |
+| brand_id           | integer     | null: false, foreign_key: true      |
+| shippingfee        | string      | null: false                         |
+| ship_from          | string      | null: false                         |
+| shipping_date      | string      | null: false                         |
+| price              | integer     | null: false                         |
+| buyer_id           | integer     | null: false                         |
+| seller_id          | integer     | null: false, foreign_key: seller_id |
 
 ### Association
 + has_many :reviews, through: users
@@ -233,6 +233,7 @@
 ## creditcards table
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
+| user_id            | integer     | null: false                    |
 | token_id           | integer     | null: false                    |
 
 ### Association
