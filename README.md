@@ -20,6 +20,10 @@
 + has_many :transactions, thorough: items
 + has_many :creditcards
 
++ has_many:buyed_items,foreign_key: "buyer_id",class_name: "Item"
++ has_many:selling_items,->{where("buyer_id is NULL")},foreign_key: "seller_id",class_name: "Item"
++ has_many:sold_items,->{where("buyer_id is not NULL")},foreign_key: "seller_id",class_name: "Item"
+
 
 
 ## addresses table
@@ -93,7 +97,7 @@
 | shipping_date      | string      | null: false                         |
 | price              | integer     | null: false                         |
 | buyer_id           | integer     | null: false                         |
-| seller_id          | integer     | null: false, foreign_key: seller_id |
+| seller_id          | integer     | null: false                         |
 
 ### Association
 + has_many :reviews, through: users
@@ -106,7 +110,8 @@
 
 + belongs_to :size
 + belongs_to :brand
-
++ belongs_to :seller, class_name: "User"
++ belongs_to :buyer, class_name: "User"
 
 
 ## item_images table
