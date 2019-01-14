@@ -1,23 +1,26 @@
-h2{
-  font-size: 30px;
-  text-align: center;
-  font-weight: bold;
+.main-page a{
+  text-decoration: none;
+  color: black;
 }
-h3{
+h3.section-name{
   text-align: center;
   color: #0099e8;
 }
-p{
+h3.section-brand{
+  text-align: center;
+  color: #0099e8;
+}
+.main-page p{
   padding: 0;
   margin: 0;
 }
+
 .section-all{
   text-align: right;
-}
-.section-all a{
-  font-size: 14px;
-  color: #0099e8;
-
+  a{
+    font-size: 14px;
+    color: #0099e8;
+  }
 }
 
 .pickup-page{
@@ -31,11 +34,12 @@ margin: 0 auto;
 
 .pickup-head{
   font-size: 30px;
+  text-align: center;
   font-weight: bold;
 }
-
 .pickup-bottom{
   font-size: 30px;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -44,53 +48,54 @@ margin: 0 auto;
   height: 330px;
   width: auto;
 }
+
 .items-box{
   float: left;
   margin: 0 0 0 20px;
   width:213px;
   height: 330px;
   background-color: white;
-}
-.items-box a{
-  height: 330px;
-  display: block;
-  color: black;
-}
-.items-box img{
-  width: 213px;
-  height: 220px;
-}
-.item-box-body{
-  height:80px;
-  padding: 16px;
-}
-.item-box-name{
-  overflow: hidden;
-  position: relative;
-  font-weight: 400;
-  height: 3em;
-  line-height: 1.5;
-  word-break: break-word;
-  white-space: normal;
-}
-.item-box-price{
-  height:30px;
-  width: auto;
-}
-.price-section{
-  float: left;
-  font-size: 16px;
-  width: auto;
+  a{
+    height: 330px;
+    display: block;
+    color: black;
+    img{
+      width: 213px;
+      height: 220px;
+      .item-box-body{
+        height:80px;
+        padding: 16px;
+        .item-box-name{
+          overflow: hidden;
+          position: relative;
+          font-weight: 400;
+          height: 3em;
+          line-height: 1.5;
+          word-break: break-word;
+          white-space: normal;
+          .item-box-price{
+            height:30px;
+            width: auto;
+            .price-section{
+              float: left;
+              font-size: 16px;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .item-liks{
   float: right;
   font-size: 16px;
   font-weight: 400;
-}
-.fa-heart{
-  color:#cccccc;
-}
-.item-tax{
-  font-size: 10px;
-  clear: both;
+  .fa-heart{
+    color:#cccccc;
+  .item-tax{
+    font-size: 10px;
+    clear: both;
+    }
+  }
 }

@@ -1,38 +1,33 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body,h1,h2,ul{
+body{
   position: relative;
   min-height: 100%;
   margin: 0;
   padding: 0;
 }
-a{
-  text-decoration: none;
-  color: black;
-}
-body{
-  background-color: white;
-}
-
 .pc-header{
   height: 120px;
   background-color: white;
+  .pc-header-inner{
+    height: 100%;
+    width: 71vw;
+    margin: 0 auto;
+    .clearfix{
+      height:40%;
+      background-color: white;
+      padding-top: 10px;
+      h1.pc-left{
+        margin: 0;
+        padding: 0;
+        float: left;
+        padding-right: 10px;
+      }
+    }
+  }
 }
-.pc-header-inner{
-  height: 100%;
-  width: 71vw;
-  margin: 0 auto;
-}
-.clearfix{
-  height:40%;
-  background-color: white;
-  padding-top: 10px;
-}
-h1{
-  float: left;
-  padding-right: 10px;
-}
+
 .input{
   position: relative;
   width:calc(100% - (134px + 16px));
@@ -41,9 +36,9 @@ h1{
   font-size: 15px;
   border-radius: 5px;
   border: 1px solid #cccccc;
-}
-.input::-webkit-search-cancel-button{
-  -webkit-appearance: none;
+  .input::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+  }
 }
 .fa-search{
   position: absolute;
@@ -59,68 +54,49 @@ h1{
 .clearfix-box{
   background-color: white;
   height: 40px;
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  .head-left{
+    float: left;
+    height: 100%;
+    width:auto;
+  }
 }
-.head-left{
-  float: left;
-  height: 100%;
-  width:auto;
 
-}
-h2{
+
+h2.menu-down{
   font-size: 14px;
   font-weight: 400;
+  padding: 0;
+  margin: 0;
 }
-
-.pull-left{
-    float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    color: #ea352d;
-    font-size: 14px;
-}
-ul.menu li{
+ul.menu{
+  margin: 0;
+  padding: 0;
+  li{
     float: left;
     position: relative;
     margin: 0;
     padding-right: 5px;
-    width: 9vw;
+    width: 13vw;
     background-color: white;
     display: block;
+  }
 }
-ul.pull-left{
-    display: none;
-    position: absolute;
-    margin-left: -5px;
-    padding: 0;
-    z-index: 1000;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-}
-ul.pull-left li{
-  padding: 5px;
-}
-ul.pull-left li a{
-    padding: 5px 10px;
-    margin-left: -5px;
-    margin-right: -5px;
-    margin-bottom: -5px;
-    display: block;
-    color: black;
-}
+
 li a:hover{
     background:#ea352d;
 }
 
-.pull-right{
+ul.pull-left{
+    float: left;
     list-style-type: none;
     margin: 0;
     padding: 0;
     color: #ea352d;
     font-size: 14px;
-}
-ul.pull-right{
     display: none;
     position: absolute;
     margin-left: -5px;
@@ -129,19 +105,45 @@ ul.pull-right{
     -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
             box-shadow: 0 10px 6px -6px #777;
-}
-ul.pull-right li{
-  padding: 5px;
-}
-ul.pull-right li a{
-    padding: 5px 10px;
-    margin-left: -5px;
-    margin-right: -5px;
-    margin-bottom: -5px;
-    display: block;
-    color: black;
+  li{
+    padding: 5px;
+    a{
+      padding: 5px 10px;
+      margin-left: -5px;
+      margin-right: -5px;
+      margin-bottom: -5px;
+      display: block;
+      color: black;
+    }
+  }
 }
 
+ul.pull-right{
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: #ea352d;
+    font-size: 14px;
+    position: absolute;
+    margin-left: -5px;
+    padding: 0;
+    z-index: 1000;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+  li{
+    padding: 5px;
+    a{
+      padding: 5px 10px;
+      margin-left: -5px;
+      margin-right: -5px;
+      margin-bottom: -5px;
+      display: block;
+      color: black;
+    }
+  }
+}
 
 
 .head-right{
@@ -149,33 +151,33 @@ ul.pull-right li a{
   background-color:white;
   height: 100%;
   width: auto;
-}
-.btn-case{
-float: right;
-height: 50px;
-width: auto;
-}
-.log-btn{
-  color: white;
-  font-size: 15px;
-  border: 1px solid #ea352d;
-  background-color: #ea352d;
-  cursor: pointer;
-  height: 30px;
-  width: 100px;
-  border-radius: 5px;
+  .btn-case{
+  float: right;
+  height: 50px;
+  width: auto;
+    .log-btn{
+      color: white;
+      font-size: 15px;
+      border: 1px solid #ea352d;
+      background-color: #ea352d;
+      cursor: pointer;
+      height: 30px;
+      width: 100px;
+      border-radius: 5px;
+    }
+    .new-btn{
+      color: #0099e8;
+      background-color: white;
+      border: 1px solid #0099e8;
+      cursor: pointer;
+      font-size: 13px;
+      height: 33px;
+      width: 100px;
+      border-radius: 5px;
+    }
+  }
 }
 
-.new-btn{
-  color: #0099e8;
-  background-color: white;
-  border: 1px solid #0099e8;
-  cursor: pointer;
-  font-size: 13px;
-  height: 33px;
-  width: 100px;
-  border-radius: 5px;
-}
 .sell-btn{
   position: fixed;
   bottom: 32px;
@@ -193,9 +195,9 @@ width: auto;
   text-align: center;
   vertical-align: middle;
   transition: .4s;
-}
-.sell-btn div{
-  padding-top: 30px;
+  div{
+    padding-top: 30px;
+  }
 }
 .fa-camera{
   font-size:60px;
