@@ -1,0 +1,101 @@
+.main-page a{
+  text-decoration: none;
+  color: black;
+}
+h3.section-name{
+  text-align: center;
+  color: #0099e8;
+}
+h3.section-brand{
+  text-align: center;
+  color: #0099e8;
+}
+.main-page p{
+  padding: 0;
+  margin: 0;
+}
+
+.section-all{
+  text-align: right;
+  a{
+    font-size: 14px;
+    color: #0099e8;
+  }
+}
+
+.pickup-page{
+  padding: 40px 0;
+  background-color: #f5f5f5;
+}
+.main-section{
+  width: 700px;
+margin: 0 auto;
+}
+
+.pickup-head{
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+.pickup-bottom{
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.section-item{
+  height: 330px;
+  width: auto;
+}
+
+.items-box{
+  float: left;
+  margin: 0 0 0 20px;
+  width:213px;
+  height: 330px;
+  background-color: white;
+  a{
+    height: 330px;
+    display: block;
+    color: black;
+    img{
+      width: 213px;
+      height: 220px;
+      .item-box-body{
+        height:80px;
+        padding: 16px;
+        .item-box-name{
+          overflow: hidden;
+          position: relative;
+          font-weight: 400;
+          height: 3em;
+          line-height: 1.5;
+          word-break: break-word;
+          white-space: normal;
+          .item-box-price{
+            height:30px;
+            width: auto;
+            .price-section{
+              float: left;
+              font-size: 16px;
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.item-liks{
+  float: right;
+  font-size: 16px;
+  font-weight: 400;
+  .fa-heart{
+    color:#cccccc;
+  .item-tax{
+    font-size: 10px;
+    clear: both;
+    }
+  }
+}
