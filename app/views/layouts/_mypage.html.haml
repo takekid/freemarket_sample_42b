@@ -20,23 +20,181 @@
           %span.mybold 0
     %section.mypage-tab-contents
       %ul.mypage-tabs
-        %li.my-tab
+        %li.now
           %h3
-            %a{:href =>"","data-togle"=>"tab"} お知らせ
-        %li.my-tab
+            %a{:href =>"#mypage-tab-notification","data-togle"=>"tab"} お知らせ
+        %li
           %h3
-            %a{:href =>"","data-togle"=>"tab"} やることリスト
+            %a{:href =>"#mypage-tab-todo","data-togle"=>"tab"} やることリスト
       .tab-content
+        %ul#mypage-tab-notification.mypage-item-list.tab-pane
+          %li
+            %a.mypage-item-link{:href => ""}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "/assets/banner/dum04.gif", :src => "/assets/banner/dum04.gif"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「【P500進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
+                %time
+                  %i.far.fa-clock
+                  %span 1 日前
+              %i.fas.fa-chevron-right
+          %li
+            %a.mypage-item-link{:href => ""}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "/assets/banner/dum04.gif", :src => "/assets/banner/dum04.gif"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「【P500進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
+                %time
+                  %i.far.fa-clock
+                  %span 1 日前
+              %i.fas.fa-chevron-right
+          %li
+            %a.mypage-item-link{:href => ""}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "/assets/banner/dum04.gif", :src => "/assets/banner/dum04.gif"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「【P500進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
+                %time
+                  %i.far.fa-clock
+                  %span 1 日前
+              %i.fas.fa-chevron-right
+          %li
+            %a.mypage-item-link{:href => ""}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "/assets/banner/dum04.gif", :src => "/assets/banner/dum04.gif"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「【P500進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
+                %time
+                  %i.far.fa-clock
+                  %span 1 日前
+              %i.fas.fa-chevron-right
+          %li
+            %a.mypage-item-link{:href => ""}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "/assets/banner/dum04.gif", :src => "/assets/banner/dum04.gif"}/
+              .mypage-item-body
+                .mypage-item-text 事務局から個別メッセージ「【P500進呈】ご登録ありがとうございます！メルカリでのお買い物をお楽しみください♪」
+                %time
+                  %i.far.fa-clock
+                  %span 1 日前
+              %i.fas.fa-chevron-right
+          %li.mypage-go-list
+            %a{:href=>""} 一覧を見る
+        %ul#mypage-tab-todo.mypage-item-list.tab-pane
+          %li.mypage-item-not-found.bold 現在、やることリストはありません
     %section.mypage-tab-under
       %h2.mypage-tab-head 購入した商品
       %ul.mypage-tabs
-        %li.my-tab
+        %li.now
           %h3
-            %a{:href =>"","data-togle"=>"tab"} 取引中
-        %li.my-tab
+            %a{:href =>"#mypage-tab-transaction-now.","data-togle"=>"tab"} 取引中
+        %li
           %h3
-            %a{:href =>"","data-togle"=>"tab"} 過去の取引
+            %a{:href =>"#mypage-tab-transaction-old","data-togle"=>"tab"} 過去の取引
       .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane
+          %img{:src => "/assets/mercari.svg", :style => "background: white;"}/
+          %li.mypage-item-not-found.bold 取引中の商品がありません
+        %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+          %img{:src => "/assets/mercari.svg", :style => "background: white;"}/
+          %li.mypage-item-not-found.bold 過去に取引した商品がありません
   .l-side
-
+    %nav.mypage-nav
+      %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item.active{:href => ""}
+            マイページ
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            お知らせ
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            やることリスト
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            いいね！一覧
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            出品する
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            出品した商品 - 出品中
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            出品した商品 - 取引中
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            出品した商品 - 売却済み
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            購入した商品 - 取引中
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            購入した商品 - 過去の取引
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            ニュース一覧
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            評価一覧
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            ガイド
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            お問い合わせ
+            %i.fas.fa-chevron-right
+      %h3.mypage-nav-head 売上・ポイント
+      %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            売上・振込申請
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            ポイント
+            %i.fas.fa-chevron-right
+      %h3.mypage-nav-head 設定
+      %ul.mypage-nav-list
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            プロフィール
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            住所変更
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            支払い方法
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            メール/パスワード
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            本人情報
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            電話番号の確認
+            %i.fas.fa-chevron-right
+        %li
+          %a.mypage-nav-list-item{:href => ""}
+            ログアウト
+            %i.fas.fa-chevron-right
 

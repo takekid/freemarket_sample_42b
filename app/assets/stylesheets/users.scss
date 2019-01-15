@@ -1,9 +1,3 @@
- body{
-  height: 1079px;
-  width:1079px;
-  background: rgb(245, 245, 245);
- }
-
 
 .mercari{
 	height:756px;
@@ -32,7 +26,7 @@
         font-size: 12px;
       }
     }
-      
+
     li {
     display: inline-block;
     font-size: 12px;
@@ -88,7 +82,7 @@
 .facebook {
   background-color: #385185;
   color: white;
- 
+
 }
 
 .google {
@@ -149,12 +143,12 @@
           font-size: 12px;
           padding: 5px;
          }
-  
+
  }
 .info-contents_form__field_submit{
   padding: 16px 127px;
   margin-right:20px;
-  margin-top:60px; 
+  margin-top:60px;
   background-color: #ea352d;
   color: white;
 }
@@ -208,7 +202,7 @@
       &_submit{
         padding: 16px 127px;
         margin-right:20px;
-        margin-top:130px; 
+        margin-top:130px;
         background-color: #ea352d;
         color: white;
       }
@@ -293,7 +287,7 @@
 }
 
 
- 
+
 .span-red{
   background-color: red;
  }
@@ -304,7 +298,7 @@
 .submit{
   padding: 16px 127px;
   margin-right:20px;
-  margin-top:40px; 
+  margin-top:40px;
   background-color: #ea352d;
   color: white;
 }
@@ -347,10 +341,10 @@
       a {
         font-size: 12px;
         margin-top: 40px;
-      }  
+      }
     }
  }
- 
+
 .main-login {
   height: 408px;
   width: 1440px;
@@ -383,7 +377,7 @@
         margin :0 auto;
        }
   }
-  
+
   &_body {
       width: 328px;
       height: 116px;
@@ -399,7 +393,7 @@
       a {
          margin-top: 15px;
       }
-    } 
+    }
 
     &_contents {
       height: 350px;
@@ -416,12 +410,12 @@
         height: 28px;
         width: 270px;
         margin-right:20px;
-        margin-top:20px; 
+        margin-top:20px;
        }
     }
   }
 }
- 
+
 .email {
   background-color: #eee;
   color: #000;
@@ -430,7 +424,7 @@
 .facebook {
   background-color: #385185;
   color: white;
- 
+
 }
 
 .google {
@@ -448,7 +442,7 @@
 .login-form {
   padding: 16px 127px;
   margin-right:20px;
-  margin-top:50px; 
+  margin-top:50px;
   background-color: #ea352d;
   color: white;
 }

@@ -91,10 +91,11 @@ ul.menu{
 }
 
 li a:hover{
-    background:#ea352d;
+    background:rgba(0,0,0,0.25);
 }
 
 ul.pull-left{
+    border: 1px solid #eee;
     float: left;
     list-style-type: none;
     margin: 0;
@@ -123,6 +124,7 @@ ul.pull-left{
 }
 
 ul.pull-right{
+    border: 1px solid #eee;
     display: none;
     list-style-type: none;
     margin: 0;
