@@ -1,0 +1,42 @@
+%nav.bread-crumbs
+  %ul
+    %li{:itemscope => "", :itemtype => ""}
+      %a{:href => "", :itemprop => "url"}
+        %span{:itemprop => "title"} メルカリ
+      %i.fas.fa-angle-right
+    %li{:itemscope => "", :itemtype => ""}
+      %span{:itemprop => "title"} マイページ
+%main.l-container.clearfix
+  .l-content
+    %section.mypage-user-icon
+      %a{:href =>""}
+        %figure
+          %img{:src=>"/assets/banner/dum05.gif", :alt =>"", :width=>"60", :height=>"60" }
+        %h2.mybold テスト
+        .mypage-number
+          .mynum 評価
+          %span.mybold 0
+          .mynum 出品数
+          %span.mybold 0
+    %section.mypage-tab-contents
+      %ul.mypage-tabs
+        %li.my-tab
+          %h3
+            %a{:href =>"","data-togle"=>"tab"} お知らせ
+        %li.my-tab
+          %h3
+            %a{:href =>"","data-togle"=>"tab"} やることリスト
+      .tab-content
+    %section.mypage-tab-under
+      %h2.mypage-tab-head 購入した商品
+      %ul.mypage-tabs
+        %li.my-tab
+          %h3
+            %a{:href =>"","data-togle"=>"tab"} 取引中
+        %li.my-tab
+          %h3
+            %a{:href =>"","data-togle"=>"tab"} 過去の取引
+      .tab-content
+  .l-side
+
+
