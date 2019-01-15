@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %title mercari
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
+    %link{:href => "https://www.google.com/recaptcha/api.js", :rel => "stylesheet"}/
+  %body
+    .mercari-header
+      %h1
+        %a{:href => "#"}
+          %img{:src => "/assets/logo.svg", :style => "background: rgb(245, 245, 245);"}/
+    .main-finish
+      .main-finish_header
+        %p 会員登録完了
+      .main-finish_contents
+        .main-finish_contents_sentence
+          %p ありがとうございます
+          %p 会員登録が完了しました
+        %button.submit{:type => "submit"} メルカリを始める
+      .mercari-footer
+        %nav
+          %ul
+            %li プライバシーポリシー
+            %li メルカリ利用規約
+            %li 特定商取引に関する表記
+        .mercari-footer_contents
+          %a.single-footer-logo{:href => "#"}
+            %img{:src => "/assets/mercari.svg", :style => "background: rgb(245, 245, 245);"}/
+          %p
+            %small © 2019 Mercari
