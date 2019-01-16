@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root "markets#index"
   resources :markets, only: [:index]
   get 'users/signin_form' => 'users#signin_form'
-  get 'users/adress' => 'users#adress'
-  get 'users/credit' => 'users#credit'
+  get 'users/address' => 'users#address'
+  get 'users/purchase' => 'users#purchase'
   get 'users/finish' => 'users#finish'
+  post 'users/signin_form_create' => 'users#signin_form_create'
+  post 'users/address_create' => 'users#address_create'
+  post 'purchase' => 'users#purchase'
   
 end

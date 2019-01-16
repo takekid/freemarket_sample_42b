@@ -4,10 +4,9 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "UTF-8"}/
     %title mercari
-    %link{:href => "test5.css", :rel => "stylesheet"}/
     %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
     %link{:href => "https://www.google.com/recaptcha/api.js", :rel => "stylesheet"}/
-  %body
+  %body.mercari
     .mercari-header
       %h1
         %a{:href => "#"}
@@ -31,22 +30,23 @@
               %img.card{:src => "/assets/american_express.svg"}/
               %img.card{:src => "/assets/dinersclub.svg"}/
               %img.card{:src => "/assets/discover.svg"}/
-            .info-credit_contents_form_field_date
+            = form_tag(action: :purchase, method: :post) do 
+              .info-credit_contents_form_field_date
+                %p
+                  有効期限　　　
+                  %span.span-red 必須
+                %li
+                  %input.input-num{:type => "number"}/
+                  %p 月
+                %li
+                  %input.input-num{:type => "number"}/
+                  %p 日
               %p
-                有効期限　　　
+                セキュリティーコード
                 %span.span-red 必須
-              %li
-                %input.input-num{:type => "number"}/
-                %p 月
-              %li
-                %input.input-num{:type => "number"}/
-                %p 日
-            %p
-              セキュリティーコード
-              %span.span-red 必須
-            %input.info-credit_contents_form_field_input-content{:placeholder => "カードの背面の４桁もしくは３桁の番号"}/
-            %p.sentence-blue カード裏側の番号とは？
-            %button.submit{:type => "submit"} 次へ進む
+              %input.info-credit_contents_form_field_input-content{:placeholder => "カードの背面の４桁もしくは３桁の番号"}/
+              %p.sentence-blue カード裏側の番号とは？
+              %button.submit{:type => "submit"} 次へ進む
       .mercari-footer
         %nav
           %ul
