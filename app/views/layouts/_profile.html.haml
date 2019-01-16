@@ -1,0 +1,16 @@
+%nav.bread-crumbs
+  %ul
+    %li
+      = link_to "" do
+        %span メルカリ
+      = fa_icon("angle-right")
+    %li
+      = link_to "" do
+        %span マイページ
+      = fa_icon("angle-right")
+    %li
+      %span プロフィール
+%main.l-container.clearfix
+  .l-content
+
+  =render "/layouts/l_sidebar"
