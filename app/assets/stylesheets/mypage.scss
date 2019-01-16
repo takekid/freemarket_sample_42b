@@ -1,0 +1,288 @@
+.bread-crumbs{
+  height: 50px;
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul{
+    overflow: visible;
+    width: 700px;
+    margin: 1vh 12vw;
+    white-space: normal;
+    li{
+      display: inline-block;
+      list-style: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      a{
+        color:#333;
+        text-decoration: none;
+        span{
+          background-repeat:no-repeat;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .fa-angle-right{
+        margin: 0 8px;
+        font-size: 13px;
+        color: #888
+      }
+    }
+  }
+}
+
+.l-container{
+  height: auto;
+  width:71vw;
+  overflow: auto;
+  margin: 40px auto;
+  a{
+    text-decoration: none;
+  }
+}
+.l-content{
+  float: right;
+  width: 700px;
+  .image-mypage{
+    height: 60px;
+    width: 60px;
+  }
+}
+.mypage-user-icon{
+  position: relative;
+  height: 200px;
+  padding: 20px;
+  background-image: image-url("/assets/banner/dum02.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  a{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #333;
+    figure{
+      overflow: hidden;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+    h2{
+      margin: 8px 0 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}
+
+.mypage-number {
+  width: 700px;
+  height: 16px;
+  margin: 8px 0 0;
+  font-size: 0;
+  div {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 16px;
+  }
+  span {
+    margin: 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.mypage-tab-contents {
+  height: auto;
+  margin: 0;
+  background-color: white;
+}
+
+.mypage-tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #eee;
+  width: 700px;
+  height: 74px;
+  li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 49.5%;
+    display: inline-block;
+  }
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+  }
+  a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 16px;
+    line-height: 72px;
+  }
+}
+li.now{
+  background: white;
+  border-top: 2px solid #ea352d;
+}
+.my-tab.active{
+  background:#fff; color:#000;
+}
+
+.tab-cnotent {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: no-repeat;
+}
+
+.tab-content {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  li {
+    border-bottom: 1px solid #eee;
+  }
+  a {
+    display: block;
+    min-height: 80px;
+    padding: 16px;
+    color: #333;
+  }
+  figure {
+    position: relative;
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+  }
+}
+.lazyload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+.mypage-item-body{
+  margin: 0 40px 0 68px;
+}
+.mypage-item-text{
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  max-height: 4.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+.mypage-item-link{
+  position: relative;
+  time{
+  display: inline-block;
+  color: #888;
+  }
+}
+.fa-chevron-right{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+}
+.mypage-go-list{
+  height: 70px;
+  border: 0;
+  padding: 16px;
+  a{
+    min-height: 70px;
+    line-height: 70px;
+    padding: 0;
+    display: block;
+    background: #eee;
+    color: #333;
+    text-align: center;
+  }
+}
+
+
+.mypage-tab-under{
+  margin: 40px 0 0;
+  background: #fff;
+}
+.mypage-tab-head{
+  margin: 0;
+  padding: 0 16px;
+  background: #fafafa;
+  font-size: 16px;
+  line-height: 72px;
+}
+.mypage-tab-under{
+  .tab-pane{
+    height: 20vh;
+    text-align: center;
+    margin: 4vh auto;
+  }
+  img{
+    background-color: white;
+    height: 10vh;
+    width: 10vw;
+    opacity: 0.6;
+  }
+  .bold{
+    opacity: 0.2;
+  }
+}
+
+
+.l-side{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+}
+.mypage-nav{
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+.mypage-nav-list{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li{
+    border-top: 1px solid #eee;
+    a{
+      position: relative;
+      display: block;
+      min-height: 20px;
+      padding: 16px;
+      background: #fff;
+      color: #333;
+      .fa-chevron-right{
+        position: absolute;
+        top: 40%;
+        right: 16px;
+        color: #ccc;
+      }
+    }
+  }
+}
+
+
+
