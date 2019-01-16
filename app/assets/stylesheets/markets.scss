@@ -24,6 +24,9 @@ body{
         padding: 0;
         float: left;
         padding-right: 10px;
+        img{
+          height:35px;
+        }
       }
     }
   }
@@ -95,6 +98,7 @@ li a:hover{
 }
 
 ul.pull-left{
+    width: auto;
     border: 1px solid #eee;
     float: left;
     list-style-type: none;
@@ -124,6 +128,7 @@ ul.pull-left{
 }
 
 ul.pull-right{
+  width: auto;
     border: 1px solid #eee;
     display: none;
     list-style-type: none;
