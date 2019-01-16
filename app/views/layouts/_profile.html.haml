@@ -1,0 +1,27 @@
+%nav.bread-crumbs
+  %ul
+    %li
+      = link_to "" do
+        %span メルカリ
+      = fa_icon("angle-right")
+    %li
+      = link_to "" do
+        %span マイページ
+      = fa_icon("angle-right")
+    %li
+      %span プロフィール
+%main.l-container.clearfix
+  .l-content
+    %section.chapter-container
+      %h2.chapter-head プロフィール
+      %form{action: "", method: ""}
+        %input{name: "chapter_value", type: "hidden", value: ""}
+        .profile-icon
+          %figure
+            = image_tag asset_path("dum02.gif")
+          %input.input-default{name: "nickname", placeholder: "例)リカルメ←発信中", type: "text", value: "テストです"}
+        .profile-contents
+          %textarea.text-default{name: "introduction", placeholder: "例)世界から集めたボードゲームやトランプなどたくさんの方に興味を持っていただけるような商品を出品しております!\n是非興味のある人はご質問などなんでもどうぞ気軽にどうぞ♪"}
+          %input{name: "save-profile", value: "", type: "hidden"}
+          %button.change-profile{type: "submit"} 変更する
+  =render "/layouts/l_sidebar"
