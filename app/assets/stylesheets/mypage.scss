@@ -44,6 +44,10 @@
 .l-content{
   float: right;
   width: 700px;
+  .image-mypage{
+    height: 60px;
+    width: 60px;
+  }
 }
 .mypage-user-icon{
   position: relative;
@@ -168,7 +172,7 @@ li.now{
     padding: 0;
   }
 }
-.lazyloaded {
+.lazyload {
   position: absolute;
   top: 0;
   right: 0;
