@@ -42,19 +42,9 @@ class UsersController < ApplicationController
     
   end
 
-  # def purchase
-  #   Payjp.api_key = PAYJP_SECRET_KEY
-  #   Payjp::Charge.new(currency: 'jpy', amount: 1000, card: params['token_id'])
-  #   if Payjp::Charge.save
-  #      redirect_to root_path, notice: "支払いが完了しました"
-  #      redirect_to("/users/finish")
-  #   else
-
-  #   end  
-
-  # end
-
-
-
+  def show
+  end
+  def profile
+  end
 
 end

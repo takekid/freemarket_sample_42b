@@ -2,11 +2,11 @@
   .swiper-container
     .swiper-wrapper
       .swiper-slide
-        %img{:height => "100%",:width => "100%",:alt => "Swiper01", :src => "/assets/banner/dum01.gif"}/
+        = image_tag asset_path"banner/dum01.gif",alt: "Swiper01"
       .swiper-slide
-        %img{:height => "100%",:width => "100%",:alt => "Swiper02", :src => "/assets/banner/dum02.gif"}/
+        = image_tag asset_path"dum02.gif",alt: "Swiper02"
       .swiper-slide
-        %img{:height => "100%",:width => "100%",:alt => "Swiper03", :src => "/assets/banner/dum03.gif"}/
+        = image_tag asset_path"dum04.gif",alt: "Swiper03"
     .swiper-pagination
     .swiper-button-prev
     .swiper-button-next
@@ -33,228 +33,228 @@
       %h3.section-name メンズ 新着アイテム
       .section-item
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
       .section-all
-        %a{:href => ""}すべての商品を見る
+        = link_to'すべての商品を見る',""
     .main-section
       %h3.section-name レディース 新着アイテム
       .section-item
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
       .section-all
-        %a{:href => ""}すべての商品を見る
+        = link_to'すべての商品を見る',""
     .main-section
       %h3.section-name ベイビー 新着アイテム
       .section-item
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
       .section-all
-        %a{:href => ""}すべての商品を見る
+        = link_to'すべての商品を見る',""
     %h2.pickup-bottom ピックアップブランド
     .main-section
       %h3.section-brand シャネル 新着アイテム
       .brand-item
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
       .section-all
-        %a{:href => ""}すべての商品を見る
+        = link_to'すべての商品を見る',""
     .main-section
       %h3.section-brand ナイキ 新着アイテム
       .brand-item
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
       .section-all
-        %a{:href => ""}すべての商品を見る
+        = link_to'すべての商品を見る',""
     .main-section
       %h3.section-brand アディダス 新着アイテム
       .brand-item
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
         .items-box
-          %a{:href => ""}
-            %img{:src => "/assets/banner/dum01.gif"}
+          = link_to "" do
+            =image_tag asset_path"banner/dum01.gif"
             .item-box-body
               .item-box-name テストの商品です
               .item-box-price
                 .price-section¥7,777
                 .item-liks
-                  %i.far.fa-heart
+                  =fa_icon("heart")
                   %span 10
                 %p.item-tax (税込)
       .section-all
-        %a{:href => ""}すべての商品を見る
+        = link_to'すべての商品を見る',""

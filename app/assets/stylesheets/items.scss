@@ -1,0 +1,336 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$outline: #0099FF;
+
+.sell-item-container {
+  width: 700px;
+  margin: 0 auto;
+  &-container-inner {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+  }
+}
+
+.sell-container-inner {
+  background-color: white;
+  border-style: solid;
+  border-width: 0;
+  height: 97px;
+  line-height: 97px;
+}
+
+h2.sell-container-header {
+  text-align: center;
+  font-size: 22px;
+}
+
+form.sell-form {
+  border-top: 1px solid #eee;
+  height: 1919px;
+  background-color: white;
+}
+
+.sell-upload-box {
+  padding: 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.sell-form-groups {
+    margin: 0 0 20px;
+}
+
+h3.sell-upload-text {
+  font-size: 16px;
+  line-height: 100%;
+}
+
+span.form-require {
+  background-color: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 3px 5px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+p.upload-image {
+  margin: 8px 0 10px;
+  line-height: 1.5;
+  padding: 0;
+  font-size: 12px;
+}
+
+label.sell-image-dropbox {
+  display: block;
+  width: 620px;
+  height: 162px;
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  line-height: 162px;
+}
+
+
+pre.visible-pc {
+    text-align: center;
+    font-size: 14px;
+    line-height: 100%;
+    padding-top: 120px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.sell-items-content.clearfix {
+  padding: 40px 40px 10px;
+  line-height: 100%;
+  border-bottom: 1px solid #eee;
+  height:auto;
+  overflow: auto;
+}
+
+label.sell-item-name {
+  font-weight: 600;
+  font-size: 14px;
+    &-left {
+    font-weight: 600;
+    font-size: 14px;
+    float: left;
+  }
+}
+
+.input-form-groups {
+  margin: 0 0 40px;
+}
+
+input.sell-item-name {
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  width: 95%;
+  margin: 8px auto;
+  &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+  }
+}
+
+
+textarea.sell-item-info {
+  display: block;
+  width: 97%;
+  max-width: 100%;
+  min-height: 104px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 15.9px;
+  line-height: 1.5;
+  margin: 8px 0 0;
+  overflow: auto;
+  &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+  }
+}
+
+
+h3.sell-detail-text {
+  float: left;
+  color: #888;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+.sell-form-box {
+  float: right;
+  width: 400px;
+  margin: 0;
+}
+
+.select-wrap-category {
+  margin: 8px 0 0;
+  position: relative;
+}
+
+select.select-category {
+  -webkit-appearance: none;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width:100%;
+    &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+    }
+}
+
+i.fas.fa-angle-down:before {
+  position: absolute;
+    right: 16px;
+    top: 40%;
+    z-index: 2;
+    color: #888;
+    font-size: 20px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-weight: solid;
+}
+
+span.form-any {
+  background-color: #ccc;
+  margin: 0 0 0 8px;
+  padding: 3px 5px;
+  border-radius: 2px;
+  line-height: 100%;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+h3.sell-price-text {
+  float: left;
+  color: #888;
+  font-size: 12px;
+  line-height: 100%;
+}
+i.fas.fa-question-circle {
+  color: $outline;
+}
+
+.sell-item-price-left {
+  float:left;
+    width: 25%;
+    height: 30px;
+
+
+}
+
+.sell-item-price-right {
+  float:right;
+}
+
+input.sell-item-price {
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 14px;
+  width: 140px;
+  margin: 8px auto;
+  text-align: right;
+    &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+    }
+}
+.sell-form-groups-list {
+    height: 80px;
+    border-bottom: 1px solid #eee;
+    line-height: 80px;
+    &-calc {
+      position: relative;
+      line-height: 80px;
+      height: 80px;
+      border-bottom: 1px solid #eee;
+      }
+}
+
+.sell-item-carc-left {
+    font-size: 13px;
+    float: left;
+}
+
+.sell-item-carc-right {
+    font-size: 11px;
+    line-height: 20px;
+    padding-left: 100px;
+    text-align: right;
+    width: 50px;
+    float: right;
+    color: black;
+}
+
+.sell-item-ans-left {
+  float: left;
+  font-weight: bold;
+}
+.sell-item-ans-right {
+  float: right;
+  text-align: right;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.sell-items-content-calc {
+  padding: 40px 40px 80px;
+  line-height: 100%;
+  border-bottom: 1px solid #eee;
+  height:auto;
+  overflow: auto;
+}
+
+.sell-form-groups-list-ans {
+    height: 80px;
+    line-height: 80px;
+  }
+
+.sell-items-content-btn {
+  padding: 40px 40px 10px;
+  line-height: 100%;
+  min-height: 270px;
+  height:auto;
+  overflow: auto;
+  background-color: white;
+  position: relative;
+}
+
+.sell-items-coution-box {
+  line-height: 1.5;
+  font-size: 13.8px;
+}
+
+a.sell-coution-message {
+  text-decoration: none;
+  color: $outline;
+}
+
+button.send-sell-btn {
+  margin: 40px 0 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  font-size: 14px;
+  color: white;
+}
+button.back-sell-btn {
+  width: 300px;
+  height: 50px;
+  background-color: #aaa;
+  border: 1px solid #aaa;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 230px;
+  left: 200px;
+}
