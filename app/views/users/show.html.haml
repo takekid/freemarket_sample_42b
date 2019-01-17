@@ -94,10 +94,10 @@
             = link_to'過去の取引' ,"#mypage-tab-transaction-old"
       .tab-content
         %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane
-          = image_tag "/assets/mercari.svg"
+          = image_tag asset_path"mercari.svg"
           %li.mypage-item-not-found.bold 取引中の商品がありません
         %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
-          = image_tag "/assets/mercari.svg"
+          = image_tag asset_path"mercari.svg"
           %li.mypage-item-not-found.bold 過去に取引した商品がありません
   = render "layouts/l_sidebar"
 = render "layouts/footer"
