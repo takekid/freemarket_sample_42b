@@ -1,11 +1,11 @@
-$outline: #0099FF;
+@import "color";
 
 section.l-chapter-container-mypage-identification {
-  background-color: #fff;
+  background-color: $white;
 }
 
 h2.l-chapter-head {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $gray;
   height: 50px;
   line-height: 50px;
   margin: 0;
@@ -13,7 +13,7 @@ h2.l-chapter-head {
 }
 
 p.text-center {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $gray;
   font-size: 13px;
   height:14px;
   line-height: 14px;
@@ -64,12 +64,8 @@ p.fas.fa-angle-down:before {
 
 .user-select-wrap {
   width: 145px;
+}
 
-}
-.birthday-content {
-  display: inline-block;
-  position: relative;
-}
 .birthday-select-wrap {
   position: relative;
   margin: 10px 30px 0 0;
@@ -123,8 +119,8 @@ button.send-regist-btn {
   margin: 40px 0 0;
   width: 100%;
   height: 50px;
-  background-color: #ea352d;
-  border: 1px solid #ea352d;
+  background-color: $redbtn;
+  border: 1px solid $redbtn;
   font-size: 14px;
   color: white;
 }
