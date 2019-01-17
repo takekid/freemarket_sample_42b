@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def signin_form
-   
+   @user = User.new
   end
 
   def address; end
@@ -13,9 +13,10 @@ class UsersController < ApplicationController
   	
   	@user = User.new(user_params)
   	if @user.save
-  		redirect_to("/users/address")
-  	else	
-     render("users/signin_form")
+  		 redirect_to("/users/address")
+  	else
+      @user = User.new(user_params)
+      render("signin_form")
   	end
   end
 
@@ -23,9 +24,10 @@ class UsersController < ApplicationController
     @address = Address.new(address_params)
     binding.pry
     if @address.save
-      redirect_to("/users/credit")
+       redirect_to("/users/credit")
     else
-      render("/users/purchase")
+      @address = Address.new(address_params)
+      render("purchase")
     end
   end
 

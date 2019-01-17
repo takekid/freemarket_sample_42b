@@ -18,12 +18,12 @@
         %h2 会員情報入力
       .info-contents
         .info-contents_form
-          = form_with  url: "/users/signin_form_create",  local: true  do |f|
+          = form_with model: @user, url: "/users/signin_form_create",  local: true  do |f|
             .info-contents_form_field
               %p
                 ニックネーム　　
                 %span 必須
-              = f.text_field :nickname, placeholder: "例) メルカリ太郎",  autofocus: true
+              = f.text_field :nickname, placeholder: "例) メルカリ太郎",  autofocus: true, value: "#{@user.nickname}"
               %p
                 メールアドレス
                 %span 必須
