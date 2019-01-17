@@ -34,9 +34,9 @@
 
 .l-container{
   height: auto;
-  width:71vw;
+  width:1020px;
   overflow: auto;
-  margin: 40px auto;
+  margin: 40px auto 0;
   a{
     text-decoration: none;
   }
@@ -258,7 +258,7 @@ li.now{
 .l-side{
   float: left;
   width: 280px;
-  margin: 0 40px 0 0;
+  margin-bottom: 40px;
 }
 .mypage-nav{
   background-repeat: no-repeat;
