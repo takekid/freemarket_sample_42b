@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'users/finish' => 'users#finish'
   get 'users/show' => 'users#show'
   get 'users/profile' => 'users#profile'
+  get 'users/identification' => 'users#identification'
   get 'items/sell'   => 'items#sell'
 end
