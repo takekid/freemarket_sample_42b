@@ -6,6 +6,9 @@ $(function() {
     $('.sell-item-carc-right').html("¥" + Math.round(thisValue));
     var calcValue = $(this).val() * 0.9;
     $('.sell-item-ans-right').html("¥" + Math.round(calcValue));
+  } else if(putNumber <= 300) {
+    $('.sell-item-carc-right').html("-");
+    $('.sell-item-ans-right').html("-");
   }
   });
 });
