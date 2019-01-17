@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   	
   	@user = User.new(user_params)
   	if @user.save
-  		redirect_to("/users/adress")
+  		redirect_to("/users/address")
   	else	
-
+     render("users/signin_form")
   	end
   end
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @address.save
       redirect_to("/users/credit")
     else
-
+      render("/users/purchase")
     end
   end
 
