@@ -6,18 +6,18 @@
   %body.mercari
     .mercari-header
       %h1
-        %a{href: "#"}
-          %img{src: "/assets/logo.svg", style: "background: rgb(245, 245, 245);"}/
+        = link_to "/" do
+          = image_tag "logo.svg", style: "background: rgb(245, 245, 245);"
     .main-login
       .main-login-reg
         %p アカウントをお持ちでない方はこちら
-        %a{href: "#"} 新規会員登録
+        = link_to "新規会員登録" ,  "/users/signin_form"
       .main-login_body
         .main-login_body_bottun
-          %a.btn.facebook{href: "#"}
+          = link_to "#", class: "btn facebook" do
             %span.fab.fa-facebook>
             Facebookでログイン
-          %a.btn.google{href: "#"}
+          = link_to "#" , class: "btn google" do
             %span.fab.fa-google &gt;Googleでログイン
       = form_with  url: "/users/sign_in",  local: true  do |f|      
         .main-login_body_contents
@@ -28,7 +28,7 @@
           .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5", style: "margin-top: 30px;"}
           = f.submit "ログイン", class: "login-form"
           %br/ 
-          %a{href: "#"} パスワードをお忘れの方
+          = link_to "パスワードをお忘れの方", "#"
       .mercari-footer
         %nav
           %ul
@@ -36,7 +36,7 @@
             %li メルカリ利用規約
             %li 特定商取引に関する表記
         .mercari-footer_contents
-             %a.single-footer-logo{href: "/"}
-            %img{src: "/assets/mercari.svg", style: "background: rgb(245, 245, 245);"}/
+          = link_to "/", class: "single-footer-logo" do
+            = image_tag  "mercari.svg", style: "background: rgb(245, 245, 245);"
           %p
             %small © 2019 Mercari

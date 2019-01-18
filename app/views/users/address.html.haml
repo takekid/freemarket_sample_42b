@@ -6,8 +6,8 @@
   %body.mercari
     .mercari-header
       %h1
-        %a{:href => "#"}
-          %img{src: "/assets/logo.svg", style: "background: rgb(245, 245, 245);"}/
+        = link_to("/") do
+          = image_tag  "logo.svg", style: "background: rgb(245, 245, 245);"
     .main-adress
       .main-adress_header
         %h2 会員情報入力
@@ -57,7 +57,7 @@
             %li メルカリ利用規約
             %li 特定商取引に関する表記
         .mercari-footer_contents
-          %a.single-footer-logo{href: "#"}
-            %img{src: "/assets/mercari.svg", style: "background: rgb(245, 245, 245);"}/
+          = link_to "/", class: "single-footer-logo" do
+            = image_tag  "mercari.svg", style: "background: rgb(245, 245, 245);"
           %p
             %small © 2019 Mercari

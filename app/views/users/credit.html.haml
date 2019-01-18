@@ -1,8 +1,8 @@
 %body.mercari
   .mercari-header
     %h1
-      %a{href: "#"}
-        %img{src: "/assets/logo.svg", style: "background: rgb(245, 245, 245);"}/
+      = link_to "/" do
+        = image_tag "logo.svg", style: "background: rgb(245, 245, 245);"
 
   .info-credit
     .info-credit_header
@@ -15,13 +15,13 @@
             %span.span-red 必須
           %input.info-credit_contents_form_field_input{:placeholder => "半角数字のみ"}/
           .info-credit_contents_form_field-cards
-            %img.card{src: "/assets/visa.svg"}/
-            %img.card{src: "/assets/master-card.svg"}/
-            %img.card{src: "/assets/saison-card.svg"}/
-            %img.card{src:  "/assets/jcb.svg"}/
-            %img.card{src:  "/assets/american_express.svg"}/
-            %img.card{src:  "/assets/dinersclub.svg"}/
-            %img.card{src:  "/assets/discover.svg"}/
+            = image_tag "visa.svg", class: "card"
+            = image_tag "master-card.svg", class: "card"
+            = image_tag "saison-card.svg", class: "card"
+            = image_tag "jcb.svg", class: "card"
+            = image_tag "american_express.svg", class: "card"
+            = image_tag "dinersclub.svg", class: "card"
+            = image_tag "discover.svg", class: "card"
           = form_tag(action: :credit, method: :post) do 
             .info-credit_contents_form_field_date
               %p
@@ -46,7 +46,7 @@
           %li メルカリ利用規約
           %li 特定商取引に関する表記
       .mercari-footer_contents
-        %a.single-footer-logo{href: "#"}
-          %img{src: "/assets/mercari.svg", style: "background: rgb(245, 245, 245);"}/
+        = link_to "/", class: "single-footer-logo" do
+          = image_tag "mercari.svg", style: "background: rgb(245, 245, 245);"
         %p
           %small © 2019 Mercari
