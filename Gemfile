@@ -58,6 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'erb2haml'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -78,7 +79,6 @@ group :production do
 end
 
 gem 'devise'
-gem 'pry-rails'
 gem 'payjp'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
