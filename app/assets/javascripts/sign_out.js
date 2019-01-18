@@ -1,15 +1,15 @@
 $(function() {
   $('.send-signout-btn')
-    .mouseover(function(e) {
+    .mouseover(function() {
       $(this).css("cursor","pointer");
     })
-    .mouseout(function(e) {
+    .mouseout(function() {
     });
 });
 
 $(function(){
-    $('.send-signout-btn').on('click', function(event){
+  $('.send-signout-btn').on('click', function(event){
     event.preventDefault();
-        $(this).toggleClass('active');
+      $(this).toggleClass('active');
     });
 });
