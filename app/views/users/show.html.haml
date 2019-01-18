@@ -20,8 +20,8 @@
           .mynum 出品数
           %span.mybold 0
     %section.mypage-tab-contents
-      %ul.mypage-tabs
-        %li.now
+      %ul.mypage-tab
+        %li
           %h3
             =link_to 'お知らせ',"#mypage-tab-notification"
         %li
@@ -82,22 +82,24 @@
           %li.mypage-go-list
             = link_to '一覧を見る',""
         %ul#mypage-tab-todo.mypage-item-list.tab-pane
+          = image_tag asset_path"mercari.svg"
           %li.mypage-item-not-found.bold 現在、やることリストはありません
     %section.mypage-tab-under
       %h2.mypage-tab-head 購入した商品
       %ul.mypage-tabs
-        %li.now
+        %li
           %h3
             = link_to'取引中', "#mypage-tab-transaction-now"
         %li
           %h3
             = link_to'過去の取引' ,"#mypage-tab-transaction-old"
       .tab-content
-        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane
-          = image_tag "/assets/mercari.svg"
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-panes
+          = image_tag asset_path"mercari.svg"
           %li.mypage-item-not-found.bold 取引中の商品がありません
-        %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
-          = image_tag "/assets/mercari.svg"
+        %ul#mypage-tab-transaction-old.mypage-item-list.tab-panes
+          = image_tag asset_path"mercari.svg"
           %li.mypage-item-not-found.bold 過去に取引した商品がありません
   = render "layouts/l_sidebar"
 = render "layouts/footer"
+= render "layouts/sellbutton"
