@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   get 'users/sign_out' => 'users#sign_out'
 
   get 'items/sell'   => 'items#sell'
+
+  get 'transactions/buy' => 'transactions#buy'
 end
