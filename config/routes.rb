@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "markets#index"
-  resources :markets, only: [:index]
+  resources :markets, only: [:index,:show]
   get 'users/signin_form' => 'users#signin_form'
   get 'users/adress' => 'users#adress'
   get 'users/credit' => 'users#credit'
