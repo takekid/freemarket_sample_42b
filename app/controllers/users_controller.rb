@@ -5,23 +5,11 @@ class UsersController < ApplicationController
 
   def address; end
 
-  def purchase; end
+  def credit; end
 
   def finish; end
 
-
-
-
-
-
-
-
-
-
-
-
   def signin_form_create
-  	
   	@user = User.new(user_params)
   	if @user.save
   		 redirect_to("/users/address")
@@ -30,7 +18,6 @@ class UsersController < ApplicationController
       render("signin_form")
   	end
   end
-
 
   def address_create
     @address = Address.new(address_params)
@@ -52,7 +39,6 @@ class UsersController < ApplicationController
     params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber)
     
   end
-
 
   def profile
   end
