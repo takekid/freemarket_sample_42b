@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   get 'users/finish' => 'users#finish'
   get 'users/show' => 'users#show'
   get 'users/profile' => 'users#profile'
+  get 'users/identification' => 'users#identification'
+  get 'users/sign_out' => 'users#sign_out'
+
   get 'items/sell'   => 'items#sell'
+
+  get 'transactions/buy' => 'transactions#buy'
 end
