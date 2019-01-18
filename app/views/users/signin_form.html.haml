@@ -1,17 +1,13 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
     %title mercari
-    %link{:href => "test3.css", :rel => "stylesheet"}/
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-    %link{:href => "https://www.google.com/recaptcha/api.js", :rel => "stylesheet"}/
+    %link{href: "https://www.google.com/recaptcha/api.js", rel: "stylesheet"}/
   %body.mercari
     .mercari-header
       %h1
-        %a{:href => "#"}
-          %img{:src => "/assets/logo.svg", :style => "background: rgb(245, 245, 245);"}/
+        %a{href: "#"}
+          %img{src: "/assets/logo.svg", style: "background: rgb(245, 245, 245);"}/
       
     .info
       .info-header
@@ -45,7 +41,7 @@
             %li メルカリ利用規約
             %li 特定商取引に関する表記
         .mercari-footer_contents
-          %a.single-footer-logo{:href => "#"}
-            %img{:src => "/assets/mercari.svg", :style => "background: rgb(245, 245, 245);"}/
+          %a.single-footer-logo{href: "#"}
+            %img{src: "/assets/mercari.svg", style: "background: rgb(245, 245, 245);"}/
           %p
             %small © 2019 Mercari

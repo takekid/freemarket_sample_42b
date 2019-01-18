@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 	
 
-
 	def configure_permitted_params
 		devise_parameter_sanitizer.permit(:signin_form, keys: [:email, :password, :nickname, :password_confirmation])
 		devise_parameter_sanitizer.permit(:address, keys: [:postal_code, :prefectures, :city, :address, :building, :phonenumber])

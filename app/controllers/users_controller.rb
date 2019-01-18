@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   def address_create
     @address = Address.new(address_params)
-    binding.pry
     if @address.save
        redirect_to("/users/credit")
     else

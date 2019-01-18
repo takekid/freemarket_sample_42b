@@ -19,5 +19,17 @@ describe UsersController, type: :controller do
   	  get :signin_form
       expect(response).to render_template :signin_form
     end
-  end    
+  end  
+    describe 'Get #signin_form_create, address_create' do
+      it 'can move a to b' do
+        user = create(:user)
+        get :signin_form_create, params: {id: user}
+        expect(response).to render_template :signin_form
+      end
+      it 'can save user in db and move a to b' do
+        address = create(:address)
+        get :address_create, params: {id: address}
+        expect(response).to render_template :purchase
+      end  
+    end  
 end

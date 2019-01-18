@@ -1,26 +1,23 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
     %title mercari
-    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
-    %script{:src => "https://www.google.com/recaptcha/api.js?render=6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5"}
+    %script{src: "https://www.google.com/recaptcha/api.js?render=6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5"}
   %body.mercari
     .mercari-header
       %h1
-        %a{:href => "#"}
-          %img{:src => "/assets/logo.svg", :style => "background: rgb(245, 245, 245);"}/
+        %a{href: "#"}
+          %img{src: "/assets/logo.svg", style: "background: rgb(245, 245, 245);"}/
     .main-login
       .main-login-reg
         %p アカウントをお持ちでない方はこちら
-        %a{:href => "#"} 新規会員登録
+        %a{href: "#"} 新規会員登録
       .main-login_body
         .main-login_body_bottun
-          %a.btn.facebook{:href => "#"}
+          %a.btn.facebook{href: "#"}
             %span.fab.fa-facebook>
             Facebookでログイン
-          %a.btn.google{:href => "#"}
+          %a.btn.google{href: "#"}
             %span.fab.fa-google &gt;Googleでログイン
       = form_with  url: "/users/sign_in",  local: true  do |f|      
         .main-login_body_contents
@@ -28,10 +25,10 @@
           = f.email_field :email, autofocus: true
           パスワード
           = f.password_field :password, autocomplete: "off"
-          .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5", :style => "margin-top: 30px;"}
+          .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5", style: "margin-top: 30px;"}
           = f.submit "ログイン", class: "login-form"
           %br/ 
-          %a{:href => "#"} パスワードをお忘れの方
+          %a{href: "#"} パスワードをお忘れの方
       .mercari-footer
         %nav
           %ul
@@ -39,7 +36,7 @@
             %li メルカリ利用規約
             %li 特定商取引に関する表記
         .mercari-footer_contents
-          %a.single-footer-logo{:href => "#"}
-            %img{:src => "/assets/mercari.svg", :style => "background: rgb(245, 245, 245);"}/
+             %a.single-footer-logo{href: "/"}
+            %img{src: "/assets/mercari.svg", style: "background: rgb(245, 245, 245);"}/
           %p
             %small © 2019 Mercari
