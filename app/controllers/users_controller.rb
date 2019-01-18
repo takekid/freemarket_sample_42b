@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   	end
   end
 
-<<<<<<< HEAD
+
   def address_create
     @address = Address.new(address_params)
     if @address.save
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     
   end
 
-=======
+
   def profile
   end
 
@@ -64,4 +64,4 @@ class UsersController < ApplicationController
   end
 
 end
->>>>>>> Ryotaman213/master
+
