@@ -20,16 +20,36 @@ describe UsersController, type: :controller do
       expect(response).to render_template :signin_form
     end
   end  
-    describe 'Get #signin_form_create, address_create' do
-      it 'can move a to b' do
-        user = create(:user)
-        get :signin_form_create, params: {id: user}
-        expect(response).to render_template :signin_form
-      end
-      it 'can save user in db and move a to b' do
-        address = create(:address)
-        get :address_create, params: {id: address}
-        expect(response).to render_template :purchase
-      end  
-    end  
+
+
+  describe 'Get #signin_form_create, address_create' do
+    it 'can move a to b' do
+      get :signin_form_create
+      expect(response).to render_template :signin_form
+    end
+    it 'can move a to b' do
+      get :address_create
+      expect(response).to render_template :purchase
+    end
+    it 'assigns the requested messsage to @user' do
+       user = create(:user)
+       get :signin_form_create, params: {id: user}
+       expect(assigns(:user)).to be_a_new(User)
+    end
+    it 'assigns the requested messsage to @address' do
+       address = create(:address)
+       get :address_create, params: {id: address}
+       expect(assigns(:address)).to be_a_new(Address)
+    end
+    it 'can save user info in db' do
+       user = create(:user)
+       get :signin_form_create 
+       expect{post :signin_form_create, params: {id: 1}}.to change(User, :count).by(1)
+    end
+    it 'can save address info in db' do
+       address = create(:address)
+       get :address_create 
+       expect{post :address_create, params: {id: 1}}.to change(Address, :count).by(1)
+    end
+  end  
 end
