@@ -15,4 +15,8 @@ class UsersController < ApplicationController
 
   def identification
   end
+
+  def sign_out
+  end
+
 end
