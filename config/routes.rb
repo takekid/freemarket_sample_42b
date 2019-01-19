@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'users/profile' => 'users#profile'
   get 'users/identification' => 'users#identification'
   get 'users/sign_out' => 'users#sign_out'
+  get 'users/creditcard' => 'users#creditcard'
+  get 'users/card_create' => 'users#card_create'
 
   get 'items/sell'   => 'items#sell'
 

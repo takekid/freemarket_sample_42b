@@ -19,4 +19,10 @@ class UsersController < ApplicationController
   def sign_out
   end
 
+  def creditcard
+  end
+
+  def card_create
+  end
+
 end
