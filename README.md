@@ -3,11 +3,9 @@
 ## users table
 | column       | type        | options                                 |
 |:-------------|------------:|:---------------------------------------:|
-| name         | string      | null: false                             |
-| kana_name    | string      | null: false                             |
 | nickname     | string      | index: true, null: false, unique: true  |
 | avater       | text        | null: false, default ""                 |
-| phonenumber  | string      | null: false, unique: true               |
+
 
 
 + 上記の他にgem deviseによるカラム。
@@ -29,12 +27,17 @@
 ## addresses table
 | column           | type        | options                        |
 |:-----------------|------------:|:------------------------------:|
-| user_id          | integer     | null: false, foreign_key: true |
+| last_name        | string      | null: false                    |
+| first_name       | string      | null: false                    |
+| kana_last_name   | string      | null: false                    |
+| kana_first_name  | string      | null: false                    |
 | postal_code      | integer     | null: false                    |
 | prefectures      | string      | null: false                    |
 | city             | string      | null: false                    |
 | address          | string      | null: false                    |
 | building         | string      | null: true                     |
+| phonenumber      | string      | null: false, unique: true      |
+| user_id          | reference   | null: false, foreign_key: true |
 
 ### Association
 + belongs_to :user
@@ -84,18 +87,18 @@
 ## items table
 | column             | type        | options                             |
 |:-------------------|------------:|:-----------------------------------:|
-| brand_id           | integer     | null: false, foreign_key: true      |
 | name               | text        | null: false, index: true            |
 | introduction       | text        | null: false                         |
-| type               | string      |                                     |
-| condition          | text        | null: false                         |
+| brand_id           | integer     | null: false, foreign_key: true      |
 | category_id        | integer     | null: false, foreign_key: true      |
 | size_id            | integer     | null: false, foreign_key: true      |
 | brand_id           | integer     | null: false, foreign_key: true      |
+| condition          | text        | null: false                         |
 | shippingfee        | string      | null: false                         |
 | ship_from          | string      | null: false                         |
 | shipping_date      | string      | null: false                         |
 | price              | integer     | null: false                         |
+| status             | string      | null: false                         |
 | buyer_id           | integer     | null: false                         |
 | seller_id          | integer     | null: false                         |
 
@@ -240,6 +243,18 @@
 |:------------------ |------------:|:------------------------------:|
 | user_id            | integer     | null: false                    |
 | token_id           | integer     | null: false                    |
+
+### Association
++ belongs_to :user
+
+
+
+## snss table
+| column             | type        | options                        |
+|:------------------ |------------:|:------------------------------:|
+| user_id            | integer     | null: false                    |
+| facebook_id        | integer     | null: true                     |
+| google_id          | integer     | null: true                     |
 
 ### Association
 + belongs_to :user
