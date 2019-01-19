@@ -59,6 +59,14 @@
               %li
                 =link_to 'ブランド一覧',""
       .head-right
-        .btn-case
-          =link_to 'ログイン',new_user_session_path,class: "btn log-btn"
-          =link_to '新規会員登録',new_user_registration_path,class: "btn new-btn"
+        %ul.head-right-user
+          %li
+            =link_to users_show_path,class: "head-user-icon"
+              %figure
+                .user-icon-right
+                  =image_tag asset_path("dum02.gif")
+              .user-icon マイページ
+            .head-user-icon-box
+          %li
+            =link_to "",class: "head-right-root"
+          %li

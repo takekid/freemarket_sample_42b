@@ -27,7 +27,9 @@
               %span 必須
             = f.password_field :password_confirmation, placeholder: "6文字以上", type: "password", autocomplete: "off"
             .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5", :style => "margin-top: 30px;"}
+
             = f.submit "次へ進む", class: "info-contents_form__field_submit" 
+
     .mercari-footer
       %nav
         %ul
@@ -39,4 +41,5 @@
           = image_tag  "mercari.svg", style: "background: rgb(245, 245, 245);"
         %p
           %small © 2019 Mercari
-          
+  
+

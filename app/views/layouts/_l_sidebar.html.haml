@@ -2,7 +2,7 @@
   %nav.mypage-nav
     %ul.mypage-nav-list
       %li
-        = link_to "show",{ class: "mypage-nav-list-item"} do
+        = link_to users_show_path,{ class: "mypage-nav-list-item"} do
           マイページ
           =fa_icon("chevron-right")
       %li
@@ -70,7 +70,7 @@
     %h3.mypage-nav-head 設定
     %ul.mypage-nav-list
       %li
-        = link_to "profile",{ class: "mypage-nav-list-item"} do
+        = link_to users_profile_path,{ class: "mypage-nav-list-item"} do
           プロフィール
           =fa_icon("chevron-right")
       %li
@@ -78,7 +78,7 @@
           住所変更
           =fa_icon("chevron-right")
       %li
-        = link_to "",{ class: "mypage-nav-list-item"} do
+        = link_to users_card_create_path,{ class: "mypage-nav-list-item"} do
           支払い方法
           =fa_icon("chevron-right")
       %li
@@ -94,6 +94,6 @@
           電話番号の確認
           =fa_icon("chevron-right")
       %li
-        = link_to "",{ class: "mypage-nav-list-item"} do
+        = link_to users_sign_out_path,{ class: "mypage-nav-list-item"} do
           ログアウト
           =fa_icon("chevron-right")
