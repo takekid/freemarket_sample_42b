@@ -253,8 +253,8 @@
 | column             | type        | options                        |
 |:------------------ |------------:|:------------------------------:|
 | user_id            | integer     | null: false                    |
-| facebook_id        | integer     | null: false                    |
-| google_id          | integer     | null: false                    |
+| facebook_id        | integer     | null: true                     |
+| google_id          | integer     | null: true                     |
 
 ### Association
 + belongs_to :user
