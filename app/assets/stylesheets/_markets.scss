@@ -209,6 +209,28 @@ ul.pull-right{
   }
 }
 
+.head-rights{
+  float: right;
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li{
+    display: inline-block;
+  }
+  a{
+    display: block;
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+
+
+
+
+
 .sell-btn{
   position: fixed;
   z-index: 1001;

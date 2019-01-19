@@ -58,15 +58,20 @@
                 =link_to 'アディダス',""
               %li
                 =link_to 'ブランド一覧',""
-      .head-right
+      .head-rights
         %ul.head-right-user
           %li
-            =link_to users_show_path,class: "head-user-icon"
+            =link_to users_show_path,class: "head-user-icon" do
               %figure
                 .user-icon-right
-                  =image_tag asset_path("dum02.gif")
+                  =image_tag asset_path("")
               .user-icon マイページ
             .head-user-icon-box
           %li
-            =link_to "",class: "head-right-root"
+            =link_to "",class: "head-right-root" do
+              =fa_icon("bell")
+              %span お知らせ
           %li
+            =link_to "",class: "hea-right-list" do
+              =fa_icon("check")
+              %span やることリスト
