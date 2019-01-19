@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
-	describe '#signin_form_create' do
-	  context 'can not save' do
+  describe '#signin_form_create' do
+    context 'can not save' do
       it'is invalid without email' do
         user = build(:user, email: "")
         user.valid?
@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
         user = build(:user, nickname: "")
         user.valid?
         expect(user.errors[:nickname]).to include("can't be blank")
-      end	
+      end
       it'is invalid witout name' do
         user = build(:user, name: "")
         user.valid?
@@ -35,4 +35,4 @@ RSpec.describe User, type: :model do
       end  
     end
   end
-end    		
+end

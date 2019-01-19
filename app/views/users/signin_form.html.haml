@@ -1,4 +1,4 @@
-%body.mercari
+.mercari
   .mercari-header
     %h1
       = link_to "/" do
@@ -8,7 +8,7 @@
       %h2 会員情報入力
     .info-contents
       .info-contents_form
-        = form_with model: @user, url: "/users/signin_form_create",  local: true  do |f|
+        = form_with url: "/users/signin_form_create",  local: true  do |f|
           .info-contents_form_field
             %p
               ニックネーム　　
@@ -39,3 +39,4 @@
           = image_tag  "mercari.svg", style: "background: rgb(245, 245, 245);"
         %p
           %small © 2019 Mercari
+          
