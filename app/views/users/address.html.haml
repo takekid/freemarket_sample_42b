@@ -13,13 +13,13 @@
             %p
               お名前　　
               %span.main-adress_contents-form_field_span-red 必須
-            = f.text_field :name, placeholder: "例) 山田",  autofocus: true, maxlength: "6"
-            = f.text_field :name, placeholder: "例) 花太郎", autofocus: true, maxlength: "6"
+            = f.text_field :first_name, placeholder: "例) 山田",  autofocus: true, maxlength: "6"
+            = f.text_field :last_name, placeholder: "例) 花太郎", autofocus: true, maxlength: "6"
             %p
               お名前カナ
               %span.main-adress_contents-form_field_span-red 必須
-            = f.text_field :kana_name, placeholder: "例）ヤマダ"
-            = f.text_field :kana_name, placeholder: "例）ハナタロウ"
+            = f.text_field :kana_first_name, placeholder: "例）ヤマダ"
+            = f.text_field :kana_last_name, placeholder: "例）ハナタロウ"
             %p
               郵便番号
               %span.main-adress_contents-form_field_span-red 必須

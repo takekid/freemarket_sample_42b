@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 2019_01_16_073930) do
     t.string "address", null: false
     t.string "building"
     t.string "phonenumber"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "kana_first_name"
+    t.string "kana_last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -41,8 +45,6 @@ ActiveRecord::Schema.define(version: 2019_01_16_073930) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name", default: "", null: false
-    t.string "kana_name", default: "", null: false
     t.string "nickname", null: false
     t.text "avater"
     t.index ["email"], name: "index_users_on_email", unique: true

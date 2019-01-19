@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def address_params
-    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber)
+    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber, :first_name, :last_name, :kana_first_name, :kana_last_name)
   end
 
   def profile

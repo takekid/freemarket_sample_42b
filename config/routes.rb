@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'users/identification' => 'users#identification'
   get 'users/sign_out' => 'users#sign_out'
   post 'users/signin_form_create', to: 'users#signin_form_create'
-  post 'users#address_create', to: 'users#address_create'
+  post 'users/address_create', to: 'users#address_create'
   get 'users/creditcard' => 'users#creditcard'
   get 'users/card_create' => 'users#card_create'
   get 'items/sell'   => 'items#sell'
