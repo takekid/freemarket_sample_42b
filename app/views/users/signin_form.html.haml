@@ -11,7 +11,7 @@
         = form_with url: "/users/signin_form_create",  local: true  do |f|
           .info-contents_form_field
             %p
-              ニックネーム　　
+              ニックネーム
               %span 必須
             = f.text_field :nickname, placeholder: "例) メルカリ太郎",  autofocus: true, value: "#{@user.nickname}"
             %p
