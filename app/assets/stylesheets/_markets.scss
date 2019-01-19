@@ -9,6 +9,7 @@ body{
   background-color: #f5f5f5;
       font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
 }
+
 .pc-header{
   height: 90px;
   background-color: white;
@@ -92,11 +93,21 @@ ul.menu{
     background-color: white;
     display: block;
   }
+  .pull-left li:hover{
+    background-color:#ea352d;
+    a{
+      color: white;
+    }
+  }
+  .pull-right li:hover{
+    background-color:#ea352d;
+    a{
+      color: white;
+    }
+  }
 }
 
-li a:hover{
-    opacity:0.5;
-}
+
 
 ul.pull-left{
     width: auto;

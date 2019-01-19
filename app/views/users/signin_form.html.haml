@@ -13,7 +13,7 @@
         %h1
           %a{:href => "#"}
             %img{:src => "/assets/logo.svg", :style => "background: rgb(245, 245, 245);"}/
-        
+
       .info
         .info-header
           %h2 会員情報入力
@@ -37,7 +37,7 @@
                 %span 必須
               %input{:name => "password_confirm", :placeholder => "6文字以上", :type => "password"}/
               .g-recaptcha{"data-callback" => "clearcall", "data-sitekey" => "6LfOU4kUAAAAADvfIChNQTbPj-VHuWd5bPj7kJU5", :style => "margin-top: 30px;"}
-              %button.info-contents_form__field_submit{:type => "submit", :href => "/users/adress"} 次へ進む
+              %button.info-contents_form__field_submit{:type => "submit", :href => users_adress_path} 次へ進む
         .mercari-footer
           %nav
             %ul
