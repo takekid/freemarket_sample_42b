@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   def signin_form_create
     @user = User.new(user_params)
     if @user.save
-      binding.pry
       redirect_to users_address_path
     else
       @user = User.new(user_params)
