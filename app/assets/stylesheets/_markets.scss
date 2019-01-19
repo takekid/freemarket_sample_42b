@@ -7,7 +7,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
-  font-family: "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+      font-family: 'Source Sans Pro', Helvetica , Arial, 'æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“', 'YuGothic', 'ãƒ¡ã‚¤ãƒªã‚ª', 'Meiryo', sans-serif;
 }
 .pc-header{
   height: 90px;
@@ -200,6 +200,7 @@ ul.pull-right{
 
 .sell-btn{
   position: fixed;
+  z-index: 1001;
   bottom: 32px;
   right: 32px;
   width: 160px;

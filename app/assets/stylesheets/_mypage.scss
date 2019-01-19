@@ -104,7 +104,7 @@
   background-color: white;
 }
 
-.mypage-tabs {
+.mypage-tab {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -238,7 +238,45 @@ li.now{
   line-height: 72px;
 }
 .mypage-tab-under{
-  .tab-pane{
+  .mypage-tabs{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #eee;
+    width: 700px;
+    height: 74px;
+    h3{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      width: 49.5%;
+      display: inline-block;
+    }
+    a {
+      display: block;
+      line-height: 75px;
+      height: 75px;
+      color: #333;
+  }
+    figure {
+      position: relative;
+      float: left;
+      width: 48px;
+      height: 48px;
+      margin: 0;
+      padding: 0;
+    img{
+      height: 40px;
+      width: 40px;
+    }
+  }
+  }
+  .tab-panes{
     height: 20vh;
     text-align: center;
     margin: 4vh auto;
@@ -288,5 +326,22 @@ li.now{
   }
 }
 
+.active{
+  background-color: white;
+  border-top: 2px solid #ea352d;
+}
 
-
+#mypage-tab-todo{
+  height: auto;
+  text-align: center;
+  margin: 4vh auto;
+  img{
+    background-color: white;
+    height: 10vh;
+    width: 10vw;
+    opacity: 0.6;
+  }
+  .bold{
+    opacity: 0.2;
+  }
+}
