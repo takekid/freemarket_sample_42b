@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
      $('.tab-pane').hide();
      $('.mypage-tab a').click(function () {
           $('.tab-pane').hide().filter(this.hash).fadeIn();
