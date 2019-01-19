@@ -1,6 +1,5 @@
 .mercari{
 	height:756px;
-	width:1440px;
   background: rgb(245, 245, 245);
   &-header{
      h1 {
@@ -13,7 +12,7 @@
   &-footer {
     height: 140px;
     width: 456px;
-    margin: 0 492px;
+    margin: 0 auto;
     padding:70px 0 ;
     &_contents {
       height: 65px;
@@ -33,7 +32,6 @@
 }
  .main-regstration {
  	height: 408px;
- 	width: 1440px;
  	text-align: center;
   &_header {
     background-color: white;
@@ -97,8 +95,6 @@
 
 .info {
   height: 834px;
-  width: 1440px;
-
   &-header {
     width:668px;
     height: 33px;
@@ -153,8 +149,6 @@
 
 .main-adress {
   height: 834px;
-  width: 1440px;
-
   &_header {
     width:668px;
     height: 33px;
@@ -220,8 +214,6 @@
 
 .info-credit {
   height: 634px;
-  width: 1440px;
-
   &_header {
     width:668px;
     height: 33px;
@@ -323,7 +315,6 @@
 
 .main-finish {
   height: 408px;
-  width: 1440px;
   text-align: center;
 
   &_header{
@@ -352,7 +343,6 @@
 
 .main-login {
   height: 408px;
-  width: 1440px;
   text-align: center;
   &-reg{
     height: 64px;
