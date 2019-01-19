@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',function() {
   $('.sell-item-price').bind('keydown keyup keypress change',function(){
     var putNumber = $(".sell-item-price").val();
     if ( putNumber >= 300 ) {
@@ -14,7 +14,7 @@ $(function() {
   });
 });
 
-$(function() {
+$(document).on('turbolinks:load',function() {
   $('.sell-image-dropbox')
     .mouseover(function(e) {
       $(this).css("cursor","pointer");

@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',function() {
   $('.send-signout-btn')
     .mouseover(function() {
       $(this).css("cursor","pointer");
@@ -7,7 +7,7 @@ $(function() {
     });
 });
 
-$(function(){
+$(document).on('turbolinks:load',function(){
   $('.send-signout-btn').on('click', function(event){
     event.preventDefault();
       $(this).toggleClass('active');
