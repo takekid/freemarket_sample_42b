@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_19_122136) do
+ActiveRecord::Schema.define(version: 2019_01_20_043004) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 2019_01_19_122136) do
   end
 
   create_table "brand_groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "brand_id"
+    t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_groups_on_brand_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_01_19_122136) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
-    t.integer "perent_id", null: false
+    t.integer "perent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,17 +59,18 @@ ActiveRecord::Schema.define(version: 2019_01_19_122136) do
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
-    t.integer "item_id", null: false
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "introduction", null: false
-    t.integer "brand_id", null: false
-    t.integer "category_id", null: false
-    t.integer "size_id", null: false
+    t.bigint "category_id"
+    t.bigint "size_id"
+    t.bigint "brand_id"
     t.text "condition", null: false
     t.string "shippingfee", null: false
     t.string "shipfrom", null: false
@@ -79,7 +81,10 @@ ActiveRecord::Schema.define(version: 2019_01_19_122136) do
     t.integer "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
+    t.index ["size_id"], name: "index_items_on_size_id"
   end
 
   create_table "size_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,9 +95,10 @@ ActiveRecord::Schema.define(version: 2019_01_19_122136) do
 
   create_table "sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "size_type_id", null: false
+    t.bigint "size_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["size_type_id"], name: "index_sizes_on_size_type_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,5 +116,11 @@ ActiveRecord::Schema.define(version: 2019_01_19_122136) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "brand_groups", "brands"
   add_foreign_key "creditcards", "users"
+  add_foreign_key "item_images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "sizes"
+  add_foreign_key "sizes", "size_types"
 end
