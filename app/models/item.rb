@@ -10,4 +10,6 @@ belongs_to :size
 belongs_to :brand
 belongs_to :seller, class_name: "User"
 belongs_to :buyer, class_name: "User"
+
+mount_uploader :image, ImageUploader
 end
