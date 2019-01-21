@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root "items#index"
-  resources :items, only: [:index,:show]
+  resources :items, only: [:index,:show] do
+    collection do
+      get 'sell'
+    end
+  end
   get 'users/signin_form', to: 'users#signin_form'
   get 'users/address', to: 'users#address'
   get 'users/credit',to: 'users#credit'
@@ -14,7 +18,7 @@ Rails.application.routes.draw do
   post 'users/address_create', to: 'users#address_create'
   get 'users/creditcard' => 'users#creditcard'
   get 'users/card_create' => 'users#card_create'
-  get 'items/sell'   => 'items#sell'
+
 
   get 'transactions/buy' => 'transactions#buy'
 end
