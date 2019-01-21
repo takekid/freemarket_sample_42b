@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.limit(3)
+    @items = Item.all.limit(3).includes(:item_images)
   end
 
   def show
