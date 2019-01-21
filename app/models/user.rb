@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :email,      presence: true
   validates :nickname,   presence: true
 
-  has_many :address
+  has_many :addresses
   has_many :items
 
 
