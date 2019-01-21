@@ -1,0 +1,27 @@
+.sign_out-container {
+  background: #fff;
+  padding: 64px;
+}
+
+.sign_out-content {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+button.send-signout-btn {
+  width: 100%;
+  height: 50px;
+  background-color: $redbtn;
+  border: 1px solid $redbtn;
+  font-size: 14px;
+  color: white;
+   &:focus {
+    outline: 0;
+  }
+    &:active {
+    background-color: $graybtn;
+    color: white;
+    border: 1px solid $graybtn;
+  }
+}
+

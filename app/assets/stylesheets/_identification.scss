@@ -1,0 +1,151 @@
+@import "color";
+
+section.l-chapter-container-mypage-identification {
+  background-color: $white;
+}
+
+h2.l-chapter-head {
+  border-bottom: 1px solid $gray;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+}
+
+p.text-center {
+  border-bottom: 1px solid $gray;
+  font-size: 13px;
+  height:14px;
+  line-height: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+form.l-single-user-inner {
+  padding: 64px;
+}
+
+.userid-form-group {
+  margin: 8px 0 40px;
+  position: relative;
+}
+
+span.form-require-userid {
+  background-color: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 3px 5px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+span.form-any-userid {
+  background-color: #ccc;
+  margin: 0 0 0 8px;
+  padding: 3px 5px;
+  border-radius: 2px;
+  line-height: 100%;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+p.fas.fa-angle-down:before {
+    position: absolute;
+    right: 16px;
+    top: 45%;
+    z-index: 2;
+    color: #888;
+    font-size: 20px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.user-select-wrap {
+  width: 145px;
+}
+
+.birthday-content {
+  display: inline-block;
+  position: relative;
+}
+.birthday-select-wrap {
+  position: relative;
+  margin: 10px 30px 0 0;
+}
+
+select.select-birthday {
+  -webkit-appearance: none;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 90%;
+    &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+    }
+}
+
+li.fas.fa-angle-down:before {
+    position: absolute;
+    right: 20%;
+    top: 35%;
+    z-index: 2;
+    color: #888;
+    font-size: 20px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+span.birthday {
+  position: absolute;
+  top: 20%;
+  left: 100%;
+}
+
+p.form-info-text {
+  height:0;
+  line-height: 0;
+  vertical-align: top;
+  color: #888;
+  margin:0;
+  font-size: 13px;
+}
+
+button.send-regist-btn {
+  margin: 40px 0 0;
+  width: 100%;
+  height: 50px;
+  background-color: $redbtn;
+  border: 1px solid $redbtn;
+  font-size: 14px;
+  color: white;
+}
+
+a.self-registration {
+  padding-top: 30px;
+  margin-bottom: 40px;
+  float: right;
+  color: #0099e8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+p.fa.fa-chevron-right {
+  padding-top: 30px;
+  margin-bottom: 40px;
+  float: right;
+  color: #0099e8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+

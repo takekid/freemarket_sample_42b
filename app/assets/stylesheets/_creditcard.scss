@@ -1,0 +1,115 @@
+.credit-container {
+  background: #fff;
+  padding: 40px;
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 1px solid $gray;
+}
+h2.creditcard-title {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  text-align: center;
+}
+h3.creditcard {
+font-size: 16px;
+padding-left: 90px;
+}
+
+.credit-content {
+  max-width: 320px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+button.send-creditadd-btn {
+  width: 100%;
+  height: 50px;
+  background-color: $redbtn;
+  border: 1px solid $redbtn;
+  font-size: 14px;
+  color: white;
+   &:focus {
+    outline: 0;
+  }
+    &:active {
+    background-color: $graybtn;
+    color: white;
+    border: 1px solid $graybtn;
+  }
+}
+
+i.far.fa-credit-card {
+  font-weight: 900;
+  padding-right: 10px;
+}
+
+section.credit-bottom {
+  border-top: 1px solid #f5f5f5;
+  padding: 40px;
+  text-align: right;
+  font-size: 14px;
+  text-decoration: none;
+  color: $outline;
+}
+
+.card-select-wrap {
+  width: 145px;
+  position: relative;
+}
+
+input.sell-card-number {
+  height: 30px;
+  padding: 10px 8px;
+  border-radius: 4px;
+  border: 1px solid $graybtn;
+  background: $white;
+  line-height: 1.5;
+  font-size: 16px;
+  width: 95%;
+  margin: 8px auto;
+  &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+    }
+}
+
+.info-creditcard_contents_form_field-cards {
+  height: 20px;
+  width: 320px;
+}
+
+select.select-expire {
+  -webkit-appearance: none;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid $graybtn;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 80%;
+    &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+    }
+}
+
+span.expire {
+  padding-left: 5px;
+  font-weight: normal;
+}
+
+h3.fas.fa-angle-down {
+  position: absolute;
+  right: 40px;
+}
+
+p.fas.fa-question-circle {
+  float: right;
+  color: $outline;
+  font-size: 13px;
+  padding-bottom: 40px;
+}

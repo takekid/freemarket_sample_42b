@@ -1,17 +1,7 @@
- body{
-  height: 1079px;
-  width:1079px;
-  background: rgb(245, 245, 245);
- }
-
-
 .mercari{
 	height:756px;
-	width:1440px;
   background: rgb(245, 245, 245);
   &-header{
-   width: 1440px;
-   height: 128px;
      h1 {
       height: 49px;
       width: 193px;
@@ -22,7 +12,7 @@
   &-footer {
     height: 140px;
     width: 456px;
-    margin: 0 492px;
+    margin: 0 auto;
     padding:70px 0 ;
     &_contents {
       height: 65px;
@@ -32,7 +22,7 @@
         font-size: 12px;
       }
     }
-      
+
     li {
     display: inline-block;
     font-size: 12px;
@@ -42,7 +32,6 @@
 }
  .main-regstration {
  	height: 408px;
- 	width: 1440px;
  	text-align: center;
   &_header {
     background-color: white;
@@ -88,7 +77,7 @@
 .facebook {
   background-color: #385185;
   color: white;
- 
+
 }
 
 .google {
@@ -106,8 +95,6 @@
 
 .info {
   height: 834px;
-  width: 1440px;
-
   &-header {
     width:668px;
     height: 33px;
@@ -149,12 +136,12 @@
           font-size: 12px;
           padding: 5px;
          }
-  
+
  }
 .info-contents_form__field_submit{
   padding: 16px 127px;
   margin-right:20px;
-  margin-top:60px; 
+  margin-top:60px;
   background-color: #ea352d;
   color: white;
 }
@@ -162,8 +149,6 @@
 
 .main-adress {
   height: 834px;
-  width: 1440px;
-
   &_header {
     width:668px;
     height: 33px;
@@ -208,12 +193,20 @@
       &_submit{
         padding: 16px 127px;
         margin-right:20px;
-        margin-top:130px; 
+        margin-top:130px;
         background-color: #ea352d;
         color: white;
       }
       &-input-name{
         margin-top: 10px;
+      }
+
+      &_span-red{
+        background-color: red;
+      }
+
+      &_span-gray {
+        background-color: gray;
       }
  }
 
@@ -221,8 +214,6 @@
 
 .info-credit {
   height: 634px;
-  width: 1440px;
-
   &_header {
     width:668px;
     height: 33px;
@@ -293,7 +284,7 @@
 }
 
 
- 
+
 .span-red{
   background-color: red;
  }
@@ -304,7 +295,7 @@
 .submit{
   padding: 16px 127px;
   margin-right:20px;
-  margin-top:40px; 
+  margin-top:40px;
   background-color: #ea352d;
   color: white;
 }
@@ -324,7 +315,6 @@
 
 .main-finish {
   height: 408px;
-  width: 1440px;
   text-align: center;
 
   &_header{
@@ -347,13 +337,12 @@
       a {
         font-size: 12px;
         margin-top: 40px;
-      }  
+      }
     }
  }
- 
+
 .main-login {
   height: 408px;
-  width: 1440px;
   text-align: center;
   &-reg{
     height: 64px;
@@ -383,7 +372,7 @@
         margin :0 auto;
        }
   }
-  
+
   &_body {
       width: 328px;
       height: 116px;
@@ -399,16 +388,16 @@
       a {
          margin-top: 15px;
       }
-    } 
+    }
 
     &_contents {
-      height: 350px;
+      height: 400px;
       width:328px;
       padding: 24px 64px 32px 64px;
       margin: 0 auto;
       background-color: white;
       a {
-        font-size: 12px;
+        font-size: 10px;
         margin-top: 40px;
       }
       input {
@@ -416,12 +405,12 @@
         height: 28px;
         width: 270px;
         margin-right:20px;
-        margin-top:20px; 
+        margin-top:20px;
        }
     }
   }
 }
- 
+
 .email {
   background-color: #eee;
   color: #000;
@@ -430,7 +419,7 @@
 .facebook {
   background-color: #385185;
   color: white;
- 
+
 }
 
 .google {
@@ -448,7 +437,7 @@
 .login-form {
   padding: 16px 127px;
   margin-right:20px;
-  margin-top:50px; 
+  margin-top:50px;
   background-color: #ea352d;
   color: white;
 }

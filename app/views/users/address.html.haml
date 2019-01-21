@@ -1,0 +1,58 @@
+.mercari
+  .mercari-header
+    %h1
+      = link_to("/") do
+        = image_tag  "logo.svg", style: "background: rgb(245, 245, 245);"
+  .main-adress
+    .main-adress_header
+      %h2 会員情報入力
+    .main-adress_contents
+      .main-adress_contents-form
+        = form_with  url: "/users/address_create",  local: true  do |f|
+          .main-adress_contents-form_field
+            %p
+              お名前　　
+              %span.main-adress_contents-form_field_span-red 必須
+            = f.text_field :first_name, placeholder: "例) 山田",  autofocus: true, maxlength: "6"
+            = f.text_field :last_name, placeholder: "例) 花太郎", autofocus: true, maxlength: "6"
+            %p
+              お名前カナ
+              %span.main-adress_contents-form_field_span-red 必須
+            = f.text_field :kana_first_name, placeholder: "例）ヤマダ"
+            = f.text_field :kana_last_name, placeholder: "例）ハナタロウ"
+            %p
+              郵便番号
+              %span.main-adress_contents-form_field_span-red 必須
+            = f.text_field :postal_code, placeholder: "例) 123-4567"
+            %p
+              都道府県
+              %span.main-adress_contents-form_field_span-red 必須
+            = f.text_field :prefectures, placeholder: "例）北海道"
+            %p
+              市町村　　
+              %span.main-adress_contents-form_field_span-red 必須
+            = f.text_field :city, placeholder: "例）大阪市"
+            %p
+              番地
+              %span.main-adress_contents-form_field_span-red 必須
+            = f.text_field :address, placeholder: "例）船橋市２−２３ー８"
+            %p
+              建物名
+              %span.main-adress_contents-form_field_span-gray 必須
+            = f.text_field :building,  placeholder: "例）ユタカビル"
+            %p
+              電話
+              %span.main-adress_contents-form_field_span-gray 必須
+            = f.text_field :phonenumber, placeholder: "例）080-5344-0766"
+            = f.submit "次へ進む", class: "main-adress_contents-form_field_submit" 
+    .mercari-footer
+      %nav
+        %ul
+          %li プライバシーポリシー
+          %li メルカリ利用規約
+          %li 特定商取引に関する表記
+      .mercari-footer_contents
+        = link_to "/", class: "single-footer-logo" do
+          = image_tag  "mercari.svg", style: "background: rgb(245, 245, 245);"
+        %p
+          %small © 2019 Mercari

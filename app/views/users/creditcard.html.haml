@@ -1,0 +1,31 @@
+= render "layouts/header"
+%nav.bread-crumbs
+  %ul
+    %li{itemscope: "", itemtype: ""}
+      = link_to "/" do
+        %span{itemprop: "title"} メルカリ
+      = fa_icon("angle-right")
+    %li{itemscope: "", itemtype: ""}
+      %span{itemprop: "title"} マイページ
+      = fa_icon("angle-right")
+    %li{itemscope: "", itemtype: ""}
+      %span{itemprop: "title"} 支払い方法
+%main.l-container.clearfix
+  .l-content
+    %section.l-chapter-container-mypage-identification
+      %section.buy-content
+        %h2.creditcard-title 支払い方法
+      %section.buy-content
+      .credit-container
+        %h3.creditcard クレジットカード一覧
+        .credit-content
+          = link_to  users_card_create_path do
+            %button.send-creditadd-btn{method: :post, type: "submit"}
+              %i.far.fa-credit-card
+              %span クレジットカードを追加する
+      %section.credit-bottom
+        = link_to users_creditcard_path class: "creditcard-info" do
+          支払い方法について>
+
+  = render "layouts/l_sidebar"
+= render "layouts/footer"

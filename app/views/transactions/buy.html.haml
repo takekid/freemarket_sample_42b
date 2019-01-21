@@ -1,0 +1,69 @@
+.mercari-header
+  %h1
+    = link_to root_path do
+      =image_tag asset_path "logo.svg", style: "background: rgb(245, 245, 245);"
+
+.single-buy-main
+  %section.buy-item-container
+    %h2.buy-confimation 購入を確定しますか？
+    %section.buy-content
+      .buy-content-inner
+        .buy-item-image
+          =image_tag asset_path "dum02.gif", style: "width: 148px;"
+        %p.buy-item-name ダミーです
+        %form.buy-form{method: "post", action: "root_path"}
+        %p.buy-price
+          ¥ 2,500
+          %span.item-shipping-fee
+            送料込み
+        .buy-accordion
+          .accordion-parent
+            .accordion-toggle
+              ポイントはありません
+        .buy-price-table
+          .buy-price-row
+            .buy-price-cell
+              支払い金額
+            .buy-price-cell
+              %span.data-buy-pay
+                ¥ 2,500
+        %button.send-buy-btn
+          購入する
+
+    %section.buy-content-user-info
+      .buy-content-inner
+        %h3.shippnig-for
+          配送先
+        %address.buy-user-info-text
+          〒111-1111
+          %br
+          ダミーですの住所
+          %br
+          メルカリ太郎
+        =link_to users_identification_path, class: "buy-user-info-fix" do
+          変更する >
+
+    %section.buy-content-card-info
+      .buy-content-inner
+        %h3.buy-card-info
+          支払い方法
+        .buy-user-info-text
+          ************4242
+          %br
+          42/42
+          .buy-user-card-image
+            =image_tag asset_path "visa.svg"
+        =link_to root_path, class: "buy-card-info-fix" do
+          変更する >
+
+.mercari-footer
+  %nav
+    %ul
+      %li プライバシーポリシー
+      %li メルカリ利用規約
+      %li 特定商取引に関する表記
+  .mercari-footer_contents
+    =link_to root_path, class: "single-footer-logo" do
+      =image_tag asset_path "mercari.svg", style: "background: rgb(245, 245, 245);"
+    %p
+      %small © 2019 Mercari
