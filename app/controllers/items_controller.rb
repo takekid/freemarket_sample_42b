@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.limit(3).includes(:item_images)
+    @items = Item.includes(:item_images,:category).order("updated_at DESC").all.limit(3)
   end
 
   def show
