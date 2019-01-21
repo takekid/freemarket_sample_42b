@@ -32,212 +32,139 @@
     .main-section
       %h3.section-name メンズ 新着アイテム
       .section-item
-        - @items.each do |item|
-          .items-box
-            -if item.category_id == 1
+        - @items.where(category_id:2).each_with_index do |item,num|
+          -if num <= 2
+            .items-box
               = link_to items_path(item.id) do
-                =image_tag asset_path"banner/dum01.gif"
-                .item-box-body
-                  .item-box-name
-                    = item.name
-                  .item-box-price
-                    .price-section
-                      ¥
-                      = number_with_delimiter(item.price)
-                    .item-liks
-                      =fa_icon("heart")
-                      %span 10
-                    %p.item-tax (税込)
+                -item.item_images.each.with_index do |image, i|
+                  - if i ==0
+                    =image_tag image.image.url
+                    .item-box-body
+                      .item-box-name
+                        = item.name
+                      .item-box-price
+                        .price-section
+                          ¥
+                          = number_with_delimiter(item.price)
+                        .item-liks
+                          =fa_icon("heart")
+                          %span 10
+                        %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-name レディース 新着アイテム
       .section-item
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
+        - @items.where(category_id:1).each_with_index do |item,num|
+          -if num <= 2
+            .items-box
+              = link_to items_path(item.id) do
+                -item.item_images.each.with_index do |image, i|
+                  - if i ==0
+                    =image_tag image.image.url
+                    .item-box-body
+                      .item-box-name
+                        = item.name
+                      .item-box-price
+                        .price-section
+                          ¥
+                          = number_with_delimiter(item.price)
+                        .item-liks
+                          =fa_icon("heart")
+                          %span 10
+                        %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-name ベイビー 新着アイテム
       .section-item
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
+        - @items.where(category_id:3).each_with_index do |item,num|
+          -if num <= 2
+            .items-box
+              = link_to items_path(item.id) do
+                -item.item_images.each.with_index do |image, i|
+                  - if i ==0
+                    =image_tag image.image.url
+                    .item-box-body
+                      .item-box-name
+                        = item.name
+                      .item-box-price
+                        .price-section
+                          ¥
+                          = number_with_delimiter(item.price)
+                        .item-liks
+                          =fa_icon("heart")
+                          %span 10
+                        %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     %h2.pickup-bottom ピックアップブランド
     .main-section
       %h3.section-brand シャネル 新着アイテム
       .brand-item
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
+        - @items.where(brand_id:8).each_with_index do |item,num|
+          -if num <= 2
+            .items-box
+              = link_to items_path(item.id) do
+                -item.item_images.each.with_index do |image, i|
+                  - if i ==0
+                    =image_tag image.image.url
+                    .item-box-body
+                      .item-box-name
+                        = item.name
+                      .item-box-price
+                        .price-section
+                          ¥
+                          = number_with_delimiter(item.price)
+                        .item-liks
+                          =fa_icon("heart")
+                          %span 10
+                        %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-brand ナイキ 新着アイテム
       .brand-item
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
+        - @items.where(brand_id:1).each_with_index do |item,num|
+          -if num <= 2
+            .items-box
+              = link_to items_path(item.id) do
+                -item.item_images.each.with_index do |image, i|
+                  - if i ==0
+                    =image_tag image.image.url
+                    .item-box-body
+                      .item-box-name
+                        = item.name
+                      .item-box-price
+                        .price-section
+                          ¥
+                          = number_with_delimiter(item.price)
+                        .item-liks
+                          =fa_icon("heart")
+                          %span 10
+                        %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-brand アディダス 新着アイテム
       .brand-item
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
-        .items-box
-          = link_to "" do
-            =image_tag asset_path"banner/dum01.gif"
-            .item-box-body
-              .item-box-name テストの商品です
-              .item-box-price
-                .price-section¥7,777
-                .item-liks
-                  =fa_icon("heart")
-                  %span 10
-                %p.item-tax (税込)
+        - @items.where(brand_id:2).each_with_index do |item,num|
+          -if num <= 2
+            .items-box
+              = link_to items_path(item.id) do
+                -item.item_images.each.with_index do |image, i|
+                  - if i ==0
+                    =image_tag image.image.url
+                    .item-box-body
+                      .item-box-name
+                        = item.name
+                      .item-box-price
+                        .price-section
+                          ¥
+                          = number_with_delimiter(item.price)
+                        .item-liks
+                          =fa_icon("heart")
+                          %span 10
+                        %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
