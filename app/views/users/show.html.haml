@@ -3,10 +3,11 @@
   %ul
     %li{itemscope: "", itemtype: ""}
       = link_to "/" do
-        %span{itemprop: "title"} メルカリ
-      = fa_icon("angle-right")
+        %span{itemprop: "title"}
+          - breadcrumb :users_show
     %li{itemscope: "", itemtype: ""}
-      %span{itemprop: "title"} マイページ
+      %span{itemprop: "title"}
+        = breadcrumbs
 %main.l-container.clearfix
   .l-content
     %section.mypage-user-icon

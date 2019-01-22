@@ -2,12 +2,12 @@
 .item-content-box-main
   %nav.bread-crumbs
     %ul
+      %li
+        %span{itemprop: "title"}
+          - breadcrumb :show_item, @item
       %li{itemscope: "", itemtype: ""}
-        = link_to "/" do
-          %span{itemprop: "title"} メルカリ
-        = fa_icon("angle-right")
-      %li{itemscope: "", itemtype: ""}
-        %span{itemprop: "title"}sample
+        %span{itemprop: "title"}
+          = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
   %section.itembox-container
     %h1.item-name
       = @item.name
@@ -50,11 +50,11 @@
               =link_to root_path do
                 .sub-name
                   =fa_icon("angle-right")
-                  パンクズ時に実装
+
               =link_to root_path do
                 .middle-name
                   =fa_icon("angle-right")
-                  パンクズ時に実装
+
           %tr
             %th ブランド
             %td
