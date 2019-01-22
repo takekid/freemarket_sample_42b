@@ -32,139 +32,133 @@
     .main-section
       %h3.section-name メンズ 新着アイテム
       .section-item
-        - @items.where(category_id:2).each_with_index do |item,num|
-          -if num <= 2
-            .items-box
-              = link_to items_path(item.id) do
-                -item.item_images.each.with_index do |image, i|
-                  - if i ==0
-                    =image_tag image.image.url
-                    .item-box-body
-                      .item-box-name
-                        = item.name
-                      .item-box-price
-                        .price-section
-                          ¥
-                          = number_with_delimiter(item.price)
-                        .item-liks
-                          =fa_icon("heart")
-                          %span 10
-                        %p.item-tax (税込)
+        - @mens_category.each do |item|
+          .items-box
+            = link_to items_path(item.id) do
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  .item-box-body
+                    .item-box-name
+                      = item.name
+                    .item-box-price
+                      .price-section
+                        ¥
+                        = number_with_delimiter(item.price)
+                      .item-liks
+                        =fa_icon("heart")
+                        %span 10
+                      %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-name レディース 新着アイテム
       .section-item
-        - @items.where(category_id:1).each_with_index do |item,num|
-          -if num <= 2
-            .items-box
-              = link_to items_path(item.id) do
-                -item.item_images.each.with_index do |image, i|
-                  - if i ==0
-                    =image_tag image.image.url
-                    .item-box-body
-                      .item-box-name
-                        = item.name
-                      .item-box-price
-                        .price-section
-                          ¥
-                          = number_with_delimiter(item.price)
-                        .item-liks
-                          =fa_icon("heart")
-                          %span 10
-                        %p.item-tax (税込)
+        - @ladys_category.each do |item|
+          .items-box
+            = link_to items_path(item.id) do
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  .item-box-body
+                    .item-box-name
+                      = item.name
+                    .item-box-price
+                      .price-section
+                        ¥
+                        = number_with_delimiter(item.price)
+                      .item-liks
+                        =fa_icon("heart")
+                        %span 10
+                      %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-name ベイビー 新着アイテム
       .section-item
-        - @items.where(category_id:3).each_with_index do |item,num|
-          -if num <= 2
-            .items-box
-              = link_to items_path(item.id) do
-                -item.item_images.each.with_index do |image, i|
-                  - if i ==0
-                    =image_tag image.image.url
-                    .item-box-body
-                      .item-box-name
-                        = item.name
-                      .item-box-price
-                        .price-section
-                          ¥
-                          = number_with_delimiter(item.price)
-                        .item-liks
-                          =fa_icon("heart")
-                          %span 10
-                        %p.item-tax (税込)
+        - @kids_category.each do |item|
+          .items-box
+            = link_to items_path(item.id) do
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  .item-box-body
+                    .item-box-name
+                      = item.name
+                    .item-box-price
+                      .price-section
+                        ¥
+                        = number_with_delimiter(item.price)
+                      .item-liks
+                        =fa_icon("heart")
+                        %span 10
+                      %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     %h2.pickup-bottom ピックアップブランド
     .main-section
       %h3.section-brand シャネル 新着アイテム
       .brand-item
-        - @items.where(brand_id:8).each_with_index do |item,num|
-          -if num <= 2
-            .items-box
-              = link_to items_path(item.id) do
-                -item.item_images.each.with_index do |image, i|
-                  - if i ==0
-                    =image_tag image.image.url
-                    .item-box-body
-                      .item-box-name
-                        = item.name
-                      .item-box-price
-                        .price-section
-                          ¥
-                          = number_with_delimiter(item.price)
-                        .item-liks
-                          =fa_icon("heart")
-                          %span 10
-                        %p.item-tax (税込)
+        - @chanel_brand.each do |item|
+          .items-box
+            = link_to items_path(item.id) do
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  .item-box-body
+                    .item-box-name
+                      = item.name
+                    .item-box-price
+                      .price-section
+                        ¥
+                        = number_with_delimiter(item.price)
+                      .item-liks
+                        =fa_icon("heart")
+                        %span 10
+                      %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-brand ナイキ 新着アイテム
       .brand-item
-        - @items.where(brand_id:1).each_with_index do |item,num|
-          -if num <= 2
-            .items-box
-              = link_to items_path(item.id) do
-                -item.item_images.each.with_index do |image, i|
-                  - if i ==0
-                    =image_tag image.image.url
-                    .item-box-body
-                      .item-box-name
-                        = item.name
-                      .item-box-price
-                        .price-section
-                          ¥
-                          = number_with_delimiter(item.price)
-                        .item-liks
-                          =fa_icon("heart")
-                          %span 10
-                        %p.item-tax (税込)
+        - @nike_brand.each do |item|
+          .items-box
+            = link_to items_path(item.id) do
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  .item-box-body
+                    .item-box-name
+                      = item.name
+                    .item-box-price
+                      .price-section
+                        ¥
+                        = number_with_delimiter(item.price)
+                      .item-liks
+                        =fa_icon("heart")
+                        %span 10
+                      %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""
     .main-section
       %h3.section-brand アディダス 新着アイテム
       .brand-item
-        - @items.where(brand_id:2).each_with_index do |item,num|
-          -if num <= 2
-            .items-box
-              = link_to items_path(item.id) do
-                -item.item_images.each.with_index do |image, i|
-                  - if i ==0
-                    =image_tag image.image.url
-                    .item-box-body
-                      .item-box-name
-                        = item.name
-                      .item-box-price
-                        .price-section
-                          ¥
-                          = number_with_delimiter(item.price)
-                        .item-liks
-                          =fa_icon("heart")
-                          %span 10
-                        %p.item-tax (税込)
+        - @adidas_brand.each do |item|
+          .items-box
+            = link_to items_path(item.id) do
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  .item-box-body
+                    .item-box-name
+                      = item.name
+                    .item-box-price
+                      .price-section
+                        ¥
+                        = number_with_delimiter(item.price)
+                      .item-liks
+                        =fa_icon("heart")
+                        %span 10
+                      %p.item-tax (税込)
       .section-all
         = link_to'すべての商品を見る',""

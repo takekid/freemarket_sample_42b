@@ -11,4 +11,5 @@ belongs_to :brand, optional: true
 belongs_to :seller, class_name: "User", optional: true
 belongs_to :buyer, class_name: "User", optional: true
 
+scope :newest, -> {order(created_at: :desc)}
 end
