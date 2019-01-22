@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item  = Item.includes(:category, :item_images, :brand, :size, :seller).find(params[:id])
+    @nike_brand     = Item.includes(:brand).where(brand_id: NIKE_BRAND_ID).limit(6).newest
+    @adidas_brand   = Item.includes(:brand).where(brand_id: ADIDAS_BRAND_ID).limit(6).newest
   end
 
   def sell

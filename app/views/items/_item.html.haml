@@ -1,5 +1,5 @@
 .items-box
-  = link_to items_path(item.id) do
+  = link_to item_path(item.id) do
     -item.item_images.each.with_index do |image, i|
       - if i ==0
         =image_tag image.image.url

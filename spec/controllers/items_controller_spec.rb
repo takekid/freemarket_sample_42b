@@ -13,4 +13,13 @@ describe ItemsController do
       expect(response).to render_template :index
     end
   end
+
+  describe 'Get #show' do
+    it '@itemに要求されたitemを割り当てること' do
+      expect(assigns(:item)).to eq @item
+    end
+    it 'renders the :show template' do
+      expect(response).to render_template :show["id"]
+    end
+  end
 end
