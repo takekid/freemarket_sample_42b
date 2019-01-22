@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
   root "markets#index"
   resources :markets, only: [:index,:show]
   get 'users/signin_form', to: 'users#signin_form'
