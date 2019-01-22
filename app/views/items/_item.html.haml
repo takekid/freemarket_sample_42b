@@ -1,0 +1,16 @@
+.items-box
+  = link_to item_path(item.id) do
+    -item.item_images.each.with_index do |image, i|
+      - if i ==0
+        =image_tag image.image.url
+        .item-box-body
+          .item-box-name
+            = item.name
+          .item-box-price
+            .price-section
+              ¥
+              = number_with_delimiter(item.price)
+            .item-liks
+              =fa_icon("heart")
+              %span 10
+            %p.item-tax (税込)
