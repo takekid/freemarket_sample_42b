@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "items#index"
-  resources :items, only: [:index,:show] do
-    collection do
-      get 'sell'
-    end
+  resources :items, only: [:index,:show,:create,:new] do
   end
   get 'users/signin_form', to: 'users#signin_form'
   get 'users/address', to: 'users#address'

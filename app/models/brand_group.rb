@@ -1,3 +1,3 @@
 class BrandGroup < ApplicationRecord
-  belongs_to :brand
+  belongs_to :brand, optional: true
 end

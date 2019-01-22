@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 2019_01_20_043004) do
     t.string "price", null: false
     t.string "status", null: false
     t.integer "buyer_id"
-    t.integer "seller_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "seller_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
