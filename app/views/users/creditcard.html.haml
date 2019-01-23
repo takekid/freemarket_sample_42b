@@ -3,13 +3,9 @@
   %ul
     %li{itemscope: "", itemtype: ""}
       = link_to "/" do
-        %span{itemprop: "title"} メルカリ
-      = fa_icon("angle-right")
-    %li{itemscope: "", itemtype: ""}
-      %span{itemprop: "title"} マイページ
-      = fa_icon("angle-right")
-    %li{itemscope: "", itemtype: ""}
-      %span{itemprop: "title"} 支払い方法
+        %span{itemprop: "title"}
+          - breadcrumb :users_credit
+          = breadcrumbs
 %main.l-container.clearfix
   .l-content
     %section.l-chapter-container-mypage-identification
