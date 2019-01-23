@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root "items#index"
-  resources :items, only: [:index,:show] do
+  resources :items, only: [:index, :show, :edit, :update] do
     collection do
       get 'sell'
     end
