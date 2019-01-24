@@ -14,7 +14,8 @@
           %span.form-require 必須
         %p.upload-image 最大10枚までアップロード出来ます
         %label.sell-image-dropbox
-          =f.file_field :images, class: "sell-upload-drop-file", style: "display: none;"
+          =f.fields_for :item_images do |i|
+            =i.file_field :image, class: "sell-upload-drop-file", style: "display: none;"
           %pre.visible-pc
             ドラッグアンドドロップ
             またはクリックしてファイルをアップロード
@@ -56,28 +57,46 @@
                   %option{value: "11"} 自動車・オートバイ
                   %option{value: "12"} その他
                 %i.fas.fa-angle-down
-              <br>
               .select-wrap-category#child
                 =f.select :category_id do
                   %option ---
                   %option{value: "110"} トップス
+                  %option{value: "111"} ジャケット・アウター
+                  %option{value: "112"} パンツ
                 %i.fas.fa-angle-down
-              <br>
+              .select-wrap-category#children
+                =f.select :category_id do
+                  %option ---
+                  %option{value: "1110"} Tシャツ
+                  %option{value: "1111"} キャミソール
+                  %option{value: "1112"} ポロシャツ
+                %i.fas.fa-angle-down
+              .select-wrap-category
+                =f.select :size_id do
+                  %option ---
+                  %option{value: "1"} sサイズ
+                  %option{value:"2"} LLサイズ
+                  %option{value:"3"} XLサイズ
+                  %option{value:"4"} XXLサイズ
+                  %option{value:"5"} Lサイズ
+                %i.fas.fa-angle-down
           .sell-form-groups
             %label.sell-item-name
               ブランド
-              %span.form-require 任意
+              %span.form-require#self 任意
               .select-wrap-category
-                =f.select :brand_id do
-                  %option ---
-                  %option{value: "1"} シャネル
-                  %option{value: "2"} ナイキ
-                  %option{value: "3"} ルイ・ヴィトン
-                  %option{value: "4"}シュプリーム
-                  %option{value: "5"}アディダス
-                  %option{value: "6"}その他
-                %i.fas.fa-angle-down
-
+                = f.select :brand_id do
+                  %option{value: ""} ---
+                  %option{value: "1"} アディダス
+                  %option{value: "2"}ナイキ
+                  %option{value: "3"}プーマ
+                  %option{value: "4"}ボルコム
+                  %option{value: "5"}アシックス
+                  %option{value:"6"}リーボック
+                  %option{value:"7"}アンブロ
+                  %option{value:"8"}ミズノ
+                  %option{value:"13"}シャネル
+                  %option{value:"110"}その他
           .sell-form-groups
             %label.sell-item-name
               商品の状態
@@ -103,20 +122,20 @@
             %label.sell-item-name
               発送料の負担
               %span.form-require 必須
-              .select-wrap-category
+              .select-wrap-category#pare
                 =f.select :shippingfee do
-                  %option ---
+                  %option{value: ""} ---
                   %option{value: "送料込み(出品者負担)"} 送料込み（出品者負担）
                   %option{value: "着払い(購入者負担)"} 着払い（購入者負担）
                 %i.fas.fa-angle-down
 
-          .sell-form-groups
+          .sell-form-groups#chi
             %label.sell-item-name
               配送の方法
               %span.form-require 必須
               .select-wrap-category
                 =f.select :delivery do
-                  %option ---
+                  %option{value:""} ---
                   %option{value: "未定"} 未定
                   %option{value: "らくらくメルカリ便"} らくらくメルカリ便
                   %option{value: "ゆうメール"} ゆうメール
@@ -151,12 +170,6 @@
                   %option{value: "2~3日で発送"} 2~3日で発送
                   %option{value: "4~7日で発送"} 4~7日で発送
                 %i.fas.fa-angle-down
-                =f.select :size_id do
-                  %option ---
-                  %option{value: "1"} sサイズ
-                =f.select :status do
-                  %option --
-                  %option{value: "1"}販売中
 
       .sell-items-content-calc
         %h3.sell-price-text
