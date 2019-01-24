@@ -1,13 +1,7 @@
 $(document).on('turbolinks:load',function(){
-    $('#item_category_id').bind('change',function(){
-      var bigwordindex = $(this).prop('selectedIndex') - 1;
-      console.log(bigwordindex );
-      if(bigwordindex<0){
-         $('#child select').removeClass('on');
-      }else{
-         $('#child select:not(:eq(bigwordindex)) option').attr('selected', false);
-         $('#child select:not(:eq(bigwordindex))').removeClass('on');
-         $('#child select').eq(bigwordindex).addClass('on');
-      }
-    });
+
+    $('#pare select[id="item_shippingfee"]').change(function() {
+    if ($('select[id="item_shippingfee"] option:selected').val() == '送料込み(出品者負担)','着払い(購入者負担)') $('#chi').css('display','block');
+    else $('#chi').css('display','none');
+  });
 });
