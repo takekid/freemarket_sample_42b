@@ -334,3 +334,12 @@ button.back-sell-btn {
   top: 230px;
   left: 200px;
 }
+
+.bread-crumbs ul li {
+  display: inline-block;
+  list-style: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 35px;
+  font-size: 14px;
+}
