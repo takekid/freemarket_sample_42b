@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
- 　devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
- 　root "items#index"
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
+  root "items#index"
   resources :markets, only: [:index,:show]
   resources :items, only: [:index, :show, :edit, :update] do
     collection do
