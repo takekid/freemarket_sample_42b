@@ -14,6 +14,12 @@
   }
 }
 
+.header_mecari_img_hi{
+  height: 49px;
+  width:185px;
+  background-image: image-url("logo.svg");
+  color: rgb(245, 245, 245);
+}
 .sell-container-inner {
   background-color: white;
   border-style: solid;
@@ -379,4 +385,14 @@ button.back-sell-btn {
   white-space: nowrap;
   line-height: 35px;
   font-size: 14px;
+}
+
+
+.mercari-footer_contents{
+  .mercari_img_contents{
+    width: 80px;
+    height: 65px;
+    background-image: image-url("mercari.svg");
+    color: rgb(245, 245, 245);
+  }
 }

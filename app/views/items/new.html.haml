@@ -1,7 +1,7 @@
 .mercari-header
   %h1
     = link_to root_path do
-      =image_tag asset_path "logo.svg", style: "background: rgb(245, 245, 245);"
+      .header_mecari_img_hi
 
 .sell-main-content.clearfix
   .sell-item-container
@@ -42,7 +42,7 @@
               %span.form-require 必須
               .select-wrap-category#parent
                 =f.select :category_id do
-                  %option{value: ""} ---
+                  %option ---
                   %option{value: "1"} レディース
                   %option{value: "2"} メンズ
                   %option{value: "3"} ベビーキッズ
@@ -56,21 +56,21 @@
                   %option{value: "10"} チケット
                   %option{value: "11"} 自動車・オートバイ
                   %option{value: "12"} その他
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
               .select-wrap-category#child
                 =f.select :category_id do
                   %option ---
                   %option{value: "110"} トップス
                   %option{value: "111"} ジャケット・アウター
                   %option{value: "112"} パンツ
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
               .select-wrap-category#children
                 =f.select :category_id do
                   %option ---
                   %option{value: "1110"} Tシャツ
                   %option{value: "1111"} キャミソール
                   %option{value: "1112"} ポロシャツ
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
               .select-wrap-category
                 =f.select :size_id do
                   %option ---
@@ -79,14 +79,14 @@
                   %option{value:"3"} XLサイズ
                   %option{value:"4"} XXLサイズ
                   %option{value:"5"} Lサイズ
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
           .sell-form-groups
             %label.sell-item-name
               ブランド
               %span.form-require#self 任意
               .select-wrap-category
                 = f.select :brand_id do
-                  %option{value: ""} ---
+                  %option ---
                   %option{value: "1"} アディダス
                   %option{value: "2"}ナイキ
                   %option{value: "3"}プーマ
@@ -109,14 +109,14 @@
                   %option{value: "目立った傷や汚れなし"} 目立った傷や汚れなし
                   %option{value: "やや傷や汚れあり"} やや傷や汚れあり
                   %option{value: "全体的に状態が悪い"} 全体的に状態が悪い
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
 
 
       .sell-items-content.clearfix
         %h3.sell-detail-text
           配送について
           = link_to new_item_path do
-            %i.fas.fa-question-circle
+            =fa_icon("question-circle")
         .sell-form-box
           .sell-form-groups
             %label.sell-item-name
@@ -127,7 +127,7 @@
                   %option{value: ""} ---
                   %option{value: "送料込み(出品者負担)"} 送料込み（出品者負担）
                   %option{value: "着払い(購入者負担)"} 着払い（購入者負担）
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
 
           .sell-form-groups#chi
             %label.sell-item-name
@@ -140,7 +140,7 @@
                   %option{value: "らくらくメルカリ便"} らくらくメルカリ便
                   %option{value: "ゆうメール"} ゆうメール
                   %option{value: "クロネコヤマト"} クロネコヤマト
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
 
           .sell-form-groups
             %label.sell-item-name
@@ -157,7 +157,7 @@
                   %option{value: "四国"} 四国
                   %option{value: "九州"} 九州
                   %option{value: "沖縄"} 沖縄
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
 
           .sell-form-groups
             %label.sell-item-name
@@ -169,13 +169,13 @@
                   %option{value: "1~2日で発送"} 1~2日で発送
                   %option{value: "2~3日で発送"} 2~3日で発送
                   %option{value: "4~7日で発送"} 4~7日で発送
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
 
       .sell-items-content-calc
         %h3.sell-price-text
           販売価格(300〜9,999,999)
           = link_to new_item_path do
-            %i.fas.fa-question-circle
+            =fa_icon("question-circle")
         .sell-form-box
           .sell-form-groups-list
             .sell-item-price-left
@@ -226,6 +226,6 @@
       %li 特定商取引に関する表記
   .mercari-footer_contents
     =link_to root_path, class: "single-footer-logo" do
-      =image_tag asset_path "mercari.svg", style: "background: rgb(245, 245, 245);"
+      .mercari_img_contents
     %p
       %small © 2019 Mercari
