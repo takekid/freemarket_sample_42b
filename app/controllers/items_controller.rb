@@ -16,4 +16,23 @@ class ItemsController < ApplicationController
 
   def sell
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    # if item.seller_id == current_user.id ログイン実装完了後に指定
+    item.update(item_params)
+
+    redirect_to item_path
+    # end ログイン実装完了後に指定
+  end
+
+  private
+  def item_params
+  params.require(:item).permit(:name,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,:brand_id,:seller_id,:buyer_id)
+  end
+
 end
