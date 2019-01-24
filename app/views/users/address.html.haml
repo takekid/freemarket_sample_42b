@@ -11,7 +11,7 @@
         = form_with  url: "/users/address_create",  local: true  do |f|
           .main-adress_contents-form_field
             %p
-              お名前　　
+              お名前
               %span.main-adress_contents-form_field_span-red 必須
             = f.text_field :first_name, placeholder: "例) 山田",  autofocus: true, maxlength: "6"
             = f.text_field :last_name, placeholder: "例) 花太郎", autofocus: true, maxlength: "6"
@@ -29,7 +29,7 @@
               %span.main-adress_contents-form_field_span-red 必須
             = f.text_field :prefectures, placeholder: "例）北海道"
             %p
-              市町村　　
+              市町村
               %span.main-adress_contents-form_field_span-red 必須
             = f.text_field :city, placeholder: "例）大阪市"
             %p
@@ -44,7 +44,7 @@
               電話
               %span.main-adress_contents-form_field_span-gray 必須
             = f.text_field :phonenumber, placeholder: "例）080-5344-0766"
-            = f.submit "次へ進む", class: "main-adress_contents-form_field_submit" 
+            = f.submit "次へ進む", class: "main-adress_contents-form_field_submit"
     .mercari-footer
       %nav
         %ul

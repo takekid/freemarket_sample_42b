@@ -1,0 +1,164 @@
+= render "layouts/header"
+.item-content-box-main
+  %nav.bread-crumbs
+    %ul
+      %li
+        %span{itemprop: "title"}
+          - breadcrumb :show_item, @item
+      %li{itemscope: "", itemtype: ""}
+        %span{itemprop: "title"}
+          = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
+  %section.itembox-container
+    %h1.item-name
+      = @item.name
+    .item-main-content
+      .item-photo
+        .main-image
+          -@item.item_images.each.with_index do |image, i|
+            - if i ==0
+              =image_tag image.image.url
+        .image-detail
+          %ul.sub-image
+            -@item.item_images.each.with_index do |image, i|
+              - if i <=10
+                %li
+                  =image_tag image.image.url
+
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              = link_to users_show_path do
+                = @item.seller.nickname
+              .rating-box
+                .user-rating
+                  = fa_icon ("grin")
+                  %span 10
+                .user-rating2
+                  = fa_icon("meh")
+                  %span 0
+                .user-rating3
+                  = fa_icon("frown-open")
+                  %span 10000
+          %tr
+            %th カテゴリー
+            %td
+              =link_to root_path do
+                .name
+                  = @item.category.category_name
+              =link_to root_path do
+                .sub-name
+                  =fa_icon("angle-right")
+
+              =link_to root_path do
+                .middle-name
+                  =fa_icon("angle-right")
+
+          %tr
+            %th ブランド
+            %td
+              =link_to root_path do
+                .item-brand
+                  = @item.brand.name
+          %tr
+            %th 商品のサイズ
+            %td
+              = @item.size.name
+          %tr
+            %th 商品の状態
+            %td
+              = @item.condition
+          %tr
+            %th 配送料の負担
+            %td
+              = @item.shippingfee
+          %tr
+            %th 配送の方法
+            %td ゆうゆうメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              = link_to root_path do
+                = @item.shipfrom
+          %tr
+            %th 発送日の目安
+            %td
+              = @item.shipping_date
+    .item-price-box
+      %span.item-price-money
+        ¥
+        = number_with_delimiter(@item.price)
+      %span.item-tax (税込)
+      %span.item-free 送料込み
+
+      / ログイン機能実装したら  - if user_signed_in? && item.seller_id == current_user.id を記述
+    = render "items/edititem"
+  %section.itembox-container
+    =link_to '購入画面に進む',"",class: "btn item-buy"
+    .item-description
+      %p.itemdecription-in
+        = @item.introduction
+    .item-button-container
+      .item-button-left
+        =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
+          =fa_icon("heart")
+          %span いいね!
+          %span.fade-in 0
+        = link_to root_path, class: "btn item-button-report" do
+          =fa_icon("flag")
+          %span 不適切な商品の報告
+      .item-button-right
+        =link_to root_path do
+          = fa_icon("user-lock")
+          %span あんしん・あんぜんへの取り組み
+
+  .item-detail-message
+    .message-container
+      .message-content
+        %form.message-form{action: ""}
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea.textarea-default{type:"text"}
+          %button.message-submit-btn{type: "submit"}
+            %span コメントする
+  %ul.nav-item-link
+    %li.item-prev
+      = link_to root_path do
+        =fa_icon("angle-left")
+        ジーパン
+    %li.item-next
+      = link_to root_path do
+        ジャンパー
+        =fa_icon("angle-right")
+  .item-social-box
+    %ul.social-media-box
+      %li
+        =link_to root_path,class: "btn share-btn" do
+          %i.fab.fa-facebook-square.fa-3x
+      %li
+        =link_to root_path,class: "btn share-btn" do
+          %i.fab.fa-twitter-square.fa-3x
+      %li
+        =link_to root_path,class: "btn share-btn" do
+          %i.fab.fa-pinterest-square.fa-3x
+
+  .item-inuser-profile
+    %section.item-box-inuser
+      .main-section
+        %h2.section-name
+          NIKEのその他商品
+        .section-item
+          - @nike_brand.each do |item|
+            = render partial: 'item', locals: { item: item }
+      .section-all
+        = link_to'すべての商品を見る',""
+
+    %section.item-box-overflow
+      %h2.section-brand アディダス 新着アイテム
+      .brand-item
+        - @nike_brand.each do |item|
+          = render partial: 'item', locals: { item: item }
+      .section-all
+        = link_to'すべての商品を見る',""
+
+= render "layouts/footer"

@@ -35,5 +35,5 @@ end
 
 Brand.seed do |s|
 s.id = 8
-s.name = 'ミズノ'
+s.name = 'シャネル'
 end
