@@ -14,7 +14,7 @@
   .l-content
     .sign_out-container
       .sign_out-content
-        = link_to destroy_user_session_path do
+        = link_to destroy_user_session_path, method: :delete do
           %button.send-signout-btn{method: :delete, type: "submit"} ログアウト
 
   = render "layouts/l_sidebar"

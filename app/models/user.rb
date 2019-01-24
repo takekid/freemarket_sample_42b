@@ -26,9 +26,8 @@ end
 
 def self.find_for_google_oauth2(auth)
     user = User.where(email: auth.info.email).first
-
     unless user
-      user = User.create(name:     auth.info.name,
+      user = User.create(nickname: "shouya",
                          provider: auth.provider,
                          uid:      auth.uid,
                          email:    auth.info.email,
