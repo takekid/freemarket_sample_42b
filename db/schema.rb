@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_01_24_103503) do
+ActiveRecord::Schema.define(version: 2019_01_21_030211) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -112,6 +113,10 @@ ActiveRecord::Schema.define(version: 2019_01_24_103503) do
     t.datetime "updated_at", null: false
     t.string "nickname", null: false
     t.text "avater"
+    t.string "uid"
+    t.string "provider"
+    t.string "token"
+    t.string "meta"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

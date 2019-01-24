@@ -1,13 +1,14 @@
 = render "layouts/header"
+= render "items/modal"
 .item-content-box-main
   %nav.bread-crumbs
     %ul
+      %li
+        %span{itemprop: "title"}
+          - breadcrumb :show_item, @item
       %li{itemscope: "", itemtype: ""}
-        = link_to "/" do
-          %span{itemprop: "title"} メルカリ
-        = fa_icon("angle-right")
-      %li{itemscope: "", itemtype: ""}
-        %span{itemprop: "title"}sample
+        %span{itemprop: "title"}
+          = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
   %section.itembox-container
     %h1.item-name
       = @item.name
@@ -55,6 +56,9 @@
                 .middle-name
                   =fa_icon("angle-right")
                   パンクズ時に実装
+              =link_to root_path do
+                .middle-name
+                  =fa_icon("angle-right")
           %tr
             %th ブランド
             %td
@@ -91,6 +95,10 @@
         = number_with_delimiter(@item.price)
       %span.item-tax (税込)
       %span.item-free 送料込み
+
+      / ログイン機能実装したら  - if user_signed_in? && item.seller_id == current_user.id を記述
+    = render "items/edititem"
+  %section.itembox-container
     =link_to '購入画面に進む',"",class: "btn item-buy"
     .item-description
       %p.itemdecription-in

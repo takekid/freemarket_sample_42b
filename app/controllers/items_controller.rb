@@ -28,4 +28,34 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name,:brand_id,:delivery,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,:seller_id,:buyer_id,item_images_attributes:[:image])
   end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    # if item.seller_id == current_user.id ログイン実装完了後に指定
+    item.update(item_params)
+
+    redirect_to item_path
+    # end ログイン実装完了後に指定
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    # if item.seller_id == current_user.id ログイン機能実装後に指定
+     item.destroy
+    # end ログイン機能実装後に指定
+    if item.destroy
+
+    redirect_to users_show_path
+    end
+  end
+
+  private
+  def item_params
+  params.require(:item).permit(:name,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,:brand_id,:seller_id,:buyer_id, :item_images)
+  end
+
 end

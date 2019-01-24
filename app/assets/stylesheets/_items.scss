@@ -372,4 +372,11 @@ button.back-sell-btn {
       outline: 0;
       border: 0.5px solid $outline;
   }
+.bread-crumbs ul li {
+  display: inline-block;
+  list-style: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 35px;
+  font-size: 14px;
 }

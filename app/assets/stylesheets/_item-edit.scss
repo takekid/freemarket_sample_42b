@@ -1,0 +1,122 @@
+p.choice {
+  text-align: center;
+}
+
+button.stop-sell-btn {
+  margin: 0 auto;
+  margin-bottom:20px;
+  width: 100%;
+  height: 50px;
+  background-color: $graybtn;
+  border: 1px solid $graybtn;
+  font-size: 14px;
+  color: white;
+}
+
+button#delete-sell-btn {
+  margin: 0 auto;
+  width: 100%;
+  height: 50px;
+  background-color: $graybtn;
+  border: 1px solid $graybtn;
+  font-size: 14px;
+  color: white;
+}
+button:hover {
+  opacity: 0.7;
+  cursor : pointer;
+}
+
+section.itembox-container-signin {
+    display: block;
+    background-color: white;
+    margin: 40px auto 0;
+    width: 620px;
+}
+
+button.send-edit-btn {
+    margin: 40px 0 0;
+    width: 100%;
+    height: 50px;
+    background-color: #ea352d;
+    border: 1px solid #ea352d;
+    font-size: 14px;
+    color: white;
+}
+
+.select-edit-category {
+  margin: 8px 0 0;
+  position: relative;
+  select{
+    -webkit-appearance: none;
+    z-index: 2;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    width:100%;
+    &:focus {
+      outline: 0;
+      border: 0.5px solid $outline;
+    }
+  }
+}
+#child{
+  select {
+    display:none;
+    position:absolute;
+    top:0px;
+  }
+  i{
+    display:none;
+  }
+}
+#child select.on {
+  display:block;
+  margin: 8px 0 0;
+  position: relative;
+  -webkit-appearance: none;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width:100%;
+  &:focus {
+    outline: 0;
+    border: 0.5px solid $outline;
+  }
+}
+#chi{
+  display: none;
+  width: 400px;
+}
+i.fas.fa-angle-down:before {
+  position: absolute;
+    right: 16px;
+    top: 40%;
+    z-index: 2;
+    color: #888;
+    font-size: 20px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-weight: solid;
+}
+
+.items-send-btn{
+  margin: 40px 0 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  font-size: 14px;
+  color: white;
+}

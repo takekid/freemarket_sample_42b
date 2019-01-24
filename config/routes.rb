@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
   root "items#index"
-  resources :items, only: [:index,:show,:create,:new] do
+  resources :items, only: [:index, :show,:create,:new, :edit, :update, :destroy] do
+
+    collection do
+      get 'sell'
+    end
   end
   get 'users/signin_form', to: 'users#signin_form'
   get 'users/address', to: 'users#address'

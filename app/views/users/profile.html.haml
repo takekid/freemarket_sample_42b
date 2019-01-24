@@ -2,15 +2,9 @@
 %nav.bread-crumbs
   %ul
     %li
-      = link_to "/" do
-        %span メルカリ
-      = fa_icon("angle-right")
-    %li
-      = link_to "show" do
-        %span マイページ
-      = fa_icon("angle-right")
-    %li
-      %span プロフィール
+      %span
+        - breadcrumb :users_profile
+        = breadcrumbs
 %main.l-container.clearfix
   .l-content
     %section.chapter-container
