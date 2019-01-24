@@ -50,4 +50,16 @@ describe ItemsController do
   end
 end
 
+  describe 'Delete #destroy' do
+    context 'available item' do
+      it 'deletes from datebase' do
+        expect { delete :destroy
+         }.to change(Item, :count).by(-1)
+      end
+      it 'redirect to users#show'do
+        redirect_to users_show_path
+      end
+    end
+  end
+
 end
