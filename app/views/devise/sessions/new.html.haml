@@ -9,10 +9,10 @@
       = link_to "新規会員登録" ,  "/users/signin_form"
     .main-login_body
       .main-login_body_bottun
-        = link_to "#", class: "btn facebook" do
+        = link_to user_facebook_omniauth_authorize_path, class: "btn facebook" do
           %span.fab.fa-facebook>
           Facebookでログイン
-        = link_to "#" , class: "btn google" do
+        = link_to user_google_oauth2_omniauth_authorize_path, class: "btn google" do
           %span.fab.fa-google &gt;Googleでログイン
     = form_with  url: "/users/sign_in",  local: true  do |f|
 
@@ -26,7 +26,7 @@
 
         %br/ 
         
-        = link_to "パスワードをお忘れの方", "#"
+        = link_to "パスワードをお忘れの方", "/"
     .mercari-footer
       %nav
         %ul
