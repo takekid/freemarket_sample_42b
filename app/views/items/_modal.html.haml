@@ -12,7 +12,7 @@
         本当に削除しますか？
     %button.btn-cansel
       キャンセル
-    = link_to  "/items/#{@item.id}",id: "modal-delete-btn", method: :delete do
+    = link_to  item_path(@item.id),id: "modal-delete-btn", method: :delete do
       %button.modal-btn-submit{type: "submit"}
         削除する
 
