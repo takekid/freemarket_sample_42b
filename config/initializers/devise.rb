@@ -249,13 +249,13 @@ Devise.setup do |config|
   # The "*/*" below is required to match Internet Explorer requests.
   # config.navigational_formats = ['*/*', :html]
   require 'omniauth-facebook'
-  
+
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
   config.omniauth :facebook,
                 ENV['FACEBOOK_ID'],
                 ENV['FACEBOOK_SECRET'],
-                scope: 'email', 
+                scope: 'email',
                 info_fields: 'email,name'
 
   config.omniauth :google_oauth2,
@@ -266,8 +266,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  
- 
+
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
