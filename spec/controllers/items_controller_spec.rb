@@ -22,7 +22,6 @@ describe ItemsController do
       expect(response).to render_template :show["id"]
     end
   end
-
   describe 'Get #edit' do
     it '@itemに要求されたitemを割り当てること' do
       expect(assigns(:item)).to eq @item
@@ -61,5 +60,4 @@ end
       end
     end
   end
-
 end

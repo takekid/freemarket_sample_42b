@@ -1,6 +1,3 @@
-// Place all the styles related to the markets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body{
   position: relative;
   min-height: 100%;
@@ -54,9 +51,6 @@ body{
   cursor: pointer;
   color: #555555;
 }
-
-
-
 
 .clearfix-box{
   background-color: white;
@@ -112,8 +106,6 @@ ul.menu{
     }
   }
 }
-
-
 
 ul.pull-left{
     width: auto;
@@ -212,6 +204,23 @@ ul.pull-right{
       width: 110px;
       border-radius: 5px;
     }
+  }
+}
+
+.head-rights{
+  float: right;
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li{
+    display: inline-block;
+  }
+  a{
+    display: block;
+    font-size: 14px;
+    color: #333;
   }
 }
 
