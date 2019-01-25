@@ -7,14 +7,14 @@
   .sell-item-container
     .sell-container-inner
       %h2.sell-container-header 商品の情報を入力
-    %form.sell-form
+    = form_with url: "/items",class: "sell-form" do |f|
       .sell-upload-box
         %h3.sell-upload-text
           出品画像
           %span.form-require 必須
         %p.upload-image 最大10枚までアップロード出来ます
         %label.sell-image-dropbox
-          %input.sell-upload-drop-file{type: "file", name: "sellimage", style: "display: none;"}
+          =f.file_field :image, class: "sell-upload-drop-file", style: "display: none;"
           %pre.visible-pc
             ドラッグアンドドロップ
             またはクリックしてファイルをアップロード
@@ -24,23 +24,23 @@
             商品名
             %span.form-require 必須
         .input-form-groups
-          %input.sell-item-name{type: "text", placeholder: "商品名（必須40文字まで）"}
+          = f.text_field :name, class: "sell-item-name",placeholder: "商品名（必須40文字まで）"
         .input-form-groups
           .form-item-name
             %label.sell-item-name
               商品の説明
               %span.form-require 必須
-          %textarea.sell-item-info{type: "input",rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+          =f.text_area :introduction,class: "sell-item-info",type: "input",rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
       .sell-items-content.clearfix
         %h3.sell-detail-text
           商品の詳細
         .sell-form-box
           .sell-form-groups
-            %label.sell-item-name
+            =f.label :category_id,class: "sell-item-name" do
               カテゴリー
               %span.form-require 必須
               .select-wrap-category
-                %select.select-category
+                =f.select :category_id do
                   %option ---
                   %option{value: "1"} レディース
                   %option{value: "2"} メンズ
@@ -58,11 +58,11 @@
                 %i.fas.fa-angle-down
 
           .sell-form-groups
-            %label.sell-item-name
+            =f.label :condition, class: "sell-item-name" do
               商品の状態
               %span.form-require 必須
               .select-wrap-category
-                %select.select-category
+                =f.select :condition do
                   %option ---
                   %option{value: "1"} 新品、未使用品
                   %option{value: "2"} 未使用に近い
@@ -79,22 +79,22 @@
             %i.fas.fa-question-circle
         .sell-form-box
           .sell-form-groups
-            %label.sell-item-name
+            = f.label :shippingfee,class: "sell-item-name" do
               発送料の負担
               %span.form-require 必須
               .select-wrap-category
-                %select.select-category
+                =f.select :shippingfee do
                   %option ---
                   %option{value: "2"} 送料込み（出品者負担）
                   %option{value: "1"} 着払い（購入者負担）
                 %i.fas.fa-angle-down
 
           .sell-form-groups
-            %label.sell-item-name
+            =f.label :shipfrom, class: "sell-item-name" do
               発送元の地域
               %span.form-require 必須
               .select-wrap-category
-                %select.select-category
+                =f.select :shipfrom do
                   %option ---
                   %option{value: "1"} 関西
                   %option{value: "2"} 北海道
@@ -107,11 +107,11 @@
                 %i.fas.fa-angle-down
 
           .sell-form-groups
-            %label.sell-item-name
+            =f.label :shipping_date, class: "sell-item-name" do
               発送までの日数
               %span.form-require 必須
               .select-wrap-category
-                %select.select-category
+                =f.select :shipping_date do
                   %option ---
                   %option{value: "1"} 1~2日で発送
                   %option{value: "2"} 2~3日で発送
@@ -132,7 +132,7 @@
             .sell-item-price-right
               .input-form-groups
                 ¥
-                %input.sell-item-price{type: "text", placeholder: "例）300"}
+                =f.text_field :price,class: "sell-item-price",placeholder: "例）300"
           .sell-form-groups-list-calc
             .sell-item-carc-left
               販売手数料(10%)
@@ -161,8 +161,7 @@
           =link_to sell_items_path, class: "sell-coution-message" do
             加盟店規約
           に同意したことになります。
-        %button.send-sell-btn
-          出品する
+        = f.submit "出品する", class: "items-send-btn"
         %button.back-sell-btn
           もどる
 

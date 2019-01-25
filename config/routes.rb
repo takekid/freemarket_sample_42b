@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
   root "items#index"
-  resources :items, only: [:index, :show, :edit, :update] do
+  resources :items, only: [:index, :show,:create,:new, :edit, :update, :destroy] do
+
     collection do
       get 'sell'
     end

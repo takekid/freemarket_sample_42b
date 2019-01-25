@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_24_080401) do
+ActiveRecord::Schema.define(version: 2019_01_24_103503) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2019_01_24_080401) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.integer "perent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,10 +77,11 @@ ActiveRecord::Schema.define(version: 2019_01_24_080401) do
     t.string "shipping_date", null: false
     t.string "price", null: false
     t.integer "buyer_id"
-    t.integer "seller_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "seller_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "delivery", null: false
+    t.integer "status", limit: 1, default: 1, null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
@@ -111,6 +112,10 @@ ActiveRecord::Schema.define(version: 2019_01_24_080401) do
     t.datetime "updated_at", null: false
     t.string "nickname", null: false
     t.text "avater"
+    t.string "uid"
+    t.string "provider"
+    t.string "token"
+    t.string "meta"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
