@@ -35,20 +35,18 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find(params[:id])
-    # if item.seller_id == current_user.id ログイン実装完了後に指定
+    if item.seller_id == current_user.id
     item.update(item_params)
-
     redirect_to item_path
-    # end ログイン実装完了後に指定
+    end
   end
 
   def destroy
     item = Item.find(params[:id])
-    # if item.seller_id == current_user.id ログイン機能実装後に指定
+    if item.seller_id == current_user.id
      item.destroy
-    # end ログイン機能実装後に指定
+    end
     if item.destroy
-
     redirect_to users_show_path
     end
   end

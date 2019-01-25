@@ -383,9 +383,10 @@ button.back-sell-btn {
   list-style: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-  line-height: 35px;
+  line-height: 50px;
   font-size: 14px;
 }
+
 
 
 .mercari-footer_contents{
@@ -395,4 +396,47 @@ button.back-sell-btn {
     background-image: image-url("mercari.svg");
     color: rgb(245, 245, 245);
   }
+=======
+span.current {
+  font-weight: bold;
+}
+
+.head-right-signed-in {
+  float: right;
+}
+.head-user-nav-sigindin {
+  display: block;
+  font-size: 14px;
+  color: #333;
+}
+.header-signedin-box {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 16px;
+  line-height: 30px;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+.header-signedin-box :hover {
+  color:#0099FF;
+}
+
+img.avater_signin {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+
+a.signin_mypage {
+  vertical-align: middle;
+  display: block;
+  line-height: 42px;
+  float: right;
+}
+
+i.fa.fa-bell {
+  font-weight: 300;
+
 }

@@ -59,6 +59,23 @@
               %li
                 =link_to 'ブランド一覧',""
       .head-right
-        .btn-case
-          =link_to 'ログイン',new_user_session_path,class: "btn log-btn"
-          =link_to '新規会員登録',new_user_registration_path,class: "btn new-btn"
+        - if user_signed_in?
+          .head-right-signed-in
+            .head-user-nav-sigindin
+              .header-signedin-box
+                = link_to users_show_path, class: "signin_mypage" do
+                  = image_tag asset_path("avater.png"),alt: "avater", class: "avater_signin"
+                  マイページ
+              .header-signedin-box
+                = link_to users_show_path do
+                  = fa_icon("bell")
+                  お知らせ
+              .header-signedin-box
+                = link_to users_show_path do
+                  = fa_icon("check")
+                  やることリスト
+
+        - else
+          .btn-case
+            =link_to 'ログイン',new_user_session_path,class: "btn log-btn"
+            =link_to '新規会員登録',new_user_registration_path,class: "btn new-btn"
