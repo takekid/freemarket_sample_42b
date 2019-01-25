@@ -51,11 +51,14 @@
               =link_to root_path do
                 .sub-name
                   =fa_icon("angle-right")
-
+                  パンクズ時に実装
               =link_to root_path do
                 .middle-name
                   =fa_icon("angle-right")
-
+                  パンクズ時に実装
+              =link_to root_path do
+                .middle-name
+                  =fa_icon("angle-right")
           %tr
             %th ブランド
             %td
@@ -93,26 +96,27 @@
       %span.item-tax (税込)
       %span.item-free 送料込み
 
-      / ログイン機能実装したら  - if user_signed_in? && item.seller_id == current_user.id を記述
-    = render "items/edititem"
-  %section.itembox-container
-    =link_to '購入画面に進む',"",class: "btn item-buy"
-    .item-description
-      %p.itemdecription-in
-        = @item.introduction
-    .item-button-container
-      .item-button-left
-        =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
-          =fa_icon("heart")
-          %span いいね!
-          %span.fade-in 0
-        = link_to root_path, class: "btn item-button-report" do
-          =fa_icon("flag")
-          %span 不適切な商品の報告
-      .item-button-right
-        =link_to root_path do
-          = fa_icon("user-lock")
-          %span あんしん・あんぜんへの取り組み
+    - if user_signed_in? && @item.seller_id == current_user.id
+      = render "items/edititem"
+    - else
+      %section.itembox-container-buy
+        =link_to '購入画面に進む',"",class: "btn item-buy"
+        .item-description
+          %p.itemdecription-in
+            = @item.introduction
+        .item-button-container
+          .item-button-left
+            =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
+              =fa_icon("heart")
+              %span いいね!
+              %span.fade-in 0
+            = link_to root_path, class: "btn item-button-report" do
+              =fa_icon("flag")
+              %span 不適切な商品の報告
+          .item-button-right
+            =link_to root_path do
+              = fa_icon("user-lock")
+              %span あんしん・あんぜんへの取り組み
 
   .item-detail-message
     .message-container
