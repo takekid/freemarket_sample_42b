@@ -50,10 +50,4 @@ class ItemsController < ApplicationController
     redirect_to users_show_path
     end
   end
-
-  private
-  def item_params
-  params.require(:item).permit(:name,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,:brand_id,:seller_id,:buyer_id, :item_images)
-  end
-
 end
