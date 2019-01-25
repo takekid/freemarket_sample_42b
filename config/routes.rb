@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   post 'users/address_create', to: 'users#address_create'
   get 'users/creditcard' => 'users#creditcard'
   get 'users/card_create' => 'users#card_create'
-
-
+  post 'users/pay', to: 'users#pay'
   get 'transactions/buy' => 'transactions#buy'
 end

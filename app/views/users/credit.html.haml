@@ -13,7 +13,7 @@
           %p
             カード番号　　
             %span.span-red 必須
-          %input.info-credit_contents_form_field_input{:placeholder => "半角数字のみ"}/
+          %input.info-credit_contents_form_field_input{ name:'number', :placeholder => "半角数字のみ"}/
           .info-credit_contents_form_field-cards
             = image_tag "visa.svg", class: "card"
             = image_tag "master-card.svg", class: "card"
@@ -22,21 +22,21 @@
             = image_tag "american_express.svg", class: "card"
             = image_tag "dinersclub.svg", class: "card"
             = image_tag "discover.svg", class: "card"
-          = form_tag(action: :credit, method: :post) do 
+          = form_with url: '/users/pay', local: true do
             .info-credit_contents_form_field_date
               %p
                 有効期限　　　
                 %span.span-red 必須
               %li
-                %input.input-num{type: "number"}/
+                %input.input-num{name: 'exp_month', type: "number"}/
                 %p 月
               %li
-                %input.input-num{type: "number"}/
-                %p 日
+                %input.input-num{ name: 'exp_year', type: "number"}/
+                %p 年
             %p
               セキュリティーコード
               %span.span-red 必須
-            %input.info-credit_contents_form_field_input-content{placeholder: "カードの背面の４桁もしくは３桁の番号"}/
+            %input.info-credit_contents_form_field_input-content{ name: 'cvc', placeholder: "カードの背面の４桁もしくは３桁の番号"}/
             %p.sentence-blue カード裏側の番号とは？
             %button.submit{type: "submit"} 次へ進む
     .mercari-footer

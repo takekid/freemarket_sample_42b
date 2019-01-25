@@ -29,6 +29,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def pay
+    Payjp.api_key = 'sk_test_33ed6ec1e16acea820f30a16'
+    @credit = Creditcard.new(user_id: current_user.id)
+
+   
+    redirect_to users_finish_path
+  end
+
   private
   def user_params
     params.permit(:nickname, :email, :password, :password_confirmation)
