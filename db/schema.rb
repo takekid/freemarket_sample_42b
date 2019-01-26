@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2019_01_24_103503) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category_name", null: false
     t.integer "perent_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,9 +77,9 @@ ActiveRecord::Schema.define(version: 2019_01_24_103503) do
     t.string "shipping_date", null: false
     t.string "price", null: false
     t.integer "buyer_id"
-    t.integer "seller_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "seller_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string "delivery", null: false
     t.integer "status", limit: 1, default: 1, null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
