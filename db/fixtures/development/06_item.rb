@@ -10,7 +10,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -26,7 +25,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -42,7 +40,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -58,7 +55,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -74,7 +70,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -90,7 +85,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -106,7 +100,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -122,7 +115,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -138,7 +130,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -154,7 +145,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -170,7 +160,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -186,7 +175,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -202,7 +190,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -218,7 +205,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -234,7 +220,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -250,7 +235,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -266,7 +250,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -282,7 +265,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -298,7 +280,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -314,7 +295,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -330,7 +310,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -346,7 +325,6 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end
 
@@ -362,6 +340,5 @@ s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
-s.status = '販売中'
 s.seller_id = 1
 end

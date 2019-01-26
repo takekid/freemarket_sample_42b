@@ -249,3 +249,14 @@ ul.pull-right{
 .fa-camera{
   font-size:60px;
 }
+
+   .mainpage_avater{
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 50%;
+      img {
+        max-width: 32px;
+        max-height: 32px;
+     vertical-align: middle;
+      }
+    }
