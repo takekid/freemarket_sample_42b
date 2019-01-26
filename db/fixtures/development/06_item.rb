@@ -11,6 +11,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -26,6 +28,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -41,6 +45,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -56,6 +62,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -71,6 +79,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -86,6 +96,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -101,6 +113,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -116,6 +130,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -131,6 +147,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -146,6 +164,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -161,6 +181,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -176,6 +198,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -191,6 +215,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -206,6 +232,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -221,6 +249,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -236,6 +266,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -251,6 +283,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -266,6 +300,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -281,6 +317,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -296,6 +334,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -311,6 +351,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -326,6 +368,8 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
 
 Item.seed do |s|
@@ -341,4 +385,6 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.delivery = 'らくらくメルカリ便'
+s.status = 1
 end
