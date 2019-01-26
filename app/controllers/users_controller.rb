@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def address; end
 
+
   def credit; end
 
   def finish; end
