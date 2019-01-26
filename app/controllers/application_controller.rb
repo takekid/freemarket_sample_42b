@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_params, if: :devise_controller?
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show, :signin_form, :address]
 
   def configure_permitted_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :nickname, :password_confirmation])

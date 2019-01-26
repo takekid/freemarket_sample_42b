@@ -8,7 +8,7 @@
       %h1 新規会員登録
     .main-regstration_body
       .main-regstration_body_bottun
-        = link_to "/users/signin_form", class: "btn email" do
+        = link_to new_user_registration_path, class: "btn email" do
           %span.fa.fa-envelope>
           メールアドレスで登録
         = link_to '/users/auth/facebook', class: "btn facebook" do

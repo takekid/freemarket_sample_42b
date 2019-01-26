@@ -24,11 +24,6 @@ class ItemsController < ApplicationController
     @item = Item.create(item_params)
   end
 
-  private
-  def item_params
-    params.require(:item).permit(:name,:brand_id,:delivery,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,:seller_id,:buyer_id,item_images_attributes:[:image])
-  end
-
   def edit
     @item = Item.find(params[:id])
   end
@@ -53,7 +48,8 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-  params.require(:item).permit(:name,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,:brand_id,:seller_id,:buyer_id, :item_images)
+    params.require(:item).permit(:name,:brand_id,:delivery,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,item_images_attributes:[:image]).merge(seller_id: current_user.id)
   end
+
 
 end

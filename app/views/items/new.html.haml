@@ -13,12 +13,23 @@
           出品画像
           %span.form-require 必須
         %p.upload-image 最大10枚までアップロード出来ます
-        %label.sell-image-dropbox
-          =f.fields_for :item_images do |i|
-            =i.file_field :image, class: "sell-upload-drop-file", style: "display: none;"
-          %pre.visible-pc
-            ドラッグアンドドロップ
-            またはクリックしてファイルをアップロード
+        .sell-image-dropbox-contentair
+          .sell-uploader-items-container
+            .sell-upload-items
+              %ul#file_list
+                %li.sell-upload-item#upload-item
+                  %figure.sell-upload-figure
+                    = image_tag "",id: "item-prev"
+                  .sell-upload-item-button
+                    =link_to "編集","" ,class: "sell-upload-edit"
+                    =link_to"削除", method: :delete
+          %label.sell-uploader-drop-box
+            =f.fields_for :item_images do |i|
+              =i.file_field :image
+            %pre.visible-pc
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップロード
+            = fa_icon("camera")
       .sell-items-content.clearfix
         .form-item-name
           %label.sell-item-name
@@ -40,7 +51,7 @@
             %label.sell-item-name
               カテゴリー
               %span.form-require 必須
-              .select-wrap-category#parent
+              .select-wrap-category
                 =f.select :category_id do
                   %option ---
                   %option{value: "1"} レディース
@@ -57,14 +68,14 @@
                   %option{value: "11"} 自動車・オートバイ
                   %option{value: "12"} その他
                 = fa_icon("angle-down")
-              .select-wrap-category#child
+              .select-wrap-category
                 =f.select :category_id do
                   %option ---
                   %option{value: "110"} トップス
                   %option{value: "111"} ジャケット・アウター
                   %option{value: "112"} パンツ
                 = fa_icon("angle-down")
-              .select-wrap-category#children
+              .select-wrap-category
                 =f.select :category_id do
                   %option ---
                   %option{value: "1110"} Tシャツ
