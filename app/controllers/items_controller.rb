@@ -46,10 +46,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.includes(:item_images).where('name LIKE(?)', "%#{params[:keyword]}%").limit(48)
+  end
+
+
   private
+
   def item_params
     params.require(:item).permit(:name,:brand_id,:delivery,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,item_images_attributes:[:image]).merge(seller_id: current_user.id)
   end
-
 
 end
