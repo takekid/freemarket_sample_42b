@@ -13,7 +13,7 @@
 .search-container.clearfix
   .search-content
     %h2.search-result-head
-      - if @items.count == nil
+      - if @items.count == 0
         検索結果 0件
       -else
         検索結果 1-#{@items.count}件
@@ -35,9 +35,3 @@
                   (税込)
 
   = render "items/left_search_form"
-
-
-
-
-
-
