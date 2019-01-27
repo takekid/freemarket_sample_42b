@@ -3,7 +3,8 @@ class UsersController < ApplicationController
    @user = User.new
   end
 
-  def address; end
+  def address
+  end
 
 
   def credit; end
