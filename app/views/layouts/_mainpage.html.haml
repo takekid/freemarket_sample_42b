@@ -34,24 +34,24 @@
       .section-item
         - @mens_category.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-name レディース 新着アイテム
       .section-item
         - @ladys_category.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-name ベイビー 新着アイテム
       .section-item
         - @kids_category.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     %h2.pickup-bottom ピックアップブランド
     .main-section
@@ -59,21 +59,21 @@
       .brand-item
         - @chanel_brand.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-brand ナイキ 新着アイテム
       .brand-item
         - @nike_brand.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-brand アディダス 新着アイテム
       .brand-item
         - @adidas_brand.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
