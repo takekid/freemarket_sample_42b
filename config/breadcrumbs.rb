@@ -41,3 +41,8 @@ crumb :users_sign_out do |user|
   link "ログアウト", users_sign_out_path
   parent :users_show
 end
+
+crumb :search_items do |user|
+  link "#{params[:keyword]}", search_items_path
+  parent :root
+end

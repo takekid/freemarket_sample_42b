@@ -4,7 +4,7 @@
       %h1.pc-left
         = link_to "/" do
           =image_tag asset_path("logo.svg"),alt: "mercari"
-      %form.pc-header-form{action: ""}
+      =form_with url:search_items_path, method: :get, class: "pc-header-form", local: true do
         %input.input{name: "keyword", placeholder: "キーワードから探す", type: "search"}/
         %i.fas.fa-search
     .clearfix-box
