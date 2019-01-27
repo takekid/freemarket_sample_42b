@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'sell'
     end
   end
+  resources :categories, only: [:index, :show,:new]
   get 'users/signin_form', to: 'users#signin_form'
   get 'users/address', to: 'users#address'
   get 'users/credit',to: 'users#credit'

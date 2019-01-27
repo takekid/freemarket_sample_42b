@@ -52,28 +52,10 @@
               カテゴリー
               %span.form-require 必須
               .select-wrap-category
-                =f.select :category_id do
-                  %option ---
-                  %option{value: "1"} レディース
-                  %option{value: "2"} メンズ
-                  %option{value: "3"} ベビーキッズ
-                  %option{value: "4"} インテリア・住まい・小物
-                  %option{value: "5"} 本・音楽・ゲーム
-                  %option{value: "6"} おもちゃ・ホビー・グッズ
-                  %option{value: "7"} コスメ・香水・美容
-                  %option{value: "11"} 家電・スマホ・カメラ
-                  %option{value: "8"} スポーツ・レジャー
-                  %option{value: "9"} ハンドメイド
-                  %option{value: "10"} チケット
-                  %option{value: "11"} 自動車・オートバイ
-                  %option{value: "12"} その他
+                =f.collection_select :category_id,Category.limit(13),:id,:category_name,{prompt: "---"}
                 = fa_icon("angle-down")
               .select-wrap-category
-                =f.select :category_id do
-                  %option ---
-                  %option{value: "110"} トップス
-                  %option{value: "111"} ジャケット・アウター
-                  %option{value: "112"} パンツ
+                =f.collection_select :category_id,Category.limit(14).offset(13),:id,:category_name,{prompt: "---"}
                 = fa_icon("angle-down")
               .select-wrap-category
                 =f.select :category_id do
