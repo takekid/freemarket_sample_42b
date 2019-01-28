@@ -30,7 +30,6 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
-before 'deploy:publishing', 'db:seed_fu'
 
   desc 'upload secrets.yml'
   task :upload do
