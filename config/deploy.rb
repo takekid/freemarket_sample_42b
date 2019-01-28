@@ -30,6 +30,8 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+before 'deploy:publishing', 'db:seed_fu'
+before :publishing, 'db:seed_fu'
 
   desc 'upload secrets.yml'
   task :upload do
@@ -44,13 +46,7 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-namespace :deploy do
-  desc "Load the seed data from db/seeds.rb"
-  task :seed do
-    run "cd #{current_path}; bundle exec rake db:seed_fu RAILS_ENV=#{rails_env}"
-  end
-end
-after :deploy, "deploy:seed"
+
 
 
 # Default branch is :master
