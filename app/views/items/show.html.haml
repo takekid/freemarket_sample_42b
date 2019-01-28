@@ -107,23 +107,24 @@
         - if @item.buyer_id == nil
           =link_to '購入画面に進む',"",class: "btn item-buy"
         - else
-          .item-sold-button 売り切れました
-          .item-description
-            %p.itemdecription-in
-              = @item.introduction
-          .item-button-container
-            .item-button-left
-              =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
-                =fa_icon("heart")
-                %span いいね!
-                %span.fade-in 0
-              = link_to root_path, class: "btn item-button-report" do
-                =fa_icon("flag")
-                %span 不適切な商品の報告
-            .item-button-right
-              =link_to root_path do
-                = fa_icon("user-lock")
-                %span あんしん・あんぜんへの取り組み
+          .item-sold-button
+            売り切れました
+        .item-description
+          %p.itemdecription-in
+            = @item.introduction
+        .item-button-container
+          .item-button-left
+            =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
+              =fa_icon("heart")
+              %span いいね!
+              %span.fade-in 0
+            = link_to root_path, class: "btn item-button-report" do
+              =fa_icon("flag")
+              %span 不適切な商品の報告
+          .item-button-right
+            =link_to root_path do
+              = fa_icon("user-lock")
+              %span あんしん・あんぜんへの取り組み
 
   .item-detail-message
     .message-container
