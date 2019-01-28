@@ -242,7 +242,7 @@ s.name = 'シャネルのダミーです3'
 s.introduction = 'ダミーの商品です'
 s.category_id = 2
 s.size_id = 1
-s.brand_id = 1
+s.brand_id = 8
 s.condition = '新品・未使用'
 s.shippingfee = '送料込み'
 s.shipfrom = '大阪府'
@@ -385,6 +385,7 @@ s.shipfrom = '大阪府'
 s.shipping_date = '2~3日で発送'
 s.price = '30000'
 s.seller_id = 1
+s.buyer_id =2
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
