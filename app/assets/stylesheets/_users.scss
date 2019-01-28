@@ -126,6 +126,7 @@
         height: 28px;
         width: 290px;
         padding: 10px 16px;
+        margin-bottom: 30px;
       }
         p {
            margin-top: 10px;
@@ -344,6 +345,7 @@
 .main-login {
   height: 408px;
   text-align: center;
+  text-decoration: none;
   &-reg{
     height: 64px;
     width:328px;
@@ -357,6 +359,7 @@
       width:160px;
       background: #0099e8;
       color: #fff;
+      text-decoration: none;
      }
    }
 
@@ -380,7 +383,8 @@
       margin: 0 auto;
       background-color: white;
       a {
-        font-size: 12px;
+        font-size: 14px;
+        text-decoration: none;
       }
     &_bottun {
       height: 182px;
@@ -396,17 +400,26 @@
       padding: 24px 64px 32px 64px;
       margin: 0 auto;
       background-color: white;
+      font-size: 14px;
       a {
         font-size: 10px;
         margin-top: 40px;
       }
-      input {
+      input#user_password {
         padding: 10px 16px;
         height: 28px;
         width: 270px;
         margin-right:20px;
-        margin-top:20px;
+        margin-top:10px;
+        margin-bottom: 40px;
        }
+       input#user_email {
+        padding: 10px 16px;
+        height: 28px;
+        width: 270px;
+        margin-right:20px;
+        margin-top:10px;
+      }
     }
   }
 }

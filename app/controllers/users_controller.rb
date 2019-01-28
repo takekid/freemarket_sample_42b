@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
   def signin_form
    @user = User.new
+   if verify_recaptcha(model: @user) && @user.save
+      redirect_to root_path
+    else
+      new_user_session_path
+    end
   end
 
-  def address; end
+  def address
+  end
 
 
   def credit; end

@@ -2,11 +2,13 @@
   .swiper-container
     .swiper-wrapper
       .swiper-slide
-        = image_tag asset_path"banner/dum01.gif",alt: "Swiper01"
+        = image_tag asset_path"banner/swipe-1-start.gif",alt: "Swiper01"
       .swiper-slide
-        = image_tag asset_path"dum02.gif",alt: "Swiper02"
+        = image_tag asset_path"banner/swipe-2-tsuyoshi.gif",alt: "Swiper02"
       .swiper-slide
-        = image_tag asset_path"dum04.gif",alt: "Swiper03"
+        = image_tag asset_path"banner/swipe-3-point.gif",alt: "Swiper03"
+      .swiper-slide
+        = image_tag asset_path"banner/swiper-4-merukari.gif",alt: "Swiper04"
     .swiper-pagination
     .swiper-button-prev
     .swiper-button-next
@@ -34,24 +36,24 @@
       .section-item
         - @mens_category.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-name レディース 新着アイテム
       .section-item
         - @ladys_category.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-name ベイビー 新着アイテム
       .section-item
         - @kids_category.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     %h2.pickup-bottom ピックアップブランド
     .main-section
@@ -59,21 +61,21 @@
       .brand-item
         - @chanel_brand.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-brand ナイキ 新着アイテム
       .brand-item
         - @nike_brand.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
 
     .main-section
       %h3.section-brand アディダス 新着アイテム
       .brand-item
         - @adidas_brand.each do |item|
           = render partial: 'item', locals: { item: item }
-      .section-all
-        = link_to'すべての商品を見る',""
+        .section-all
+          = link_to'すべての商品を見る',""
