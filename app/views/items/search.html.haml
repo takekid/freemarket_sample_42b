@@ -25,6 +25,9 @@
               -item.item_images.each.with_index do |image, i|
                 - if i ==0
                   =image_tag image.image.url
+                  - if item.buyer_id == nil
+                  -else
+                    .search-item-sold-out-badge
             .search-box-body
               %p.items-box-name
                 = item.name

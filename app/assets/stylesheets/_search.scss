@@ -292,3 +292,26 @@ label#condition-box {
   line-height: 50px;
   -webkit-appearance: none;
 }
+
+.search-item-sold-out-badge::before {
+    content: "";
+    top: 0;
+    left: 0;
+    border-bottom: 100px solid transparent;
+    border-left: 100px solid #ea352d;
+    position: absolute;
+    z-index: 100;
+}
+.search-item-sold-out-badge::after {
+    content: "SOLD";
+    display: block;
+    top: 15px;
+    font-size: 26px;
+    letter-spacing: 2px;
+    transform: rotate(-45deg);
+    color: #fff;
+    left: 0;
+    position: absolute;
+    z-index: 101;
+    font-weight: 600;
+}
