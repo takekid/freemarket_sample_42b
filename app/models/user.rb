@@ -3,9 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
- 
+
   has_many :address
-  has_many :addresses
   has_many :items
   has_many :creditcard
 
@@ -17,7 +16,7 @@ class User < ApplicationRecord
 def self.from_omniauth(auth)
   user = User.where(uid: auth.uid, provider: auth.provider).first
 
-  unless user 
+  unless user
     user = User.create(
       nickname:  "shouya",
       uid:       auth.uid,
