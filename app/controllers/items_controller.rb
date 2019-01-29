@@ -3,15 +3,19 @@ class ItemsController < ApplicationController
     @ladys_category = Item.includes(:category).where(category_id: 1).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 2).limit(3).newest
     @kids_category  = Item.includes(:category).where(category_id: 3).limit(3).newest
-    @chanel_brand   = Item.includes(:brand).where(brand_id: 8).limit(3).newest
-    @nike_brand     = Item.includes(:brand).where(brand_id: 1).limit(3).newest
-    @adidas_brand   = Item.includes(:brand).where(brand_id: 2).limit(3).newest
+    @chanel_brand   = Item.chanel_desc
+    @nike_brand     = Item.nike_desc
+    @adidas_brand   = Item.adidas_desc
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
   def show
     @item  = Item.includes(:category, :item_images, :brand, :size, :seller).find(params[:id])
     @nike_brand     = Item.includes(:brand).where(brand_id: NIKE_BRAND_ID).limit(6).newest
     @adidas_brand   = Item.includes(:brand).where(brand_id: ADIDAS_BRAND_ID).limit(6).newest
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
 
@@ -47,7 +51,12 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.includes(:item_images).where('name LIKE(?)', "%#{params[:keyword]}%").limit(48)
+    #ransackのデフォルトのparamsのキーは[:q]となっております
+    @search = Item.ransack(params[:q])
+    @categories = Category.all
+    @brands     = Brand.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
+
   end
 
 
@@ -55,6 +64,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name,:brand_id,:delivery,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,item_images_attributes:[:image]).merge(seller_id: current_user.id)
+  end
+
+  def search_params
+    params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
   end
 
 end

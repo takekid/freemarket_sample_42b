@@ -14,5 +14,9 @@ belongs_to :seller, class_name: "User", optional: true
 belongs_to :buyer, class_name: "User", optional: true
 
 scope :newest, -> {order(created_at: :desc)}
+scope :chanel_desc, -> {includes(:brand).where(brand_id: 8).limit(3).newest}
+scope :nike_desc, -> {includes(:brand).where(brand_id: 1).limit(3).newest}
+scope :adidas_desc, -> {includes(:brand).where(brand_id: 2).limit(3).newest}
+
 enum status:{nonreleased: 0, released: 1}
 end
