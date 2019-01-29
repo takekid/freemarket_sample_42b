@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-
+    #ransackのデフォルトのparamsのキーは[:q]となっております
     @search = Item.ransack(params[:q])
     @categories = Category.all
     @brands     = Brand.ransack(params[:q])
