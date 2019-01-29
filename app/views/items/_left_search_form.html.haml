@@ -19,7 +19,7 @@
         = fa_icon("plus")
         %span.keyword
           =f.label :name_contains_all, 'キーワードを追加する'
-        =f.search_field :name_contains_all, class: "left-search-input", value: "#{params[:q][:name_cont]}",placeholder: "例）値下げ"
+        =f.search_field :name_contains_all, class: "left-search-input", value: "#{params[:data][:name_cont]}",placeholder: "例）値下げ"
       .search-form-group-list
         .icon-plus
           = fa_icon("list")

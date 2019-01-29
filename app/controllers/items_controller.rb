@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @chanel_brand   = Item.chanel_desc
     @nike_brand     = Item.nike_desc
     @adidas_brand   = Item.adidas_desc
-    @search = Item.ransack(params[:q])
+    @search = Item.ransack(params[:data])
     @items = @search.result.includes(:brand, :category)
   end
 
@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     @item  = Item.includes(:category, :item_images, :brand, :size, :seller).find(params[:id])
     @nike_brand     = Item.includes(:brand).where(brand_id: NIKE_BRAND_ID).limit(6).newest
     @adidas_brand   = Item.includes(:brand).where(brand_id: ADIDAS_BRAND_ID).limit(6).newest
-    @search = Item.ransack(params[:q])
+    @search = Item.ransack(params[:data])
     @items = @search.result.includes(:brand, :category)
   end
 
@@ -52,9 +52,9 @@ class ItemsController < ApplicationController
 
   def search
 
-    @search = Item.ransack(params[:q])
+    @search = Item.ransack(params[:data])
     @categories = Category.all
-    @brands     = Brand.ransack(params[:q])
+    @brands     = Brand.ransack(params[:data])
     @items = @search.result.includes(:brand, :category)
 
   end
@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
   end
 
   def search_params
-    params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
+    params.require(:data).permit(:category_name_cont, :name_contains_all, :introduction_cont)
   end
 
 end
