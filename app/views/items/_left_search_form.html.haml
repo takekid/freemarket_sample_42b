@@ -14,7 +14,7 @@
     %h3.search-more
       詳細検索
     .search-form-group
-    = search_form_for(@q, url:search_items_path) do |f|
+    = search_form_for(@search, url:search_items_path) do |f|
       .icon-plus
         = fa_icon("plus")
         %span.keyword

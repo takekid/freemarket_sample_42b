@@ -3,19 +3,19 @@ class ItemsController < ApplicationController
     @ladys_category = Item.includes(:category).where(category_id: 1).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 2).limit(3).newest
     @kids_category  = Item.includes(:category).where(category_id: 3).limit(3).newest
-    @chanel_brand   = Item.includes(:brand).where(brand_id: 8).limit(3).newest
-    @nike_brand     = Item.includes(:brand).where(brand_id: 1).limit(3).newest
-    @adidas_brand   = Item.includes(:brand).where(brand_id: 2).limit(3).newest
-    @q = Item.ransack(params[:q])
-    @items = @q.result.includes(:brand, :category)
+    @chanel_brand   = Item.chanel_desc
+    @nike_brand     = Item.nike_desc
+    @adidas_brand   = Item.adidas_desc
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
   def show
     @item  = Item.includes(:category, :item_images, :brand, :size, :seller).find(params[:id])
     @nike_brand     = Item.includes(:brand).where(brand_id: NIKE_BRAND_ID).limit(6).newest
     @adidas_brand   = Item.includes(:brand).where(brand_id: ADIDAS_BRAND_ID).limit(6).newest
-    @q = Item.ransack(params[:q])
-    @items = @q.result.includes(:brand, :category)
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
 
@@ -52,10 +52,10 @@ class ItemsController < ApplicationController
 
   def search
 
-    @q = Item.ransack(params[:q])
+    @search = Item.ransack(params[:q])
     @categories = Category.all
     @brands     = Brand.ransack(params[:q])
-    @items = @q.result.includes(:brand, :category)
+    @items = @search.result.includes(:brand, :category)
 
   end
 
