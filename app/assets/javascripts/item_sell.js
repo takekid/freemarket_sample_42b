@@ -17,4 +17,5 @@ $(document).on('turbolinks:load',function(){
       $("#item_item_images_attributes_0_image").change(function(){
          readURL(this);
  });
+
 });
