@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.where("perent_id IS NULL")
-    @category = Category.new
+    @categories = Category.new
+    @category = Category.children.build
   end
 
   def show
@@ -10,12 +10,15 @@ class CategoriesController < ApplicationController
     render :action => :index
   end
 
-  def get_subscategories
-    @subscategories = Category.where(:parent_id => params[:perent_id])
-    render :partial => "subscategories", :object => @subscategories
-  end
-
   def new
     @category = Category.new
+  end
+
+  def category_params
+    params.require(:category).permit(:name, :parent_id)
+  end
+
+  def parent
+    @child = my_cat.children
   end
 end
