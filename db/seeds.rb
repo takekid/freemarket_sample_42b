@@ -8,5 +8,5 @@
 require "csv"
 
 CSV.foreach(Rails.root + 'db/category.csv') do |row|
-  Category.create(id: row[0],category_name: row[1],perent_id: row[2])
+  Category.create(id: row[0],category_name: row[1],parent_id: row[4],lft: row[5],rgt: row[6])
 end
