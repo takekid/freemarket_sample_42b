@@ -31,8 +31,6 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  before 'deploy:publishing', 'db:seed_fu'
-
   desc 'upload secrets.yml'
   task :upload do
     on roles(:app) do |host|
