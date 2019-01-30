@@ -1,5 +1,4 @@
 class Category < ApplicationRecord
+  acts_as_nested_set
   has_many :items
-  has_many :categories
-  belongs_to :category
 end

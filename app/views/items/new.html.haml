@@ -52,36 +52,29 @@
               カテゴリー
               %span.form-require 必須
               .select-wrap-category
-                =f.select :category_id do
-                  %option ---
-                  %option{value: "1"} レディース
-                  %option{value: "2"} メンズ
-                  %option{value: "3"} ベビーキッズ
-                  %option{value: "4"} インテリア・住まい・小物
-                  %option{value: "5"} 本・音楽・ゲーム
-                  %option{value: "6"} おもちゃ・ホビー・グッズ
-                  %option{value: "7"} コスメ・香水・美容
-                  %option{value: "11"} 家電・スマホ・カメラ
-                  %option{value: "8"} スポーツ・レジャー
-                  %option{value: "9"} ハンドメイド
-                  %option{value: "10"} チケット
-                  %option{value: "11"} 自動車・オートバイ
-                  %option{value: "12"} その他
+                %select#category_id{name: "item[category_id]",class: "parents"}
+                  %option{value:"0" } ---
+                  - Category.each_with_level(Category.roots) do |category, level|
+                    %option{value: category.id}
+                      = category.category_name
                 = fa_icon("angle-down")
               .select-wrap-category
-                =f.select :category_id do
-                  %option ---
-                  %option{value: "110"} トップス
-                  %option{value: "111"} ジャケット・アウター
-                  %option{value: "112"} パンツ
-                = fa_icon("angle-down")
+                %select#category_id{name: "item[category_id]",class: "child"}
+                  %option{value: ""} ---
+                  - Category.each_with_level(Category.all) do |category, level|
+                    %option{value: category.id, parent: category.parent_id}
+                      = category.category_name
               .select-wrap-category
-                =f.select :category_id do
-                  %option ---
-                  %option{value: "1110"} Tシャツ
-                  %option{value: "1111"} キャミソール
-                  %option{value: "1112"} ポロシャツ
-                = fa_icon("angle-down")
+                %select#category_id{name: "item[category_id]",class: "grandson"}
+                  %option{value: ""} ---
+                  - Category.each_with_level(Category.all) do |category, level|
+                    %option{value: category.id, parent: category.parent_id}
+                      = category.category_name
+                    }
+          .sell-form-groups
+            %label.sell-item-name
+              サイズ
+              %span.form-require 必須
               .select-wrap-category
                 =f.select :size_id do
                   %option ---
@@ -228,7 +221,6 @@
         = f.submit "出品する", class: "items-send-btn"
         %button.back-sell-btn
           もどる
-
 .mercari-footer
   %nav
     %ul
