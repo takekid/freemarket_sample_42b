@@ -10,8 +10,7 @@
     .info-credit_contents
       .info-credit_contents_form
         .info-credit_contents_form_field
-<<<<<<< HEAD
-          = form_with url: '/users/pay', local: true do |f|
+          = form_with url: pay_path(@user), local: true do |f|
             %p
               カード番号　　
             %span.span-red 必須
@@ -39,37 +38,6 @@
                 %span.span-red 必須
               = f.text_field :cvc, placeholder: "カードの背面の４桁もしくは３桁の番号",  class:"info-credit_contents_form_field_input-content"
               %p.sentence-blue カード裏側の番号とは？
-=======
-          %p
-            カード番号
-            %span.span-red 必須
-          %input.info-credit_contents_form_field_input{:placeholder => "半角数字のみ"}/
-          .info-credit_contents_form_field-cards
-            = image_tag "visa.svg", class: "card"
-            = image_tag "master-card.svg", class: "card"
-            = image_tag "saison-card.svg", class: "card"
-            = image_tag "jcb.svg", class: "card"
-            = image_tag "american_express.svg", class: "card"
-            = image_tag "dinersclub.svg", class: "card"
-            = image_tag "discover.svg", class: "card"
-          = form_tag(action: :credit, method: :post) do
-            .info-credit_contents_form_field_date
-              %p
-                有効期限
-                %span.span-red 必須
-              %li
-                %input.input-num{type: "number"}/
-                %p 月
-              %li
-                %input.input-num{type: "number"}/
-                %p 日
-            %p
-              セキュリティーコード
-              %span.span-red 必須
-            %input.info-credit_contents_form_field_input-content{placeholder: "カードの背面の４桁もしくは３桁の番号"}/
-            %p.sentence-blue カード裏側の番号とは？
-            = link_to users_finish_path do
->>>>>>> Ryotaman213/master
               %button.submit{type: "submit"} 次へ進む
     .mercari-footer
       %nav

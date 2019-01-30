@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :address
-  has_many :items
-  has_many :creditcard
+  has_many :creditcards
 
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :salling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
@@ -40,6 +39,8 @@ def self.find_for_google_oauth2(auth)
     end
     user
   end
+
+  
 
   private
   def self.dummy_email(auth)

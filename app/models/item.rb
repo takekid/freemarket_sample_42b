@@ -6,7 +6,6 @@ has_many :item_images
 accepts_nested_attributes_for :item_images
 has_many :item_images, dependent: :destroy
 # has_many :transactions, thorough: users
-
 belongs_to :category, optional: true
 belongs_to :size, optional: true
 belongs_to :brand, optional: true
@@ -15,4 +14,14 @@ belongs_to :buyer, class_name: "User", optional: true
 
 scope :newest, -> {order(created_at: :desc)}
 enum status:{nonreleased: 0, released: 1}
+
+
+def self.create_charge_by_customer(price, user)
+    Payjp::Charge.create(
+      customer: user,
+      amount:   price,
+      currency: 'jpy',   
+    )
+
+  end
 end
