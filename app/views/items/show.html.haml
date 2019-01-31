@@ -51,18 +51,16 @@
             %td
               =link_to root_path do
                 .name
-                  = @item.category.category_name
+                  = Category.root.category_name
               =link_to root_path do
                 .sub-name
                   =fa_icon("angle-right")
-                  パンクズ時に実装
+                  = @category.category_name
+
               =link_to root_path do
                 .middle-name
                   =fa_icon("angle-right")
-                  パンクズ時に実装
-              =link_to root_path do
-                .middle-name
-                  =fa_icon("angle-right")
+                  = @item.category.category_name
           %tr
             %th ブランド
             %td

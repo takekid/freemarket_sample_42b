@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
     @adidas_brand   = Item.includes(:brand).where(brand_id: ADIDAS_BRAND_ID).limit(6).newest
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
+    @category = @item.category.parent
   end
 
 
