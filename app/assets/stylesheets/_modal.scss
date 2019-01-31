@@ -56,3 +56,34 @@ button.btn-cansel {
     color: $outline;
     font-size: 14px;
     }
+
+.modal-inner{
+    height: 300px;
+    max-width: none;
+    width: 600px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    h3{
+        text-align: center;
+        line-height: 80px;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+    .sell-modal-body{
+        border-top: 1px solid #eee;
+        padding: 40px;
+    }
+    .btn-default-modal{
+        text-decoration: none;
+        background-color: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+    }
+    a{
+        color: #0099e8;
+        text-decoration: none;
+    }
+}
