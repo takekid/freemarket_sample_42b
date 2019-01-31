@@ -14,34 +14,9 @@
             %h2.menu-down
               =link_to 'カテゴリーから探す',""
             %ul.pull-left
-              %li
-                =link_to 'レディース',""
-              %li
-                =link_to 'メンズ',""
-              %li
-                =link_to 'ベビー・キッズ',""
-              %li
-                =link_to 'インテリア・住まい・小物',""
-              %li
-                =link_to '本・音楽・ゲーム',""
-              %li
-                =link_to 'おもちゃ・ホビー・グッズ',""
-              %li
-                =link_to 'コスメ・香水・美容',""
-              %li
-                =link_to '家電・スマホ・カメラ',""
-              %li
-                =link_to 'スポーツ・レジャー',""
-              %li
-                =link_to 'ハンドメイド',""
-              %li
-                =link_to 'チケット',""
-              %li
-                =link_to '自転車・オートバイ',""
-              %li
-                =link_to 'その他',""
-              %li
-                =link_to 'カテゴリー 一覧',""
+              - Category.each_with_level(Category.roots) do |category, level|
+                %li
+                  = category.category_name
           %li
             %h2.menu-down
               =link_to 'ブランドから探す',""
@@ -79,7 +54,6 @@
                 = link_to users_show_path do
                   = fa_icon("check")
                   やることリスト
-
         - else
           .btn-case
             =link_to 'ログイン',new_user_session_path,class: "btn log-btn"
