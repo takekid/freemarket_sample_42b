@@ -10,10 +10,12 @@ $(document).on('turbolinks:load',function(){
     if ($('.grandson').val() >= 63 && $('.grandson').val() <= 66){
       $('#shoes').css('display','block');
       $('#clothes').css('display', 'none');
+      $('#shoes').insertAfter('#clothes');
 
     }else if ($('.grandson').val() >= 112 && $('.grandson').val() <= 117){
       $('#shoes').css('display','block');
       $('#clothes').css('display', 'none');
+      $('#shoes').insertAfter('#clothes');
 
     }else{
       $('#shoes').css('display','none');
