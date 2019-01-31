@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   def index
-    @ladys_category = Item.includes(:category).where(category_id: 1).limit(3).newest
-    @mens_category  = Item.includes(:category).where(category_id: 2).limit(3).newest
-    @kids_category  = Item.includes(:category).where(category_id: 3).limit(3).newest
+    @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
+    @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
+    @kids_category  = Item.includes(:category).where(category_id: 118..120).limit(3).newest
     @chanel_brand   = Item.chanel_desc
     @nike_brand     = Item.nike_desc
     @adidas_brand   = Item.adidas_desc
