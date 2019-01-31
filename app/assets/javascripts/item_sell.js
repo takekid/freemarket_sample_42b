@@ -18,6 +18,7 @@ $(document).on('turbolinks:load',function(){
     }else{
       $('#shoes').css('display','none');
       $('#clothes').css('display', 'block');
+      $('#clothes').insertAfter('#shoes');
     }
   });
   $('.child').change(function(){
