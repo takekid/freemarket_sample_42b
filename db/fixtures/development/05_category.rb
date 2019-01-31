@@ -5,6 +5,6 @@ csv = CSV.read('db/fixtures/development/category.csv')
     Category.seed do |s|
     s.id = category[0]
     s.category_name = category[1]
-    s.perent_id = category[2]
-  end
+    s.parent_id = category[4]
+    end
 end
