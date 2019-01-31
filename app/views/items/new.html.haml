@@ -3,6 +3,7 @@
     = link_to root_path do
       .header_mecari_img_hi
 
+
 .sell-main-content.clearfix
   .sell-item-container
     .sell-container-inner
@@ -58,31 +59,34 @@
                     %option{value: category.id}
                       = category.category_name
                 = fa_icon("angle-down")
+
               .select-wrap-category
                 %select#category_id{name: "item[category_id]",class: "child"}
                   %option{value: ""} ---
                   - Category.each_with_level(Category.all) do |category, level|
                     %option{value: category.id, parent: category.parent_id}
                       = category.category_name
+
               .select-wrap-category
                 %select#category_id{name: "item[category_id]",class: "grandson"}
                   %option{value: ""} ---
                   - Category.each_with_level(Category.all) do |category, level|
                     %option{value: category.id, parent: category.parent_id}
                       = category.category_name
-                    }
-          .sell-form-groups
+
+          .sell-form-groups#clothes
             %label.sell-item-name
               サイズ
               %span.form-require 必須
               .select-wrap-category
-                =f.select :size_id do
-                  %option ---
-                  %option{value: "1"} sサイズ
-                  %option{value:"2"} LLサイズ
-                  %option{value:"3"} XLサイズ
-                  %option{value:"4"} XXLサイズ
-                  %option{value:"5"} Lサイズ
+                =f.collection_select :size_id,Size.limit(10),:id,:size_name,{prompt: "---"}
+                = fa_icon("angle-down")
+          .sell-form-groups#shoes
+            %label.sell-item-name
+              サイズ
+              %span.form-require 必須
+              .select-wrap-category
+                =f.collection_select :size_id,Size.limit(14).offset(10),:id,:size_name,{prompt: "---"}
                 = fa_icon("angle-down")
           .sell-form-groups
             %label.sell-item-name
@@ -199,6 +203,15 @@
             .sell-item-ans-left
               販売利益
             .sell-item-ans-right -
+
+      .modal.is-show.is-animate.sell-draft{role: "dialog", tabindex: "-1"}
+        .modal-inner
+          %div
+            %h3.modal-head 出品が完了しました
+            .sell-modal-body あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます
+            =link_to '続けて出品する', "" ,class: "btn-default.btn-red"
+            %p.text-center
+              =link_to '商品ページへ行ってシェアする', ""
 
       .sell-items-content-btn
         .sell-items-coution-box
