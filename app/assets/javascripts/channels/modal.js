@@ -23,5 +23,23 @@ $(document).on('turbolinks:load',function() {
     }
   });
   });
-});
 
+  $(function(){
+    var modal = $('.modal.is-show.is-animate.sell-draft'),
+        modalContent = $('.modal-inner'),
+        btnOpen = $(".items-send-btn"),
+        btnSubmit = $(".btn.btn-default-modal");
+
+  $(btnOpen).on('click', function(e) {
+    modal.show();
+    $('.items-send-btn').submit();
+    $('.text-center').submit();
+  });
+
+  $(modal).on('click', function(event) {
+    if(!($(event.target).closest(modalContent).length)||($(event.target).closest(btnSubmit).length)){
+    modal.hide();
+    }
+  });
+});
+});
