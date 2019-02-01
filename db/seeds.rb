@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "csv"
+
+
+CSV.foreach(Rails.root + 'db/category.csv') do |row|
+  Category.create(id: row[0],category_name: row[1],parent_id: row[4],lft: row[5],rgt: row[6])
+end

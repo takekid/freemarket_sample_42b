@@ -1,44 +1,63 @@
 .side-serch-content
-  =form_with url:search_items_path, action: :novalidate, class: "left-search-form", local: true do |f|
-    .search-sort
-      .search-select-wrap
-        =f.select "sort-order" do
-          %option 並び替え
-          %option{value: "price_asc"}    価格の安い順
-          %option{value: "price_desc"}   価格の高い順
-          %option{value: "created_asc"}  出品の古い順
-          %option{value: "created_desc"} 出品の新しい順
-          %option{value: "like_desc"}    いいね！の多い順
-        = fa_icon("angle-down")
+  .search-sort
+    .search-select-wrap
+      %select.sort_order
+        %option 並び替え
+        %option{value: "price_asc"}    価格の安い順
+        %option{value: "price_desc"}   価格の高い順
+        %option{value: "created_asc"}  出品の古い順
+        %option{value: "created_desc"} 出品の新しい順
+        %option{value: "like_desc"}    いいね！の多い順
+      = fa_icon("angle-down")
 
-    .search-dropdown-content.search-extend
-      %h3.search-more
-        詳細検索
-      .search-form-group
-        .icon-plus
-          = fa_icon("plus")
-          %span.keyword キーワードを追加する
-          =f.text_field :"left-search-input", class: "left-search-input", value: "検索", name: "keyword", type: "text",placeholder: "例）値下げ"
-
+  .search-dropdown-content.search-extend
+    %h3.search-more
+      詳細検索
+    .search-form-group
+    = search_form_for(@search, url:search_items_path) do |f|
+      .icon-plus
+        = fa_icon("plus")
+        %span.keyword
+          =f.label :name_contains_all, 'キーワードを追加する'
+        =f.search_field :name_contains_all, class: "left-search-input", value: "#{params[:q][:name_cont]}",placeholder: "例）値下げ"
       .search-form-group-list
         .icon-plus
           = fa_icon("list")
-          %span.keyword カテゴリーを選択する
-          =f.select "choice-category" do
-            %option すべて
-            %option{value: "category"}    カテゴリー
-          = fa_icon("angle-down")
+          =f.label :category_id_eq, 'カテゴリーを選択する'
+          .select-wrap-category
+            %select#category_id_eq{name: "item[category_id]",class: "parents"}
+              %option{value:"0" } ---
+              - Category.each_with_level(Category.roots) do |category, level|
+                %option{value: category.id}
+                  = category.category_name
+            = fa_icon("angle-down")
+
+          .select-wrap-category
+            %select#category_id_eq{name: "item[category_id]",class: "child"}
+              %option{value: ""} ---
+              - Category.each_with_level(Category.all) do |category, level|
+                %option{value: category.id, parent: category.parent_id}
+                  = category.category_name
+
+          .select-wrap-category
+            %select#category_id_eq{name: "item[category_id]",class: "grandson"}
+              %option{value: ""} ---
+              - Category.each_with_level(Category.all) do |category, level|
+                %option{value: category.id, parent: category.parent_id}
+                  = category.category_name
+
       .search-form-group-tag
         .icon-plus
           = fa_icon("tag")
-          %span.keyword ブランド名から探す
-          =f.text_field :"brand-search-input", class: "brand-search-input", value: "", name: "keyword", type: "text",placeholder: "例）シャネル"
+          %span.keyword
+            =f.label :name_cont, 'ブランド名から探す'
+          =f.search_field :name_cont,value: "",placeholder: "例）シャネル"
 
       .search-form-size-list
         .icon-plus
           = fa_icon("vector-square")
           %span.keyword サイズを指定する
-          =f.select "choice-category" do
+          %select{id: "choice-category"}
             %option すべて
             %option{value: "size"} サイズ
           = fa_icon("angle-down")
@@ -47,14 +66,14 @@
         .icon-plus
           = fa_icon("coins")
           %span.keyword 価格
-          =f.select "price-category" do
+          %select{id: "price-category"}
             %option 選択してください
             %option{value: "price"} 300 ~ 1000
           = fa_icon("angle-down")
         .icon-plus
-          =f.text_field :"min-price-input", class: "min-price-input", value: "", name: "keyword", type: "text",placeholder: "¥ Min"
+          %input{id:"min-price-input", value: "", name: "keyword", type: "text",placeholder: "¥ Min"}
           %span ~
-          =f.text_field :"max-price-input", class: "max-price-input", value: "", name: "keyword", type: "text",placeholder: "¥ Max"
+          %input{id:"max-price-input", value: "", name: "keyword", type: "text",placeholder: "¥ Max"}
 
       .search-form-size-list
         .icon-plus
@@ -62,31 +81,31 @@
           %span.keyword 商品の状態
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_condition, {checked: :true}
+            =f.check_box :conditon_eq, checked: :true
             %span
-            = f.label :condition, "すべて",id: "condition-box"
+            %label{value: "condition", id: "condition-box"} すべて
           .condition-check-box-right
-            = f.check_box :item_condition, {checked: :true}
-            = f.label :condition, "新品・未使用品",id: "condition-box"
+            =f.check_box :conditon_eq, checked: :true
+            %label{value: "新品・未使用品", id: "condition-box"} 新品・未使用品
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_condition, {checked: :true}
+            =f.check_box :conditon_eq, checked: :true
             %span
-            = f.label :condition, "未使用に近い",id: "condition-box"
+            %label{value: "未使用に近い", id: "condition-box"} 未使用に近い
           .condition-check-box-right
-            = f.check_box :item_condition, {checked: :true}
-            = f.label :condition, "目立った傷や汚れなし",id: "condition-box"
+            =f.check_box :conditon_eq, checked: :true
+            %f.label{value:"目立った傷や汚れなし", id: "condition-box"} 目立った傷や汚れなし
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_condition, {checked: :true}
-            = f.label :condition, "やや傷や汚れあり",id: "condition-box"
+            =f.check_box :conditon_eq, checked: :true
+            %label{value: "やや傷や汚れあり", id: "condition-box"} やや傷や汚れあり
           .condition-check-box-right
-            = f.check_box :item_condition, {checked: :true}
-            = f.label :condition, "傷や汚れあり",id: "condition-box"
+            =f.check_box :conditon_eq, checked: :true
+            %label{value: "傷や汚れあり", id: "condition-box"} 傷や汚れあり
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_condition, {checked: :true}
-            = f.label :condition, "全体的に状態が悪い",id: "condition-box"
+            =f.check_box :conditon_eq, checked: :true
+            %label{value: "全体的に状態が悪い", id: "condition-box"} 全体的に状態が悪い
 
       .search-form-ship-list
         .icon-plus
@@ -94,17 +113,17 @@
           %span.keyword 配送料の負担
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_shipping, {checked: :true}
+            =f.check_box :conditon_eq, checked: :true
             %span
-            = f.label :shipping, "すべて",id: "shippng-box"
+            %label{value: "shipping", id: "shippng-box"} すべて
           .condition-check-box-right
-            = f.check_box :item_shipping, {checked: :true}
-            = f.label :shipping, "着払い(購入者負担)",id: "shipping-box"
+            =f.check_box :conditon_eq, checked: :true
+            %label{value: "着払い(購入者負担)", id: "shipping-box"} 着払い(購入者負担)
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_shipping, {checked: :true}
+            =f.check_box :conditon_eq, checked: :true
             %span
-            = f.label :shipping, "送料込み(出品者負担)",id: "shipping-box"
+            %label{value: "送料込み(出品者負担)", id: "shipping-box"} 送料込み(出品者負担)
 
       .search-form-cart-list
         .icon-plus
@@ -112,20 +131,21 @@
           %span.keyword 販売状況
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_status, {checked: :true}
+            =f.check_box :conditon_eq, checked: :true
             %span
-            = f.label :status, "すべて",id: "status-box"
+            %label{value: "status", id: "status-box"} すべて
           .condition-check-box-right
-            = f.check_box :item_shipping, {checked: :true}
-            = f.label :status, "販売中",id: "status-box"
+            =f.check_box :conditon_eq, checked: :true
+            %label{value: "", id: "status-box"} 販売中
         .condition-check-box
           .condition-check-box-left
-            = f.check_box :item_status, {checked: :true}
+            =f.check_box :conditon_eq, checked: :true
             %span
-            = f.label :status, "売り切れ",id: "status-box"
+            %label{value: "2", id: "status-box"} 売り切れ
 
         .search-form-buttons
           %button.items-search-clear-btn
             クリア
           %button.items-search-finish-btn
             完了
+          =f.submit 'Submit', type: "hidden"

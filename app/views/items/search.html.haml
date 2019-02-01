@@ -20,7 +20,7 @@
     .search-items-content.clearfix
       - @items.each do |item|
         .search-item-box
-          =link_to root_path do
+          =link_to item_path(item.id) do
             .items-box-photo
               -item.item_images.each.with_index do |image, i|
                 - if i ==0

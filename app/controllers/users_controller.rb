@@ -11,6 +11,11 @@ class UsersController < ApplicationController
   def address
   end
 
+  def show
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
+  end
+
 
   def credit; end
 
@@ -38,18 +43,37 @@ class UsersController < ApplicationController
 
 
   def profile
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
   def identification
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
   def sign_out
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
   def creditcard
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
   end
 
   def card_create
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
+  end
+
+  private
+  def user_params
+    params.permit(:nickname, :email, :password, :password_confirmation)
+  end
+
+  def address_params
+    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber, :first_name, :last_name, :kana_first_name, :kana_last_name)
   end
 
   private

@@ -8,6 +8,7 @@ require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano3/unicorn'
+require 'seed-fu/capistrano3'
 
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
 

@@ -21,11 +21,10 @@
             - if @item.buyer_id == nil
             -else
               .item-sold-out-badge
-
         .image-detail
           %ul.sub-image
             -@item.item_images.each.with_index do |image, i|
-              - if i <=10
+              - if i <=9
                 %li
                   =image_tag image.image.url
 
@@ -51,18 +50,16 @@
             %td
               =link_to root_path do
                 .name
-                  = @item.category.category_name
+                  = @category.root.category_name
               =link_to root_path do
                 .sub-name
                   =fa_icon("angle-right")
-                  パンクズ時に実装
+                  = @category.category_name
+
               =link_to root_path do
                 .middle-name
                   =fa_icon("angle-right")
-                  パンクズ時に実装
-              =link_to root_path do
-                .middle-name
-                  =fa_icon("angle-right")
+                  = @item.category.category_name
           %tr
             %th ブランド
             %td
@@ -72,7 +69,7 @@
           %tr
             %th 商品のサイズ
             %td
-              = @item.size.name
+              = @item.size.size_name.to_s
           %tr
             %th 商品の状態
             %td
@@ -110,23 +107,24 @@
             = f.hidden_field :buyer_id, value: current_user.id
             = f.submit'購入画面に進む', class: "btn item-buy"
         - else
-          .item-sold-button 売り切れました
-          .item-description
-            %p.itemdecription-in
-              = @item.introduction
-          .item-button-container
-            .item-button-left
-              =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
-                =fa_icon("heart")
-                %span いいね!
-                %span.fade-in 0
-              = link_to root_path, class: "btn item-button-report" do
-                =fa_icon("flag")
-                %span 不適切な商品の報告
-            .item-button-right
-              =link_to root_path do
-                = fa_icon("user-lock")
-                %span あんしん・あんぜんへの取り組み
+          .item-sold-button
+            売り切れました
+        .item-description
+          %p.itemdecription-in
+            = @item.introduction
+        .item-button-container
+          .item-button-left
+            =link_to transactions_buy_path(@item.id), class: "btn item-button-like" do
+              =fa_icon("heart")
+              %span いいね!
+              %span.fade-in 0
+            = link_to root_path, class: "btn item-button-report" do
+              =fa_icon("flag")
+              %span 不適切な商品の報告
+          .item-button-right
+            =link_to root_path do
+              = fa_icon("user-lock")
+              %span あんしん・あんぜんへの取り組み
 
   .item-detail-message
     .message-container

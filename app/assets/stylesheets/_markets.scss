@@ -33,7 +33,7 @@ body{
   }
 }
 
-.input{
+input#q_name_cont{
   position: relative;
   width:calc(100% - (125px + 16px));
   height:33px;
@@ -41,7 +41,9 @@ body{
   font-size: 15px;
   border-radius: 5px;
   border: 1px solid #cccccc;
-  .input::-webkit-search-cancel-button{
+  -webkit-appearance: none;
+  -webkit-transition: all ease-out .3s;
+  input#q_name_cont::-webkit-search-cancel-button{
     -webkit-appearance: none;
   }
 }

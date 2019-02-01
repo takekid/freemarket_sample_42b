@@ -16,7 +16,7 @@
 
 .header_mecari_img_hi{
   height: 49px;
-  width:185px;
+  width:180px;
   margin: 0;
   background-image: image-url("logo.svg");
   color: rgb(245, 245, 245);
@@ -250,6 +250,12 @@ h3.sell-detail-text {
   float: right;
   width: 400px;
   margin: 0;
+  #clothes{
+    display: none;
+  }
+  #shoes{
+    display: none;
+  }
 }
 
 .select-wrap-category {
@@ -271,6 +277,12 @@ h3.sell-detail-text {
       outline: 0;
       border: 0.5px solid $outline;
     }
+  }
+  .child{
+    display: none;
+  }
+  .grandson{
+    display: none;
   }
 }
 
@@ -417,6 +429,7 @@ a.sell-coution-message {
   border: 1px solid #ea352d;
   font-size: 14px;
   color: white;
+  cursor: pointer;
 }
 button.back-sell-btn {
   width: 300px;

@@ -43,6 +43,6 @@ crumb :users_sign_out do |user|
 end
 
 crumb :search_items do |user|
-  link "#{params[:keyword]}", search_items_path
+  link "#{params[:q][:name_cont]}", search_items_path
   parent :root
 end
