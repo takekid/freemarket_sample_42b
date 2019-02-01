@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "items#index"
   resources :items, only: [:index, :show,:create,:new, :edit, :update, :destroy] do
+    patch :toggle_status
 
     collection do
       get 'sell'

@@ -10,8 +10,7 @@
       商品の編集
   %p.choice
     or
-  %button.stop-sell-btn{type: "submit"}
-    出品を一旦停止する
+  = link_to @item.status, item_toggle_status_path(@item),class: "btn stop-sell-btn", method: :patch
   = link_to  item_path(@item.id),id: "delete-btn", method: :delete do
     %button#delete-sell-btn{type: "submit"}
       この商品を削除する

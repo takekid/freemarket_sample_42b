@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+   before_action :set_item, only: [:show, :edit, :update, :destroy, :toggle_status]
   def index
     @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
@@ -60,6 +61,12 @@ class ItemsController < ApplicationController
 
   end
 
+  def toggle_status
+    @item.toggle_status!
+    redirect_to @item, notice: 'Article was successfully updated.'
+  end
+
+
 
   private
 
@@ -70,5 +77,9 @@ class ItemsController < ApplicationController
   def search_params
     params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
   end
+
+  def set_item
+      @item = Item.find(params[:id] || params[:item_id])
+    end
 
 end
