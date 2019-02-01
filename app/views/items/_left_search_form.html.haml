@@ -24,8 +24,28 @@
         .icon-plus
           = fa_icon("list")
           =f.label :category_id_eq, 'カテゴリーを選択する'
-          =f.collection_select :category_id_eq, @categories, :id, :category_name, :include_blank => "すべて"
-          = fa_icon("angle-down")
+          .select-wrap-category
+            %select#category_id_eq{name: "item[category_id]",class: "parents"}
+              %option{value:"0" } ---
+              - Category.each_with_level(Category.roots) do |category, level|
+                %option{value: category.id}
+                  = category.category_name
+            = fa_icon("angle-down")
+
+          .select-wrap-category
+            %select#category_id_eq{name: "item[category_id]",class: "child"}
+              %option{value: ""} ---
+              - Category.each_with_level(Category.all) do |category, level|
+                %option{value: category.id, parent: category.parent_id}
+                  = category.category_name
+
+          .select-wrap-category
+            %select#category_id_eq{name: "item[category_id]",class: "grandson"}
+              %option{value: ""} ---
+              - Category.each_with_level(Category.all) do |category, level|
+                %option{value: category.id, parent: category.parent_id}
+                  = category.category_name
+
       .search-form-group-tag
         .icon-plus
           = fa_icon("tag")
@@ -66,26 +86,26 @@
             %label{value: "condition", id: "condition-box"} すべて
           .condition-check-box-right
             =f.check_box :conditon_eq, checked: :true
-            %label{value: "condition", id: "condition-box"} 新品・未使用品
+            %label{value: "新品・未使用品", id: "condition-box"} 新品・未使用品
         .condition-check-box
           .condition-check-box-left
             =f.check_box :conditon_eq, checked: :true
             %span
-            %label{value: "condition", id: "condition-box"} 未使用に近い
+            %label{value: "未使用に近い", id: "condition-box"} 未使用に近い
           .condition-check-box-right
             =f.check_box :conditon_eq, checked: :true
-            %f.label{value:"condition", id: "condition-box"} 目立った傷や汚れなし
+            %f.label{value:"目立った傷や汚れなし", id: "condition-box"} 目立った傷や汚れなし
         .condition-check-box
           .condition-check-box-left
             =f.check_box :conditon_eq, checked: :true
-            %label{value: "condition", id: "condition-box"} やや傷や汚れあり
+            %label{value: "やや傷や汚れあり", id: "condition-box"} やや傷や汚れあり
           .condition-check-box-right
             =f.check_box :conditon_eq, checked: :true
-            %label{value: "condition", id: "condition-box"} 傷や汚れあり
+            %label{value: "傷や汚れあり", id: "condition-box"} 傷や汚れあり
         .condition-check-box
           .condition-check-box-left
             =f.check_box :conditon_eq, checked: :true
-            %label{value: "condition", id: "condition-box"} 全体的に状態が悪い
+            %label{value: "全体的に状態が悪い", id: "condition-box"} 全体的に状態が悪い
 
       .search-form-ship-list
         .icon-plus
@@ -98,12 +118,12 @@
             %label{value: "shipping", id: "shippng-box"} すべて
           .condition-check-box-right
             =f.check_box :conditon_eq, checked: :true
-            %label{value: "shipping", id: "shipping-box"} 着払い(購入者負担)
+            %label{value: "着払い(購入者負担)", id: "shipping-box"} 着払い(購入者負担)
         .condition-check-box
           .condition-check-box-left
             =f.check_box :conditon_eq, checked: :true
             %span
-            %label{value: "shipping", id: "shipping-box"} 送料込み(出品者負担)
+            %label{value: "送料込み(出品者負担)", id: "shipping-box"} 送料込み(出品者負担)
 
       .search-form-cart-list
         .icon-plus
@@ -116,12 +136,12 @@
             %label{value: "status", id: "status-box"} すべて
           .condition-check-box-right
             =f.check_box :conditon_eq, checked: :true
-            %label{value: "status", id: "status-box"} 販売中
+            %label{value: "", id: "status-box"} 販売中
         .condition-check-box
           .condition-check-box-left
             =f.check_box :conditon_eq, checked: :true
             %span
-            %label{value: "status", id: "status-box"} 売り切れ
+            %label{value: "2", id: "status-box"} 売り切れ
 
         .search-form-buttons
           %button.items-search-clear-btn

@@ -21,11 +21,10 @@
             - if @item.buyer_id == nil
             -else
               .item-sold-out-badge
-
         .image-detail
           %ul.sub-image
             -@item.item_images.each.with_index do |image, i|
-              - if i <=10
+              - if i <=9
                 %li
                   =image_tag image.image.url
 
@@ -35,7 +34,7 @@
             %th 出品者
             %td
               = link_to users_show_path do
-                = @item.seller.nickname
+                = @item.seller
               .rating-box
                 .user-rating
                   = fa_icon ("grin")
@@ -103,7 +102,10 @@
     - else
       %section.itembox-container-buy
         - if @item.buyer_id == nil
-          =link_to '購入画面に進む',"",class: "btn item-buy"
+          = form_with model: @item, method: 'post', local: true do |f|
+            = f.hidden_field :price, value: @item.price 
+            = f.hidden_field :buyer_id, value: current_user.id
+            = f.submit'購入画面に進む', class: "btn item-buy"
         - else
           .item-sold-button
             売り切れました
