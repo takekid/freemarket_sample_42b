@@ -34,7 +34,7 @@
             %th 出品者
             %td
               = link_to users_show_path do
-                = @item.seller
+                = @item.seller.nickname
               .rating-box
                 .user-rating
                   = fa_icon ("grin")
@@ -103,7 +103,7 @@
       %section.itembox-container-buy
         - if @item.buyer_id == nil
           = form_with model: @item, method: 'post', local: true do |f|
-            = f.hidden_field :price, value: @item.price 
+            = f.hidden_field :price, value: @item.price
             = f.hidden_field :buyer_id, value: current_user.id
             = f.submit'購入画面に進む', class: "btn item-buy"
         - else
