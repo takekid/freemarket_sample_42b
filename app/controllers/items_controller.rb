@@ -53,11 +53,12 @@ class ItemsController < ApplicationController
 
   def charge
     Payjp.api_key = ENV['PAYJP_KEY']
+    binding.pry
     price = params[:item][:price]
     # -----------
-    @creditcard = Creditcard.where(user_id: current_user.id)
+    @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)
     user = Payjp::Customer.retrieve(@creditcard[0].customer_id)
-    @credit = Item.create_charge_by_customer(price, user)
+    Item.create_charge_by_customer(price, user)
     # ---------- Payjp
     @item.update(charge_params)
     redirect_to root_path

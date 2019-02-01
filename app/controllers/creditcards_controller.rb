@@ -1,9 +1,9 @@
 class CreditcardsController < ApplicationController
 
   def pay
-    Payjp.api_key = 'sk_test_33ed6ec1e16acea820f30a16'
+    Payjp.api_key = ENV['PAYJP_KEY']
     customer = Creditcard.create_token(params, customer)
-    @credit = Creditcard.new(user_id: current_user.id, customer_id: customer.id)
+    @credit = Creditcard.includes(:user).new(user_id: current_user.id, customer_id: customer.id)
      # @customer = Payjp::Customer.retrieve(@customer.id)
      # @customer.cards.create(card:  )
 
