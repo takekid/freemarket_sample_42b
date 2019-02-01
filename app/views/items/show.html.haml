@@ -21,11 +21,10 @@
             - if @item.buyer_id == nil
             -else
               .item-sold-out-badge
-
         .image-detail
           %ul.sub-image
             -@item.item_images.each.with_index do |image, i|
-              - if i <=10
+              - if i <=9
                 %li
                   =image_tag image.image.url
 

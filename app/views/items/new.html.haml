@@ -131,7 +131,7 @@
               発送料の負担
               %span.form-require 必須
               .select-wrap-category#pare
-                =f.select :shippingfee do
+                =f.select :shippingfee, selected: "selected" do
                   %option{value: ""} ---
                   %option{value: "送料込み(出品者負担)"} 送料込み（出品者負担）
                   %option{value: "着払い(購入者負担)"} 着払い（購入者負担）
