@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-   before_action :set_item, only: [:show, :edit, :update, :destroy, :toggle_status]
+   before_action :set_item, only: [:show, :edit, :update, :destroy, :toggle_status,:charge]
   def index
     @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item  = Item.includes(:category, :item_images, :brand, :size, :seller).find(params[:id])
+    @item  = Item.includes(:category, :item_images, :brand, :size, :seller,:buyer).find(params[:id])
     @nike_brand     = Item.includes(:brand).where(brand_id: NIKE_BRAND_ID).limit(6).newest
     @adidas_brand   = Item.includes(:brand).where(brand_id: ADIDAS_BRAND_ID).limit(6).newest
     @search = Item.ransack(params[:q])
@@ -31,7 +31,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @edit = Item.find(params[:id])
+    @category = @edit.category.parent
   end
 
   def update
@@ -66,6 +67,18 @@ class ItemsController < ApplicationController
     redirect_to @item, notice: 'Article was successfully updated.'
   end
 
+  def charge
+    Payjp.api_key = ENV['PAYJP_KEY']
+    binding.pry
+    price = params[:item][:price]
+    # -----------
+    @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)
+    user = Payjp::Customer.retrieve(@creditcard[0].customer_id)
+    Item.create_charge_by_customer(price, user)
+    # ---------- Payjp
+    @item.update(charge_params)
+    redirect_to root_path
+   end
 
 
   private
@@ -74,6 +87,13 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name,:brand_id,:delivery,:category_id,:introduction,:condition,:shippingfee,:shipfrom,:shipping_date,:price,:status,:size_id,item_images_attributes:[:image]).merge(seller_id: current_user.id)
   end
 
+  def charge_params
+    params.require(:item).permit(:buyer_id)
+  end
+  def set_item
+    @item = Item.find(params[:id])
+  end
+  
   def search_params
     params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
   end

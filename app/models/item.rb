@@ -6,7 +6,6 @@ has_many :item_images
 accepts_nested_attributes_for :item_images
 has_many :item_images, dependent: :destroy
 # has_many :transactions, thorough: users
-
 belongs_to :category, optional: true
 belongs_to :size, optional: true
 belongs_to :brand, optional: true
@@ -27,5 +26,13 @@ validates :status, inclusion: { in: Item.statuses.keys }
     else
       出品を一旦停止する!
     end
+
+def self.create_charge_by_customer(price, user)
+    Payjp::Charge.create(
+      customer: user,
+      amount:   price,
+      currency: 'jpy',   
+    )
+
   end
 end

@@ -14,7 +14,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 2
 s.name = 'レディースのダミー2'
@@ -31,7 +30,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 3
 s.name = 'レディースのダミー3'
@@ -48,7 +46,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 4
 s.name = 'レディースのダミー4'
@@ -65,7 +62,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 5
 s.name = 'メンズのダミーです'
@@ -82,7 +78,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 6
 s.name = 'メンズのダミーです2'
@@ -99,7 +94,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 7
 s.name = 'メンズのダミーです3'
@@ -116,7 +110,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 8
 s.name = 'メンズのダミーです4'
@@ -133,7 +126,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 9
 s.name = 'ベビーのダミーです'
@@ -150,7 +142,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 10
 s.name = 'ベビーのダミーです2'
@@ -167,7 +158,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 11
 s.name = 'キッズのダミーです3'
@@ -184,7 +174,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 12
 s.name = 'キッズのダミー4'
@@ -201,7 +190,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 13
 s.name = 'シャネルのダミー'
@@ -218,7 +206,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 14
 s.name = 'シャネルのダミー2'
@@ -235,7 +222,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 15
 s.name = 'シャネルのダミーです3'
@@ -252,7 +238,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 16
 s.name = 'ナイキのダミーです'
@@ -269,7 +254,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 17
 s.name = 'NIKEのダミーです2'
@@ -286,7 +270,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 18
 s.name = 'NIKEのダミーです3'
@@ -303,7 +286,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 19
 s.name = 'アディダスダミー'
@@ -320,7 +302,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 20
 s.name = 'アディダスダミー2'
@@ -337,7 +318,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 21
 s.name = 'アディダスダミー3'
@@ -354,7 +334,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 22
 s.name = 'アディダスダミー4'
@@ -371,7 +350,6 @@ s.seller_id = 1
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
-
 Item.seed do |s|
 s.id = 23
 s.name = 'アディダスダミー5'
@@ -389,3 +367,7 @@ s.buyer_id =2
 s.delivery = 'らくらくメルカリ便'
 s.status = 1
 end
+
+
+
+
