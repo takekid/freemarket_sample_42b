@@ -17,22 +17,19 @@ scope :chanel_desc, -> {includes(:brand).where(brand_id: 8).limit(3).newest}
 scope :nike_desc, -> {includes(:brand).where(brand_id: 1).limit(3).newest}
 scope :adidas_desc, -> {includes(:brand).where(brand_id: 2).limit(3).newest}
 
-enum status:{出品を一旦停止する: 0, 出品を再開する: 1}
+enum status:{出品を再開する: 0, 出品を一旦停止する: 1}
 validates :status, inclusion: { in: Item.statuses.keys }
 
-  def toggle_status!
-    if 出品を一旦停止する?
-      出品を再開する!
-    else
-      出品を一旦停止する!
-    end
-
-def self.create_charge_by_customer(price, user)
+  def self.create_charge_by_customer(price, user)
     Payjp::Charge.create(
       customer: user,
       amount:   price,
-      currency: 'jpy',   
+      currency: 'jpy',
     )
-
   end
+
+  def toggle_status!
+    出品を再開する? ? 出品を一旦停止する! : 出品を再開する!
+  end
+
 end
