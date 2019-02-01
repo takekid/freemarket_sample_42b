@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
 
   def toggle_status
     @item.toggle_status!
-    redirect_to @item, notice: 'Article was successfully updated.'
+    redirect_to @item, notice: '出品完了しました'
   end
 
   def charge
@@ -77,7 +77,7 @@ class ItemsController < ApplicationController
     # ---------- Payjp
     @item.update(charge_params)
     redirect_to root_path
-   end
+  end
 
   private
 
