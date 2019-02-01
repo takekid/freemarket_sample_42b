@@ -209,9 +209,10 @@
           %div.inner-modal
             %h3.modal-head 出品が完了しました
             .sell-modal-body  あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます
-            = link_to '続けて出品する', "" ,class: "btn btn-default-modal"
+            .btn-defalut-red
+              = link_to '続けて出品する', new_item_path ,class: "btn btn-default-modal"
             %p.text-center
-              = link_to '商品ページへ行ってシェアする', ""
+              = link_to '商品ページへ行ってシェアする', "/"
 
       .sell-items-content-btn
         .sell-items-coution-box

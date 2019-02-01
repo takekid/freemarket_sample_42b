@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: :charge
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :toggle_status,:charge]
   def index
     @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
@@ -62,9 +62,13 @@ class ItemsController < ApplicationController
 
   end
 
+  def toggle_status
+    @item.toggle_status!
+    redirect_to @item, notice: '出品完了しました'
+  end
+
   def charge
     Payjp.api_key = ENV['PAYJP_KEY']
-
     price = params[:item][:price]
     # -----------
     @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)
@@ -73,8 +77,7 @@ class ItemsController < ApplicationController
     # ---------- Payjp
     @item.update(charge_params)
     redirect_to root_path
-   end
-
+  end
 
   private
 
@@ -85,12 +88,17 @@ class ItemsController < ApplicationController
   def charge_params
     params.require(:item).permit(:buyer_id)
   end
+  
   def set_item
     @item = Item.find(params[:id])
   end
 
   def search_params
     params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
+  end
+
+  def set_item
+    @item = Item.find(params[:id] || params[:item_id])
   end
 
 end
