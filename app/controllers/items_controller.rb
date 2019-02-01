@@ -30,7 +30,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @edit = Item.find(params[:id])
+    @category = @edit.category.parent
   end
 
   def update
