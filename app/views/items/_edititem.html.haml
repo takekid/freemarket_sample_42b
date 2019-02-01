@@ -12,6 +12,6 @@
     or
   %button.stop-sell-btn{type: "submit"}
     出品を一旦停止する
-  = link_to "削除" do
-    %button.delete-sell-btn{type: "submit"}
+  = link_to  item_path(@item.id),id: "delete-btn", method: :delete do
+    %button#delete-sell-btn{type: "submit"}
       この商品を削除する

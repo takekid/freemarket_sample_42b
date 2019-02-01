@@ -1,0 +1,40 @@
+= render "layouts/header"
+
+.item-content-box-main
+  %nav.bread-crumbs
+    %ul
+      %li
+        %span{itemprop: "title"}
+          - breadcrumb :search_items, @items
+      %li{itemscope: "", itemtype: ""}
+        %span{itemprop: "title"}
+          = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-angle-right')} "
+
+.search-container.clearfix
+  .search-content
+    %h2.search-result-head
+      - if @items.count == 0
+        検索結果 0件
+      -else
+        検索結果 1-#{@items.count}件
+    .search-items-content.clearfix
+      - @items.each do |item|
+        .search-item-box
+          =link_to item_path(item.id) do
+            .items-box-photo
+              -item.item_images.each.with_index do |image, i|
+                - if i ==0
+                  =image_tag image.image.url
+                  - if item.buyer_id == nil
+                  -else
+                    .search-item-sold-out-badge
+            .search-box-body
+              %p.items-box-name
+                = item.name
+              .items-box-price
+                ¥
+                = number_with_delimiter(item.price)
+                %p.item-box-tax
+                  (税込)
+
+  = render "items/left_search_form"

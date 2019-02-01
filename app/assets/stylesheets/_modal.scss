@@ -1,0 +1,89 @@
+#modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+}
+.modal-title {
+    font-size: 16px;
+    padding-top: 64px;
+}
+
+#modal_content{
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: none;
+    width:600px;
+    background:#fff;
+    font-weight: bold;
+    margin:20px auto;
+    position:relative;
+    animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}
+}
+
+p.modal {
+    font-weight: normal;
+    margin: 0;
+    padding: 0 64px 64px 64px;
+}
+
+button.btn-cansel {
+    float: left;
+    line-height: 63px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    text-align: center;
+    line-height: 49px;
+    font-size: 14px;
+}
+
+    button.modal-btn-submit{
+    float:right;
+    line-height: 63px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    width: 50%;
+    text-align: center;
+    line-height: 49px;
+    color: $outline;
+    font-size: 14px;
+    }
+
+.modal-inner{
+    height: 300px;
+    max-width: none;
+    width: 600px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    h3{
+        text-align: center;
+        line-height: 80px;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+    }
+    .sell-modal-body{
+        border-top: 1px solid #eee;
+        padding: 40px;
+    }
+    .btn-default-modal{
+        text-decoration: none;
+        background-color: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+    }
+    a{
+        color: #0099e8;
+        text-decoration: none;
+    }
+}

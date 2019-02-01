@@ -1,23 +1,36 @@
-/ 商品出品完了後に修正
 .mercari-header
   %h1
     = link_to root_path do
-      =image_tag asset_path "logo.svg", style: "background: rgb(245, 245, 245);"
+      .header_mecari_img_hi
+
+
 .sell-main-content.clearfix
   .sell-item-container
     .sell-container-inner
       %h2.sell-container-header 商品の情報を入力
-    = form_with model: @item,class: "sell-form",method: :patch, local: true do |f|
+    = form_with model: @edit,class: "sell-form", local: true do |f|
       .sell-upload-box
         %h3.sell-upload-text
           出品画像
           %span.form-require 必須
         %p.upload-image 最大10枚までアップロード出来ます
-        %label.sell-image-dropbox
-          =f.file_field :images, class: "sell-upload-drop-file", style: "display: none;"
-          %pre.visible-pc
-            ドラッグアンドドロップ
-            またはクリックしてファイルをアップロード
+        .sell-image-dropbox-contentair
+          .sell-uploader-items-container
+            .sell-upload-items
+              %ul#file_list
+                %li.sell-upload-item#upload-item
+                  %figure.sell-upload-figure
+                    = image_tag "",id: "item-prev"
+                  .sell-upload-item-button
+                    =link_to "編集","" ,class: "sell-upload-edit"
+                    =link_to"削除", method: :delete
+          %label.sell-uploader-drop-box
+            =f.fields_for :item_images do |i|
+              =i.file_field :image
+            %pre.visible-pc
+              ドラッグアンドドロップ
+              またはクリックしてファイルをアップロード
+            = fa_icon("camera")
       .sell-items-content.clearfix
         .form-item-name
           %label.sell-item-name
@@ -39,86 +52,119 @@
             %label.sell-item-name
               カテゴリー
               %span.form-require 必須
-              .select-edit-category
-                =f.select :category_id do
-                  %option{value: ""} ---
-                  %option{value: "1"} レディース
-                  %option{value: "2"} メンズ
-                  %option{value: "3"} ベビーキッズ
-                  %option{value: "4"} インテリア・住まい・小物
-                  %option{value: "5"} 本・音楽・ゲーム
-                  %option{value: "6"} おもちゃ・ホビー・グッズ
-                  %option{value: "7"} コスメ・香水・美容
-                  %option{value: "11"} 家電・スマホ・カメラ
-                  %option{value: "8"} スポーツ・レジャー
-                  %option{value: "9"} ハンドメイド
-                  %option{value: "10"} チケット
-                  %option{value: "11"} 自動車・オートバイ
-                  %option{value: "12"} その他
-                %i.fas.fa-angle-down
+              .select-wrap-category
+                %select#category_id{name: "item[category_id]",class: "parents"}
+                  %option{value:"" }
+                    = @category.root.category_name
+                  - Category.each_with_level(Category.roots) do |category, level|
+                    %option{value: category.id}
+                      = category.category_name
+                = fa_icon("angle-down")
 
+              .select-wrap-category
+                %select#category_id{name: "item[category_id]",class: "child"}
+                  %option{value: ""}
+                    = @category.category_name
+                  - Category.each_with_level(Category.all) do |category, level|
+                    %option{value: category.id, parent: category.parent_id}
+                      = category.category_name
+
+              .select-wrap-category
+                %select#category_id{name: "item[category_id]",class: "grandson"}
+                  %option{value: "#{@edit.category_id}"}
+                    = @edit.category.category_name
+                  - Category.each_with_level(Category.all) do |category, level|
+                    %option{value: category.id, parent: category.parent_id}
+                      = category.category_name
+
+          .sell-form-groups#clothes
+            %label.sell-item-name
+              サイズ
+              %span.form-require 必須
+              .select-wrap-category
+                =f.collection_select :size_id,Size.limit(10),:id,:size_name,{prompt: "#{@edit.size.size_type}"}
+                = fa_icon("angle-down")
+          .sell-form-groups#shoes
+            %label.sell-item-name
+              サイズ
+              %span.form-require 必須
+              .select-wrap-category
+                =f.collection_select :size_id,Size.limit(14).offset(10),:id,:size_name,{prompt: "---"}
+                = fa_icon("angle-down")
           .sell-form-groups
             %label.sell-item-name
               ブランド
-              %span.form-require 任意
-              .select-edit-category
-                =f.select :brand_id do
-                  %option ---
-                  %option{value: "1"} シャネル
-                  %option{value: "2"} ナイキ
-                  %option{value: "3"} ルイ・ヴィトン
-                  %option{value: "4"}シュプリーム
-                  %option{value: "5"}アディダス
-                  %option{value: "6"}その他
-                %i.fas.fa-angle-down
+              %span.form-require#self 任意
+              .select-wrap-category
+                = f.select :brand_id do
+                  %option{value: "#{@edit.brand_id}"}
+                    = @edit.brand.name
+                  %option{value: "1"} アディダス
+                  %option{value: "2"}ナイキ
+                  %option{value: "3"}プーマ
+                  %option{value: "4"}ボルコム
+                  %option{value: "5"}アシックス
+                  %option{value:"6"}リーボック
+                  %option{value:"7"}アンブロ
+                  %option{value:"8"}ミズノ
+                  %option{value:"13"}シャネル
+                  %option{value:"110"}その他
           .sell-form-groups
             %label.sell-item-name
               商品の状態
               %span.form-require 必須
-              .select-edit-category
+              .select-wrap-category
                 =f.select :condition do
-                  %option ---
+                  %option{value: "#{@edit.condition}"}
+                    = @edit.condition
                   %option{value: "新品、未使用品"} 新品、未使用品
                   %option{value: "未使用に近い"} 未使用に近い
                   %option{value: "目立った傷や汚れなし"} 目立った傷や汚れなし
                   %option{value: "やや傷や汚れあり"} やや傷や汚れあり
                   %option{value: "全体的に状態が悪い"} 全体的に状態が悪い
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
+
+
       .sell-items-content.clearfix
         %h3.sell-detail-text
           配送について
-          = link_to edit_item_path do
-            %i.fas.fa-question-circle
+          = link_to new_item_path do
+            =fa_icon("question-circle")
         .sell-form-box
           .sell-form-groups
             %label.sell-item-name
               発送料の負担
               %span.form-require 必須
-              .select-edit-category#pare
-                =f.select :shippingfee do
-                  %option{value: ""} ---
+              .select-wrap-category#pare
+                =f.select :shippingfee, selected: "selected" do
+                  %option{value: "#{@edit.shippingfee}"}
+                    = @edit.shippingfee
                   %option{value: "送料込み(出品者負担)"} 送料込み（出品者負担）
                   %option{value: "着払い(購入者負担)"} 着払い（購入者負担）
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
+
           .sell-form-groups#chi
             %label.sell-item-name
               配送の方法
               %span.form-require 必須
-              .select-edit-category
+              .select-wrap-category
                 =f.select :delivery do
-                  %option{value:""} ---
+                  %option{value:"#{@edit.delivery}"}
+                    = @edit.delivery
                   %option{value: "未定"} 未定
                   %option{value: "らくらくメルカリ便"} らくらくメルカリ便
                   %option{value: "ゆうメール"} ゆうメール
                   %option{value: "クロネコヤマト"} クロネコヤマト
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
+
           .sell-form-groups
             %label.sell-item-name
               発送元の地域
               %span.form-require 必須
-              .select-edit-category
+              .select-wrap-category
                 =f.select :shipfrom do
-                  %option ---
+                  %option{value: "#{@edit.shipfrom}"}
+                    = @edit.shipfrom
                   %option{value: "関西"} 関西
                   %option{value: "北海道"} 北海道
                   %option{value: "東北"} 東北
@@ -127,29 +173,26 @@
                   %option{value: "四国"} 四国
                   %option{value: "九州"} 九州
                   %option{value: "沖縄"} 沖縄
-                %i.fas.fa-angle-down
+                = fa_icon("angle-down")
+
           .sell-form-groups
             %label.sell-item-name
               発送までの日数
               %span.form-require 必須
-              .select-edit-category
+              .select-wrap-category
                 =f.select :shipping_date do
-                  %option ---
+                  %option{value: "#{@edit.shipping_date}"}
+                    = @edit.shipping_date
                   %option{value: "1~2日で発送"} 1~2日で発送
                   %option{value: "2~3日で発送"} 2~3日で発送
                   %option{value: "4~7日で発送"} 4~7日で発送
-                %i.fas.fa-angle-down
-                =f.select :size_id do
-                  %option ---
-                  %option{value: "1"} sサイズ
-                =f.select :status do
-                  %option --
-                  %option{value: "1"}販売中
+                = fa_icon("angle-down")
+
       .sell-items-content-calc
         %h3.sell-price-text
           販売価格(300〜9,999,999)
-          = link_to edit_item_path do
-            %i.fas.fa-question-circle
+          = link_to new_item_path do
+            =fa_icon("question-circle")
         .sell-form-box
           .sell-form-groups-list
             .sell-item-price-left
@@ -169,27 +212,29 @@
             .sell-item-ans-left
               販売利益
             .sell-item-ans-right -
+
       .sell-items-content-btn
         .sell-items-coution-box
-          =link_to edit_item_path, class: "sell-coution-message"  do
+          =link_to new_item_path, class: "sell-coution-message"  do
             禁止されている出品
           、
-          =link_to edit_item_path, class: "sell-coution-message" do
+          =link_to new_item_path, class: "sell-coution-message" do
             行為
           を必ずご確認ください。
           .coution-middle
           またブランド品でシリアルナンバー等がある場合はご記載ください。
-          =link_to edit_item_path, class: "sell-coution-message" do
+          =link_to new_item_path, class: "sell-coution-message" do
             偽ブランドの販売
           は犯罪であり処罰される可能性があります。
           .coution-bottom
           また、出品を持ちまして
-          =link_to edit_item_path, class: "sell-coution-message" do
+          =link_to new_item_path, class: "sell-coution-message" do
             加盟店規約
           に同意したことになります。
-        = f.submit "変更する", class: "items-send-btn"
+        = f.submit "編集完了", class: "items-send-btn"
         %button.back-sell-btn
           もどる
+
 .mercari-footer
   %nav
     %ul
@@ -198,6 +243,6 @@
       %li 特定商取引に関する表記
   .mercari-footer_contents
     =link_to root_path, class: "single-footer-logo" do
-      =image_tag asset_path "mercari.svg", style: "background: rgb(245, 245, 245);"
+      .mercari_img_contents
     %p
       %small © 2019 Mercari

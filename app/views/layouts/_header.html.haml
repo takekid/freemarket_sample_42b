@@ -4,8 +4,8 @@
       %h1.pc-left
         = link_to "/" do
           =image_tag asset_path("logo.svg"),alt: "mercari"
-      %form.pc-header-form{action: ""}
-        %input.input{name: "keyword", placeholder: "キーワードから探す", type: "search"}/
+      = search_form_for(@search, url:search_items_path) do |f|
+        = f.search_field :name_cont,value: "", placeholder: "キーワードから探す"
         %i.fas.fa-search
     .clearfix-box
       .head-left
@@ -14,34 +14,9 @@
             %h2.menu-down
               =link_to 'カテゴリーから探す',""
             %ul.pull-left
-              %li
-                =link_to 'レディース',""
-              %li
-                =link_to 'メンズ',""
-              %li
-                =link_to 'ベビー・キッズ',""
-              %li
-                =link_to 'インテリア・住まい・小物',""
-              %li
-                =link_to '本・音楽・ゲーム',""
-              %li
-                =link_to 'おもちゃ・ホビー・グッズ',""
-              %li
-                =link_to 'コスメ・香水・美容',""
-              %li
-                =link_to '家電・スマホ・カメラ',""
-              %li
-                =link_to 'スポーツ・レジャー',""
-              %li
-                =link_to 'ハンドメイド',""
-              %li
-                =link_to 'チケット',""
-              %li
-                =link_to '自転車・オートバイ',""
-              %li
-                =link_to 'その他',""
-              %li
-                =link_to 'カテゴリー 一覧',""
+              - Category.each_with_level(Category.roots) do |category, level|
+                %li
+                  = category.category_name
           %li
             %h2.menu-down
               =link_to 'ブランドから探す',""
@@ -59,6 +34,27 @@
               %li
                 =link_to 'ブランド一覧',""
       .head-right
-        .btn-case
-          =link_to 'ログイン',new_user_session_path,class: "btn log-btn"
-          =link_to '新規会員登録',new_user_registration_path,class: "btn new-btn"
+        - if user_signed_in?
+          .head-right-signed-in
+            .head-user-nav-sigindin
+              .header-signedin-box
+                = link_to users_show_path, class: "signin_mypage" do
+                  .mainpage_avater
+                    - if current_user.avater.nil?
+                      = image_tag asset_path"avater.png",class: "avater_signin"
+                      マイページ
+                    - else
+                      = current_user.avater
+                      マイページ
+              .header-signedin-box
+                = link_to users_show_path do
+                  = fa_icon("bell")
+                  お知らせ
+              .header-signedin-box
+                = link_to users_show_path do
+                  = fa_icon("check")
+                  やることリスト
+        - else
+          .btn-case
+            =link_to 'ログイン',new_user_session_path,class: "btn log-btn"
+            =link_to '新規会員登録', users_signin_form_path,class: "btn new-btn"

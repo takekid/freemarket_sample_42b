@@ -1,0 +1,20 @@
+#modal
+  #modal_content
+    .modal-cover
+      .modal-title
+        確認
+      %p.modal
+        削除すると二度と復活できません。
+        %br
+          削除する代わりに停止することもできます。
+        %br
+        %br
+        本当に削除しますか？
+    %button.btn-cansel
+      キャンセル
+    = link_to  item_path(@item.id),id: "modal-delete-btn", method: :delete do
+      %button.modal-btn-submit{type: "submit"}
+        削除する
+
+
+

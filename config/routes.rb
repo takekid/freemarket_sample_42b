@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
+
   root "items#index"
-  resources :items, only: [:index, :show, :edit, :update] do
+  resources :items, only: [:index, :show,:create,:new, :edit, :update, :destroy] do
+
     collection do
       get 'sell'
+      get 'search'
     end
   end
+  resources :categories, only: [:index, :show,:new]
   get 'users/signin_form', to: 'users#signin_form'
   get 'users/address', to: 'users#address'
   get 'users/credit',to: 'users#credit'
@@ -18,7 +22,7 @@ Rails.application.routes.draw do
   post 'users/address_create', to: 'users#address_create'
   get 'users/creditcard' => 'users#creditcard'
   get 'users/card_create' => 'users#card_create'
-
-
+  post '/pay', to: 'creditcards#pay'
+  post 'items/:id', to: 'items#charge'
   get 'transactions/buy' => 'transactions#buy'
 end
