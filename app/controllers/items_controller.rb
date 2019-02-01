@@ -72,7 +72,7 @@ class ItemsController < ApplicationController
     price = params[:item][:price]
     # -----------
     @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)
-    user = Payjp::Customer.retrieve(@creditcard[0].customer_id)
+    user = Payjp::Customer.retrieve(@creditcard[0].customer_token)
     Item.create_charge_by_customer(price, user)
     # ---------- Payjp
     @item.update(charge_params)
@@ -88,6 +88,7 @@ class ItemsController < ApplicationController
   def charge_params
     params.require(:item).permit(:buyer_id)
   end
+  
   def set_item
     @item = Item.find(params[:id])
   end
