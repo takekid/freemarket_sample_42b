@@ -64,11 +64,11 @@ class ItemsController < ApplicationController
 
   def charge
     Payjp.api_key = ENV['PAYJP_KEY']
-    binding.pry
+
     price = params[:item][:price]
     # -----------
     @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)
-    user = Payjp::Customer.retrieve(@creditcard[0].customer_id)
+    user = Payjp::Customer.retrieve(@creditcard[0].customer_token)
     Item.create_charge_by_customer(price, user)
     # ---------- Payjp
     @item.update(charge_params)
@@ -88,7 +88,7 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
   def search_params
     params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
   end
