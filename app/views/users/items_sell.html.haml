@@ -1,0 +1,32 @@
+= render "layouts/header"
+%nav.bread-crumbs
+  %ul
+    %li{itemscope: "", itemtype: ""}
+      = link_to "/" do
+        %span{itemprop: "title"}
+          - breadcrumb :users_show
+    %li{itemscope: "", itemtype: ""}
+      %span{itemprop: "title"}
+        = breadcrumbs
+.users-items-sell
+  %main.l-container.clearfix
+    .l-content
+      %section.mypage-tab-under
+        %h2.mypage-tab-head 出品した商品
+        %ul.mypage-tabs
+          %li
+            %h3
+              = link_to'出品中', "#mypage-tab-transaction-now"
+          %li
+            %h3
+              = link_to'取引中' ,"#mypage-tab-transaction-old"
+        .tab-content
+          %ul#mypage-tab-transaction-now.mypage-item-list.tab-panes
+            = image_tag asset_path"mercari.svg"
+            %li.mypage-item-not-found.bold 出品中の商品がありません
+          %ul#mypage-tab-transaction-old.mypage-item-list.tab-panes
+            = image_tag asset_path"mercari.svg"
+            %li.mypage-item-not-found.bold 過去に取引した商品がありません
+    = render "layouts/l_sidebar"
+= render "layouts/footer"
+= render "layouts/sellbutton"

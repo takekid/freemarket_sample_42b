@@ -88,7 +88,7 @@ class ItemsController < ApplicationController
   def charge_params
     params.require(:item).permit(:buyer_id)
   end
-  
+
   def set_item
     @item = Item.find(params[:id])
   end

@@ -276,6 +276,10 @@ li.now{
       padding: 0;
       border-radius: 50%;
   }
+  .active{
+  background-color: white;
+  border-top: 2px solid #ea352d;
+}
   }
   .tab-panes{
     height: 20vh;
@@ -325,11 +329,6 @@ li.now{
       }
     }
   }
-}
-
-.active{
-  background-color: white;
-  border-top: 2px solid #ea352d;
 }
 
 #mypage-tab-todo{
