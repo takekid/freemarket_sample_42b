@@ -41,6 +41,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def items_sell
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
+  end
+
 
   def profile
     @search = Item.ransack(params[:q])

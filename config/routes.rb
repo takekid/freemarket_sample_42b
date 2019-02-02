@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'users/finish', to: 'users#finish'
   get 'users/show' => 'users#show'
   get 'users/profile' => 'users#profile'
+  get 'users/items_sell' => 'users#items_sell'
   get 'users/identification' => 'users#identification'
   get 'users/sign_out' => 'users#sign_out'
   post 'users/signin_form_create', to: 'users#signin_form_create'
