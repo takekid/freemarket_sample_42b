@@ -10,14 +10,22 @@
     .clearfix-box
       .head-left
         %ul.menu
-          %li
+          %li.menu-parent
             %h2.menu-down
               =link_to 'カテゴリーから探す',""
             %ul.pull-left
-              - Category.each_with_level(Category.roots) do |category, level|
-                %li
-                  = category.category_name
-          %li
+              - Category.where(parent_id: nil).each do |category1|
+                %li.header-parent
+                  =link_to category1.category_name, "/"
+                  %ul.level2
+                    - Category.where(parent_id: category1.id).each do |category2|
+                      %li.header-child
+                        =link_to category2.category_name, "/"
+                        %ul.level2
+                          - Category.where(parent_id: category2.id).each do |category3|
+                            %li.header-grandson
+                              =link_to category3.category_name, "/"
+          %li.menu-parent
             %h2.menu-down
               =link_to 'ブランドから探す',""
             %ul.pull-right
