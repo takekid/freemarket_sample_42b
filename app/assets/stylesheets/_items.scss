@@ -521,3 +521,112 @@ a.signin_mypage {
 i.fa.fa-bell {
   font-weight: 300;
 }
+.item-purchase {
+  height: 1050px;
+  width:700px;
+  margin:0 auto;
+  background-color: white;
+
+&_header{
+  padding: 32px 16px;
+  width:668px ;
+  height:33px ;
+
+  h1 {
+    font-size:  25px;
+    text-align: center;
+   }
+}
+
+&_content {
+  padding: 24px 87px 0 87px;
+  width:225px ;
+  height:500px ;
+  margin-left: 120px;
+  &__image{
+   
+   
+    
+    img{
+      width: 175px;
+      height: 140px;
+      
+      margin-left: 50px;
+     
+    }
+  }
+  &__name{
+    width:280px;
+    margin-left: 30px;
+    
+  }
+  &__price{
+    width: 320px;
+    margin-left: 40px;
+    h1{
+       
+        display: inline-block;
+      }
+      p{
+        margin-left: 60px;
+        display: inline-block;
+      }
+  }
+  &__point{
+    width: 270px;
+    height: 10px;
+    padding:19px;
+    background-color: gray;
+     text-align: center;
+  }
+  &__confirm{
+    width: 400px;
+    height: 100px;
+    
+
+    &-price{
+      display: inline-block;
+      width: 180px;
+      height: 40px;
+      
+    }
+    &-message{
+      width: 100px;
+      height: 40px;
+      display: inline-block;
+      margin-right: 50px;
+    }
+  }
+  &__finish{
+    width: 310px;
+    height: 40px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    padding: 10px;
+    button{
+      
+    }
+  }
+
+}
+
+&_address{
+  padding:24px 87px 0 87px;
+  margin:20px auto;
+  width:225px ;
+  height:102px ;
+}
+
+&_charge{
+  padding: 40px 87px;
+  width: 225px;
+  height:89px ;
+  margin:10px auto;
+  text-align: center;
+}
+
+}
+
+
+

@@ -62,9 +62,13 @@ class ItemsController < ApplicationController
 
   end
 
+  def purchase
+     @item  = Item.find(params[:id])
+     
+  end
+
   def charge
     Payjp.api_key = ENV['PAYJP_KEY']
-    binding.pry
     price = params[:item][:price]
     # -----------
     @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)

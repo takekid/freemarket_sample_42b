@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_30_052044) do
+ActiveRecord::Schema.define(version: 2019_02_03_042329) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -93,6 +93,17 @@ ActiveRecord::Schema.define(version: 2019_01_30_052044) do
     t.index ["size_id"], name: "index_items_on_size_id"
   end
 
+  create_table "proceeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "proceed", null: false
+    t.integer "point"
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_proceeds_on_item_id"
+    t.index ["user_id"], name: "index_proceeds_on_user_id"
+  end
+
   create_table "size_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "size_type", null: false
     t.datetime "created_at", null: false
@@ -132,5 +143,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_052044) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "sizes"
+  add_foreign_key "proceeds", "items"
+  add_foreign_key "proceeds", "users"
   add_foreign_key "sizes", "size_types"
 end
