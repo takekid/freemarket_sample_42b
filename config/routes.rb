@@ -3,12 +3,13 @@ Rails.application.routes.draw do
 
   root "items#index"
   resources :items, only: [:index, :show,:create,:new, :edit, :update, :destroy] do
-    patch :toggle_status
 
     collection do
       get 'sell'
       get 'search'
+      get 'user_items_sell'
     end
+  patch :toggle_status
   end
   resources :categories, only: [:index, :show,:new]
   get 'users/signin_form', to: 'users#signin_form'

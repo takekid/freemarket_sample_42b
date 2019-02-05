@@ -108,14 +108,14 @@
   }
 
     &-contents {
-      height: 608px;
+      height: auto;
       width: 572px;
       padding: 64px;
       background-color: white;
       margin: 0 auto;
 
       &_form {
-        height: 608px;
+        height: auto;
         width: 320px;
         margin: 0 126px;
       }
@@ -137,7 +137,10 @@
           font-size: 12px;
           padding: 5px;
          }
-
+         .info-contents_form__field_submit{
+          height: 50px;
+          cursor: pointer;
+         }
  }
 .info-contents_form__field_submit{
   padding: 16px 127px;
@@ -209,6 +212,11 @@
       &_span-gray {
         background-color: gray;
       }
+  .main-adress_contents-form_field_submit{
+    height: 50px;
+    cursor: pointer;
+    margin-left: 15px;
+   }
  }
 
 
