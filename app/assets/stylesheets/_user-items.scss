@@ -1,0 +1,66 @@
+.mypage-item-links{
+  display: block;
+  min-height: 80px;
+  padding: 16px;
+  color: #333;
+  position: relative;
+  border-bottom: solid 1px #eeeeee;
+  figure{
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 48px;
+    height: 48px;
+    .mypage-item-images{
+      width: auto;
+      left: 50%;
+      right: auto;
+      height: 100%;
+    }
+  }
+  .mypage-stock-item{
+    margin: 20px 40px 0 68px;
+    text-align: left;
+    .mypage-item-text{
+      overflow: hidden;
+      display: block;
+      max-height: 4.4em;
+      text-overflow: ellipsis;
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+  }
+  .mypage-detail{
+    span{
+      vertical-align: 2px;
+      margin: 0 6px 0 0;
+      .fa{
+        font-weight: 400;
+        color: #ccc;
+      }
+    }
+    .mypage-item-status{
+      width: 80px;
+      height: 20px;
+      background-color: #ea352d;
+      color: white;
+      display: inline-block;
+      border-radius: 2px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+      font-weight: 600;
+    }
+  }
+  .user-angle-right{
+    float: right;
+    .fa{
+      position: absolute;
+      top: 40%;
+      right: 3%;
+    }
+  }
+}
+  .mypage-item-links:hover{
+    background-color: #f8f8f8;
+  }

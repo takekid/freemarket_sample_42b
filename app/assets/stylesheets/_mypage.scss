@@ -172,7 +172,7 @@ li.now{
     float: left;
     width: 48px;
     height: 48px;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
     img{
       height: 40px;
@@ -282,9 +282,8 @@ li.now{
 }
   }
   .tab-panes{
-    height: 20vh;
+    height: auto;
     text-align: center;
-    margin: 4vh auto;
   }
   img{
     background-color: white;

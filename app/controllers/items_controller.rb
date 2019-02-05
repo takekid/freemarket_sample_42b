@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy, :toggle_status,:charge]
+  before_action :set_item, only: [:show, :edit, :update, :destroy,:toggle_status,:charge]
   def index
     @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
     @category = @item.category.parent
+    @item_sell = Item.where(seller_id: current_user.id)
   end
 
 
@@ -62,6 +63,11 @@ class ItemsController < ApplicationController
 
   end
 
+  def user_items_sell
+    @search = Item.ransack(params[:q])
+    @item_sell = Item.includes(:item_images).where(seller_id: current_user.id)
+  end
+
   def toggle_status
     @item.toggle_status!
     redirect_to @item, notice: '出品完了しました'
@@ -90,15 +96,11 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:id]|| params[:item_id])
   end
 
   def search_params
     params.require(:q).permit(:category_name_cont, :name_contains_all, :introduction_cont)
-  end
-
-  def set_item
-    @item = Item.find(params[:id] || params[:item_id])
   end
 
 end
