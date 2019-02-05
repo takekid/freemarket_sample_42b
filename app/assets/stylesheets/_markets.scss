@@ -66,8 +66,9 @@ input#q_name_cont{
   .head-left{
     float: left;
     position: absolute;
-    top: 7.5vh;
+    top: 6.3vh;
     height: 90px;
+    left: 15vw;
     width:auto;
   }
 }
@@ -76,6 +77,7 @@ input#q_name_cont{
 h2.menu-down{
   font-size: 14px;
   font-weight: 400;
+  height: 5vh;
   padding: 0;
   margin: 0;
 }
@@ -92,62 +94,89 @@ ul.menu{
     position: relative;
     margin: 0;
     padding-right: 0;
-    width: 13vw;
+    width: 17vw;
     background-color: white;
     display: block;
   }
-  .pull-left li:hover{
-    background-color:#ea352d;
-    a{
-      color: white;
-    }
-  }
-  .pull-right li:hover{
-    background-color:#ea352d;
-    a{
-      color: white;
-    }
+  .menu-parent{
+    height: 40px;
+    width: 10vw;
   }
 }
 
-ul.pull-left{
-    width: auto;
-    border: 1px solid #eee;
-    float: left;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    color: #ea352d;
-    font-size: 14px;
-    display: none;
+.menu {
+  font-size: 14px;
+  > ul {
+    width: 1000px;
+    display: flex;
+    > li {
+      height: 70px;
+      flex: 1;
+      &:not(:last-child) {
+      }
+    }
+  }
+  ul {
+    li {position: relative;}
+  }
+  a {
+    display: block;
+    border: none;
+    &:hover {
+      text-decoration: none;
+      border: none;
+    }
+  }
+  > ul > li > a {
+    padding: 19px 0 15px;
+  }
+  .pull-left, .level2 {
+    width: 75%;
     position: absolute;
-    margin-left: -5px;
-    padding: 0;
     z-index: 1000;
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-  li{
-    padding: 5px;
-    a{
-      padding: 5px 10px;
-      margin-left: -5px;
-      margin-right: -5px;
-      margin-bottom: -5px;
-      display: block;
+    li{
+      border-left:1px solid #eeeeee;
+    }
+    a {
+      padding: 0 16px;
+    }
+    .active {
+      color: white;
+      background: #ea352d;
+    }
+  }
+  .pull-left {
+    padding: 0;
+    top: 100%;
+    left: 0;
+  }
+  .level2 {
+    top: 0;
+    left: 100%;
+    padding: 0;
+    .active{
       color: black;
+      background:#EEEEEE;
+      border: none;
+    }
+  }
+  .header-child {
+    &:after {
+      width: 7px;
+      height: 7px;
+      top: 50%;
+      right: 10px;
+      margin-top: -4px;
     }
   }
 }
 
 ul.pull-right{
-  width: auto;
-    border: 1px solid #eee;
+    width: auto;
     display: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    color: #ea352d;
     font-size: 14px;
     position: absolute;
     margin-left: -5px;
@@ -158,6 +187,9 @@ ul.pull-right{
             box-shadow: 0 10px 6px -6px #777;
   li{
     padding: 5px;
+    &:hover{
+      background: #ea352d;
+    }
     a{
       padding: 5px 10px;
       margin-left: -5px;
@@ -165,6 +197,9 @@ ul.pull-right{
       margin-bottom: -5px;
       display: block;
       color: black;
+      &:hover{
+        color: white;
+      }
     }
   }
 }
