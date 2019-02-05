@@ -544,13 +544,10 @@ i.fa.fa-bell {
   height:500px ;
   margin-left: 120px;
   &__image{
-   
-   
     
     img{
       width: 175px;
       height: 140px;
-      
       margin-left: 50px;
      
     }
@@ -576,7 +573,7 @@ i.fa.fa-bell {
     width: 270px;
     height: 10px;
     padding:19px;
-    background-color: gray;
+    background-color: #EEEEEE;
      text-align: center;
   }
   &__confirm{
@@ -620,11 +617,18 @@ i.fa.fa-bell {
 
 &_charge{
   padding: 40px 87px;
-  width: 225px;
-  height:89px ;
+  width: 125px;
+  height:59px ;
   margin:10px auto;
   text-align: center;
+
+  img{
+    height: 60px;
+    width: 40px;
+  }
+
 }
+  
 
 }
 

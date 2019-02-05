@@ -7,8 +7,9 @@
   .item-purchase_header
     %h1 購入を確定しますか！？
   %section.item-purchase_content
-    %image.item-purchase_content__image
-      =image_tag asset_path "visa.svg"
+    .item-purchase_content__image
+      -@item.item_images.each.with_index do |image, i|
+        =image_tag image.image.url
     .item-purchase_content__name
       %h2
         = @item.name
@@ -36,7 +37,9 @@
   .item-purchase_charge
     .item-purchase_charge__inner
       %h3 支払方法
-    =image_tag asset_path "visa.svg"
+    .buy-user-info-text
+      ************4242
+      =image_tag asset_path "visa.svg"
 
 .mercari-footer
   %nav

@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  def address; end
+
+  def credit; end
+
+  def finish; end
+
   def signin_form
    @user = User.new
    if verify_recaptcha(model: @user) && @user.save
@@ -7,20 +13,7 @@ class UsersController < ApplicationController
       new_user_session_path
     end
   end
-
-  def address
-  end
-
-  def show
-    @search = Item.ransack(params[:q])
-    @items = @search.result.includes(:brand, :category)
-  end
-
-
-  def credit; end
-
-  def finish; end
-
+  
   def signin_form_create
     @user = User.new(user_params)
     if @user.save
@@ -37,10 +30,14 @@ class UsersController < ApplicationController
        redirect_to users_credit_path
     else
       @address = Address.new(address_params)
-      render("purchase")
+      render("address")
     end
   end
 
+  def show
+    @search = Item.ransack(params[:q])
+    @items = @search.result.includes(:brand, :category)
+  end 
 
   def profile
     @search = Item.ransack(params[:q])
@@ -65,15 +62,6 @@ class UsersController < ApplicationController
   def card_create
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
-  end
-
-  private
-  def user_params
-    params.permit(:nickname, :email, :password, :password_confirmation)
-  end
-
-  def address_params
-    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber, :first_name, :last_name, :kana_first_name, :kana_last_name)
   end
 
   private
