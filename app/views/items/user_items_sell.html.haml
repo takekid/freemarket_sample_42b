@@ -22,8 +22,26 @@
               = link_to'取引中' ,"#mypage-tab-transaction-old"
         .tab-content
           %ul#mypage-tab-transaction-now.mypage-item-list.tab-panes
-            = image_tag asset_path"mercari.svg"
-            %li.mypage-item-not-found.bold 出品中の商品がありません
+            %li
+              - @item_sell.each do |item|
+                = link_to item,class: "mypage-item-links" do
+                  %figure
+                    .mypage-item-images
+                      =image_tag item
+                  .mypage-stock-item
+                    .mypage-item-text
+                      = item.name
+                    .mypage-detail
+                      %span.listing-item-count
+                        =fa_icon("heart")
+                        %span 0
+                      %span.listing-item-count
+                        =fa_icon("comment-alt")
+                        %span 0
+                      .mypage-item-status
+                        = item.status
+                  .user-angle-right
+                    =fa_icon("angle-right 2x")
           %ul#mypage-tab-transaction-old.mypage-item-list.tab-panes
             = image_tag asset_path"mercari.svg"
             %li.mypage-item-not-found.bold 過去に取引した商品がありません

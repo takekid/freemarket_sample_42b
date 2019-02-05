@@ -41,12 +41,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def items_sell
-    @search = Item.ransack(params[:q])
-    @items = @search.result.includes(:brand, :category)
-  end
-
-
   def profile
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
@@ -73,15 +67,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params
-    params.permit(:nickname, :email, :password, :password_confirmation)
-  end
 
-  def address_params
-    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber, :first_name, :last_name, :kana_first_name, :kana_last_name)
-  end
-
-  private
   def user_params
     params.permit(:nickname, :email, :password, :password_confirmation)
   end

@@ -3,12 +3,13 @@ Rails.application.routes.draw do
 
   root "items#index"
   resources :items, only: [:index, :show,:create,:new, :edit, :update, :destroy] do
-    patch :toggle_status
 
     collection do
       get 'sell'
       get 'search'
+      get 'user_items_sell'
     end
+  patch :toggle_status
   end
   resources :categories, only: [:index, :show,:new]
   get 'users/signin_form', to: 'users#signin_form'
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
   get 'users/finish', to: 'users#finish'
   get 'users/show' => 'users#show'
   get 'users/profile' => 'users#profile'
-  get 'users/items_sell' => 'users#items_sell'
   get 'users/identification' => 'users#identification'
   get 'users/sign_out' => 'users#sign_out'
   post 'users/signin_form_create', to: 'users#signin_form_create'
