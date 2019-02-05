@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @item.item_images.build
+    5.times {@item.item_images.build}
   end
 
   def create
@@ -88,7 +88,7 @@ class ItemsController < ApplicationController
   def charge_params
     params.require(:item).permit(:buyer_id)
   end
-  
+
   def set_item
     @item = Item.find(params[:id])
   end

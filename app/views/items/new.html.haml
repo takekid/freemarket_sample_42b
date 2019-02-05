@@ -15,22 +15,17 @@
           %span.form-require 必須
         %p.upload-image 最大10枚までアップロード出来ます
         .sell-image-dropbox-contentair
-          .sell-uploader-items-container
-            .sell-upload-items
-              %ul#file_list
-                %li.sell-upload-item#upload-item
-                  %figure.sell-upload-figure
-                    = image_tag "",id: "item-prev"
-                  .sell-upload-item-button
-                    =link_to "編集","" ,class: "sell-upload-edit"
-                    =link_to"削除", method: :delete
-          %label.sell-uploader-drop-box
-            =f.fields_for :item_images do |i|
+
+
+          =f.fields_for :item_images do |i|
+            %label.sell-uploader-drop-box
               =i.file_field :image
-            %pre.visible-pc
-              ドラッグアンドドロップ
-              またはクリックしてファイルをアップロード
-            = fa_icon("camera")
+              %pre.visible-pc
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+          .sell-uploader-items-container
+
+
       .sell-items-content.clearfix
         .form-item-name
           %label.sell-item-name
