@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_073756) do
+ActiveRecord::Schema.define(version: 2019_02_03_042329) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -82,15 +82,26 @@ ActiveRecord::Schema.define(version: 2019_02_01_073756) do
     t.string "shipping_date", null: false
     t.string "price", null: false
     t.integer "buyer_id"
-    t.integer "seller_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "seller_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "delivery", null: false
     t.integer "status", limit: 1, default: 1, null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["size_id"], name: "index_items_on_size_id"
+  end
+
+  create_table "proceeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "proceed", null: false
+    t.integer "point"
+    t.bigint "user_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_proceeds_on_item_id"
+    t.index ["user_id"], name: "index_proceeds_on_user_id"
   end
 
   create_table "size_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -132,5 +143,7 @@ ActiveRecord::Schema.define(version: 2019_02_01_073756) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories", name: "items_ibfk_1"
   add_foreign_key "items", "sizes"
+  add_foreign_key "proceeds", "items"
+  add_foreign_key "proceeds", "users"
   add_foreign_key "sizes", "size_types"
 end

@@ -4,4 +4,8 @@ class Address < ApplicationRecord
   validates  :postal_code,   presence: true
   validates  :city,          presence: true
   validates  :address,       presence: true
+  validates  :last_name,     presence: true
+  validates  :first_name,    presence: true
+  validates  :kana_last_name,     presence: true
+  validates  :kana_first_name,    presence: true
 end
