@@ -60,7 +60,6 @@ class ItemsController < ApplicationController
     @categories = Category.all
     @brands     = Brand.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
-
   end
 
   def purchase
