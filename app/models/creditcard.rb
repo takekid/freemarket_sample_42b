@@ -3,6 +3,7 @@ class Creditcard < ApplicationRecord
   
 
   def self.create_token(params, customer)	
+    begin
     token = Payjp::Token.create({
     :card => {
       :number => params[:number],
@@ -17,5 +18,9 @@ class Creditcard < ApplicationRecord
      customer = Payjp::Customer.create(
                          card: token.id
                          )
-  end
+    rescue Payjp::CardError => e
+      body = e.json_body
+      err  = body[:error]
+    end
+  end 
 end

@@ -69,10 +69,6 @@ class ItemsController < ApplicationController
 
   def charge
     Payjp.api_key = ENV['PAYJP_KEY']
-<<<<<<< HEAD
-=======
-
->>>>>>> Ryotaman213/master
     price = params[:item][:price]
     # -----------
     @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)

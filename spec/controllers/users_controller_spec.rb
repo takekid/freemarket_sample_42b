@@ -58,13 +58,13 @@ describe UsersController, type: :controller do
         expect(@user).not_to receive(:save)
       end  
 
-      # it 'renders address.html.haml' do
-      #   expect(response).to redirect_to(users_address_path)
-      # end
+      it 'renders address.html.haml' do
+        expect(response).to redirect_to(users_address_path)
+      end
 
-      # it 'assigns to user' do
-      #   expect(assigns(:user)).to match_array(@user)
-      # end
+      it 'assigns to user' do
+        expect(assigns(:user)).to match_array(@user)
+      end
     end
   end
   describe 'GET #show' do

@@ -10,14 +10,18 @@ class User < ApplicationRecord
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :salling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
-
+  
+  validates :nickname,                presence: true, uniqueness: true, length: { minimum: 6 }
+  validates :email,                   presence: true
+  validates :password,                presence: true, length: { in: 6..20 }
+  validates :password_confirmation,   confirmation: true, presence: true
 
 def self.from_omniauth(auth)
   user = User.where(uid: auth.uid, provider: auth.provider).first
 
   unless user
     user = User.create(
-      nickname:  "shouya",
+      nickname:  auth.name,
       uid:       auth.uid,
       provider:  auth.provider,
       email:     User.dummy_email(auth),
@@ -30,7 +34,7 @@ end
 def self.find_for_google_oauth2(auth)
     user = User.where(email: auth.info.email).first
     unless user
-      user = User.create(nickname: "shouya",
+      user = User.create(nickname: auth.info.name,
                          provider: auth.provider,
                          uid:      auth.uid,
                          email:    auth.info.email,
