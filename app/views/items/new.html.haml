@@ -15,22 +15,17 @@
           %span.form-require 必須
         %p.upload-image 最大10枚までアップロード出来ます
         .sell-image-dropbox-contentair
-          .sell-uploader-items-container
-            .sell-upload-items
-              %ul#file_list
-                %li.sell-upload-item#upload-item
-                  %figure.sell-upload-figure
-                    = image_tag "",id: "item-prev"
-                  .sell-upload-item-button
-                    =link_to "編集","" ,class: "sell-upload-edit"
-                    =link_to"削除", method: :delete
-          %label.sell-uploader-drop-box
-            =f.fields_for :item_images do |i|
+
+
+          =f.fields_for :item_images do |i|
+            %label.sell-uploader-drop-box
               =i.file_field :image
-            %pre.visible-pc
-              ドラッグアンドドロップ
-              またはクリックしてファイルをアップロード
-            = fa_icon("camera")
+              %pre.visible-pc
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
+          .sell-uploader-items-container
+
+
       .sell-items-content.clearfix
         .form-item-name
           %label.sell-item-name
@@ -55,9 +50,9 @@
               .select-wrap-category
                 %select#category_id{name: "item[category_id]",class: "parents"}
                   %option{value:"0" } ---
-                  - Category.each_with_level(Category.roots) do |category, level|
-                    %option{value: category.id}
-                      = category.category_name
+                  - Category.where(parent_id: nil).each do |category1|
+                    %option{value: category1.id}
+                      = category1.category_name
                 = fa_icon("angle-down")
 
               .select-wrap-category
@@ -209,9 +204,10 @@
           %div.inner-modal
             %h3.modal-head 出品が完了しました
             .sell-modal-body  あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます
-            = link_to '続けて出品する', "" ,class: "btn btn-default-modal"
+            .btn-defalut-red
+              = link_to '続けて出品する', new_item_path ,class: "btn btn-default-modal"
             %p.text-center
-              = link_to '商品ページへ行ってシェアする', ""
+              = link_to '商品ページへ行ってシェアする', "/"
 
       .sell-items-content-btn
         .sell-items-coution-box

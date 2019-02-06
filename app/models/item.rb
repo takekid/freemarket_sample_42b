@@ -17,8 +17,8 @@ scope :chanel_desc, -> {includes(:brand).where(brand_id: 8).limit(3).newest}
 scope :nike_desc, -> {includes(:brand).where(brand_id: 1).limit(3).newest}
 scope :adidas_desc, -> {includes(:brand).where(brand_id: 2).limit(3).newest}
 
-enum status:{nonreleased: 0, released: 1}
-
+enum status:{公開停止中: 0, 出品中: 1}
+validates :status, inclusion: { in: Item.statuses.keys }
 validates :name,           presence: true
 validates :introduction,   presence: true
 validates :condition,      presence: true
@@ -29,11 +29,16 @@ validates :price,          presence: true
 validates :status,         presence: true
 
 def self.create_charge_by_customer(price, user)
+
     Payjp::Charge.create(
       customer: user,
       amount:   price,
-      currency: 'jpy',   
+      currency: 'jpy',
     )
-
   end
+
+  def toggle_status!
+    公開停止中? ? 出品中! : 公開停止中!
+  end
+
 end

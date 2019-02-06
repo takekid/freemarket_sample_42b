@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   def show
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)

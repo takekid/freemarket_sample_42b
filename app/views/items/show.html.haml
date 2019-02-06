@@ -34,7 +34,7 @@
             %th 出品者
             %td
               = link_to users_show_path do
-                = @item.seller
+                = @item.seller.nickname
               .rating-box
                 .user-rating
                   = fa_icon ("grin")

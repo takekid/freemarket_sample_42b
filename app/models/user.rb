@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :salling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
-  
   validates :nickname,                presence: true, uniqueness: true, length: { minimum: 6 }
   validates :email,                   presence: true
   validates :password,                presence: true, length: { in: 6..20 }
@@ -44,7 +43,7 @@ def self.find_for_google_oauth2(auth)
     user
   end
 
-  
+
 
   private
   def self.dummy_email(auth)
