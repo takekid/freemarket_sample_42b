@@ -28,10 +28,10 @@
                   有効期限　　　
                   %span.span-red 必須
                 %li
-                  = f.number_field :exp_month, class: "input-num"
+                  = f.text_field :exp_month, class: "input-num"
                   %p 月
                 %li
-                  = f.number_field :exp_year, class: "input-num"
+                  = f.text_field :exp_year, class: "input-num"
                   %p 年
               %p
                 セキュリティーコード

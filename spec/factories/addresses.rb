@@ -6,5 +6,9 @@ FactoryGirl.define do
     address        "yuyvech"
     building       "Oh"
     phonenumber    "090877656526"
+    first_name      "higuchi"
+    last_name      "shouya"
+    kana_first_name  "hpge"
+    kana_last_name  "hogoogo"
   end	
 end
