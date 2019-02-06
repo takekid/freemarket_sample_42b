@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     collection do
       get 'sell'
       get 'search'
+      get 'user_items_sell'
     end
+  patch :toggle_status
   end
   resources :categories, only: [:index, :show,:new]
   get 'users/signin_form', to: 'users#signin_form'

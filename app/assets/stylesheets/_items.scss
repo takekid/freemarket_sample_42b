@@ -43,6 +43,7 @@ form.sell-form {
 .sell-upload-box {
   width: 620px;
   padding: 40px;
+  display: block;
 }
 
 .sell-form-groups {
@@ -78,45 +79,36 @@ p.upload-image {
   margin: 16px auto 0;
   height: 162px;
   .sell-uploader-items-container{
-    display: block;
     margin: 0;
-    margin-right: 10px;
     .sell-upload-items{
+    display: inline-block;
       margin: 0;
       padding:0;
+      display: none;
       ul{
         width: auto;
         margin: 0;
         padding:0;
         list-style: none;
         li{
-          width:116px;
-          height: 116px;
-          padding: 0;
-          margin: 0 0 10px 10px;
+          width:114px;
+          padding-top: 20px;
+          padding-bottom: 30px;
           float: left;
-          border:solid 1px #ccc;
+          margin-left: 6px;
           background-color: #f5f5f5;
           figure{
             position: relative;
-            line-height:116px;
             height: 116px;
+            width:114px;
             padding: 0;
             margin: 0;
+            text-align: center;
           }
             img{
-              width:116px;
-              height: 116px;
+              width:114px;
+              height: 86px;
             }
-          .sell-upload-item-button{
-
-            text-align: center;
-            a{
-              color:#0099e8;
-              text-decoration: none;
-              margin: 0 5px 0 5px;
-            }
-          }
         }
       }
     }
@@ -130,27 +122,28 @@ p.upload-image {
     position: relative;
     background: #f5f5f5;
     border: 1px dashed #ccc;
-    font-size: 0;
     text-align: center;
     cursor: pointer;
+    display: none;
     input{
       border: 0;
       outline: 0;
       font-family: inherit;
       display: none;
     }
-    .fa{
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 14px;
-    }
   }
 }
+.sell-upload-item-button{
+  padding-top: 10px;
+  text-align: center;
+  display: inline-block;
+  a{
+    color:#0099e8;
+    text-decoration: none;
+    margin: 0 5px 0 5px;
 
-
+  }
+}
 pre.visible-pc {
   position: absolute;
   top: 50%;
@@ -521,6 +514,7 @@ a.signin_mypage {
 i.fa.fa-bell {
   font-weight: 300;
 }
+
 .item-purchase {
   height: 1050px;
   width:700px;
@@ -646,4 +640,14 @@ i.fa.fa-bell {
 }
 
 
+.sell-detail-text{
+  .fa{
+    color: #0099e8;
+  }
+}
+.sell-price-text{
+  .fa{
+    color: #0099e8;
+  }
+}
 

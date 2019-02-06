@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: :charge
+  before_action :set_item, only: [:show, :edit, :update, :destroy,:toggle_status,:charge]
   def index
     @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
@@ -18,12 +18,13 @@ class ItemsController < ApplicationController
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
     @category = @item.category.parent
+    @item_sell = Item.where(seller_id: current_user.id)
   end
 
 
   def new
     @item = Item.new
-    @item.item_images.build
+    5.times {@item.item_images.build}
   end
 
   def create
@@ -64,6 +65,18 @@ class ItemsController < ApplicationController
 
   def purchase
      @item  = Item.find(params[:id])
+<<<<<<< HEAD
+=======
+     
+  def user_items_sell
+    @search = Item.ransack(params[:q])
+    @item_sell = Item.includes(:item_images).where(seller_id: current_user.id)
+  end
+
+  def toggle_status
+    @item.toggle_status!
+    redirect_to @item, notice: '出品完了しました'
+>>>>>>> origin/rspec_test
   end
 
   def charge
@@ -76,8 +89,7 @@ class ItemsController < ApplicationController
     # ---------- Payjp
     @item.update(charge_params)
     redirect_to root_path
-   end
-
+  end
 
   private
 
@@ -88,8 +100,9 @@ class ItemsController < ApplicationController
   def charge_params
     params.require(:item).permit(:buyer_id)
   end
+
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:id]|| params[:item_id])
   end
 
   def search_params

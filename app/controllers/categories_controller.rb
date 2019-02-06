@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.new
     @category = Category.children.build
+    @categories = Category.where(parent_id: nil)
   end
 
   def show
