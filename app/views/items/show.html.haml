@@ -34,7 +34,7 @@
             %th 出品者
             %td
               = link_to users_show_path do
-                = @item.seller.nickname
+                = @item.seller
               .rating-box
                 .user-rating
                   = fa_icon ("grin")
@@ -50,11 +50,11 @@
             %td
               =link_to root_path do
                 .name
-                  / = @category.root.category_name
+                  = @category.root.category_name
               =link_to root_path do
                 .sub-name
                   =fa_icon("angle-right")
-                  / = @category.category_name
+                  = @category.category_name
 
               =link_to root_path do
                 .middle-name

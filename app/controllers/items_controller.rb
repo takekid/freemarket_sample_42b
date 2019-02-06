@@ -65,9 +65,8 @@ class ItemsController < ApplicationController
 
   def purchase
      @item  = Item.find(params[:id])
-<<<<<<< HEAD
-=======
-     
+  end
+          
   def user_items_sell
     @search = Item.ransack(params[:q])
     @item_sell = Item.includes(:item_images).where(seller_id: current_user.id)
@@ -76,7 +75,6 @@ class ItemsController < ApplicationController
   def toggle_status
     @item.toggle_status!
     redirect_to @item, notice: '出品完了しました'
->>>>>>> origin/rspec_test
   end
 
   def charge
