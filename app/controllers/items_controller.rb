@@ -60,13 +60,12 @@ class ItemsController < ApplicationController
     @categories = Category.all
     @brands     = Brand.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
-
   end
 
   def purchase
      @item  = Item.find(params[:id])
   end
-          
+
   def user_items_sell
     @search = Item.ransack(params[:q])
     @item_sell = Item.includes(:item_images).where(seller_id: current_user.id)
