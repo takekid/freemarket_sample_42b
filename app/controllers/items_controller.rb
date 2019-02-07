@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy,:toggle_status,:charge]
+  before_action :set_item, only: [:show, :edit, :update, :destroy,:toggle_status,:charge,:items_box]
   def index
     @ladys_category = Item.includes(:category).where(category_id: 28..66).limit(3).newest
     @mens_category  = Item.includes(:category).where(category_id: 80..117).limit(3).newest
@@ -60,7 +60,6 @@ class ItemsController < ApplicationController
     @categories = Category.all
     @brands     = Brand.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
-
   end
 
   def user_items_sell
@@ -83,6 +82,11 @@ class ItemsController < ApplicationController
     # ---------- Payjp
     @item.update(charge_params)
     redirect_to root_path
+  end
+
+  def items_box
+    @search = Item.ransack(params[:q])
+    @category = Category.find(params[:id])
   end
 
   private

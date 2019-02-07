@@ -24,10 +24,10 @@
           %ul#mypage-tab-transaction-now.mypage-item-list.tab-panes
             %li
               - @item_sell.each do |item|
-                = link_to item,class: "mypage-item-links" do
+                = link_to item_path(item),class: "mypage-item-links" do
                   %figure
                     .mypage-item-images
-                      =image_tag item
+                      %img.is-higher-width.lazyloaded{src: item.item_images.first.image}/
                   .mypage-stock-item
                     .mypage-item-text
                       = item.name

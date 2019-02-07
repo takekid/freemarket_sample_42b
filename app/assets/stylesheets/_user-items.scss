@@ -16,6 +16,10 @@
       left: 50%;
       right: auto;
       height: 100%;
+      .is-higher-width{
+        height: 50px;
+        width: 50px;
+      }
     }
   }
   .mypage-stock-item{

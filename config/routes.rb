@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'sell'
       get 'search'
       get 'user_items_sell'
+      get 'items_box'
     end
   patch :toggle_status
   end
