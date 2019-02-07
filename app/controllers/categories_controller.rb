@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+
   def index
     @categories = Category.new
     @category = Category.children.build
@@ -6,9 +7,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @categories = @category.subcategories
-    render :action => :index
+    @mens_category  = Item.includes(:category).where(category_id: self.category_params)
+    @category = Category.includes(:items).find(params[:id])
+    @search = Item.ransack(params[:q])
   end
 
   def new
@@ -16,10 +17,11 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :parent_id)
+    @category = Category.includes(:items).find(params[:id])
   end
 
   def parent
     @child = my_cat.children
   end
+
 end
