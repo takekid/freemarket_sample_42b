@@ -10,6 +10,7 @@
     .item-purchase_content__image
       -@item.item_images.each.with_index do |image, i|
         =image_tag image.image.url
+        -break if i == 0
     .item-purchase_content__name
       %h2
         = @item.name
