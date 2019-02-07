@@ -34,6 +34,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def credit_update
+    Payjp.api_key = ENV['PAYJP_KEY']
+    @creditcard = Creditcard.includes(:user).where(user_id: current_user.id)
+    card = Payjp::Customer.retrieve(@creditcard[0].customer_token)
+    customer = Payjp::Customer.retrieve(card.id)
+    User.add_token(card, customer,params)
+    redirect_to root_path
+  end
+
 
   def show
     @search = Item.ransack(params[:q])
