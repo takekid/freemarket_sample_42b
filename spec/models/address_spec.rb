@@ -22,6 +22,26 @@ RSpec.describe Address, type: :model do
         address.valid?
         expect(address.errors[:address]).to include("can't be blank")
       end
+       it'is invalid witout last_name' do
+        address = build(:address, last_name: "")
+        address.valid?
+        expect(address.errors[:last_name]).to include("can't be blank")
+      end 
+      it'is invalid witout first_name' do
+        address = build(:address, first_name: "")
+        address.valid?
+        expect(address.errors[:first_name]).to include("can't be blank")
+      end 
+      it'is invalid witout kana_last_name' do
+        address = build(:address, kana_last_name: "")
+        address.valid?
+        expect(address.errors[:kana_last_name]).to include("can't be blank")
+      end 
+      it'is invalid witout kana_first_name' do
+        address = build(:address, kana_first_name: "")
+        address.valid?
+        expect(address.errors[:kana_first_name]).to include("can't be blank")
+      end 
     end
 
     context 'can save' do

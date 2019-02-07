@@ -42,6 +42,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
+  gem 'capybara', '>= 2.15'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -63,7 +64,6 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'

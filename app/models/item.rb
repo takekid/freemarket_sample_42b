@@ -5,7 +5,7 @@ class Item < ApplicationRecord
 has_many :item_images
 accepts_nested_attributes_for :item_images
 has_many :item_images, dependent: :destroy
-# has_many :transactions, thorough: users
+has_many :proceeds
 belongs_to :category, optional: true
 belongs_to :size, optional: true
 belongs_to :brand, optional: true
@@ -19,8 +19,17 @@ scope :adidas_desc, -> {includes(:brand).where(brand_id: 2).limit(3).newest}
 
 enum status:{公開停止中: 0, 出品中: 1}
 validates :status, inclusion: { in: Item.statuses.keys }
+validates :name,           presence: true
+validates :introduction,   presence: true
+validates :condition,      presence: true
+validates :shippingfee,    presence: true
+validates :shipfrom,      presence: true
+validates :shipping_date,  presence: true
+validates :price,          presence: true
+validates :status,         presence: true
 
-  def self.create_charge_by_customer(price, user)
+def self.create_charge_by_customer(price, user)
+
     Payjp::Charge.create(
       customer: user,
       amount:   price,

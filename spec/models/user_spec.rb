@@ -12,16 +12,12 @@ RSpec.describe User, type: :model do
         user.valid?
         expect(user.errors[:nickname]).to include("can't be blank")
       end
-      it'is invalid witout name' do
-        user = build(:user, name: "")
+      it "is invalid without a password" do
+        user = build(:user, password: nil)
         user.valid?
-        expect(user.errors[:name]).to include("can't be blank")
-      end 
-      it'is invalid witout kana_name' do
-        user = build(:user, kana_name: "")
-        user.valid?
-        expect(user.errors[:kana_name]).to include("can't be blank")
-      end 
+        expect(user.errors[:password]).to include("can't be blank")
+      end
+     
       it "is invalid without a password_confirmation although with a password" do
         user = build(:user, password_confirmation: "")
         user.valid?
@@ -32,7 +28,23 @@ RSpec.describe User, type: :model do
         another_user = build(:user, email: user.email)
         another_user.valid?
         expect(another_user.errors[:email]).to include("has already been taken")
-      end  
+      end
+      it "is invalid with a nickname that has more than 7 characters " do
+        user = build(:user, nickname: "aaaaaaaa")
+        user.valid?
+        expect(user.errors[:nickname][0])
+      end
+
+      it "is valid with a nickname that has less than 6 characters " do
+        user = build(:user, nickname: "aaaaaa")
+        expect(user).to be_valid
+      end
+
+      it "is invalid with a password that has less than 5 characters " do
+        user = build(:user, password: "00000", password_confirmation: "00000")
+        user.valid?
+        expect(user.errors[:password][0]).to include("is too short")
+      end
     end
   end
 end
