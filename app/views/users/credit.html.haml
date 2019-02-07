@@ -13,7 +13,7 @@
           = form_with url: pay_path(@user), local: true do |f|
             %p
               カード番号　　
-            %span.span-red 必須
+              %span.span-red 必須
             = f.text_field :number, maxlength: "16", placeholder: "半角数字のみ", class: "info-credit_contents_form_field_input"
             .info-credit_contents_form_field-cards
               = image_tag "visa.svg", class: "card"
