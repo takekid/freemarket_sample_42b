@@ -16,15 +16,15 @@
             %ul.pull-left
               - Category.where(parent_id: nil).each do |category1|
                 %li.header-parent
-                  =link_to category1.category_name, "/"
+                  =link_to category1.category_name,category_path(category1)
                   %ul.level2
                     - Category.where(parent_id: category1.id).each do |category2|
                       %li.header-child
-                        =link_to category2.category_name, "/"
+                        =link_to category2.category_name, category_path(category2)
                         %ul.level2
                           - Category.where(parent_id: category2.id).each do |category3|
                             %li.header-grandson
-                              =link_to category3.category_name, "/"
+                              =link_to category3.category_name,category_path(category3)
           %li.menu-parent
             %h2.menu-down
               =link_to 'ブランドから探す',""
