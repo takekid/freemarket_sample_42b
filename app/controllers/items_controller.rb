@@ -65,9 +65,9 @@ class ItemsController < ApplicationController
   def purchase
      @item  = Item.find(params[:id])
      @user = User.find(current_user.id)
-     @address = @user.addresses.pluck(:prefectures,:city,:address).join("")
+     @address = @user.addresses.pluck(:prefectures,:city,:address).join(" ")
      @postal = @user.addresses.pluck(:postal_code).join("")
-     @name = @user.addresses.pluck(:first_name, :last_name).join("")
+     @name = @user.addresses.pluck(:first_name, :last_name).join(" ")
   end
 
   def user_items_sell
