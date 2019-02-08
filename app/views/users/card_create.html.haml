@@ -18,15 +18,15 @@
             %label.sell-item-name
               カード番号
               %span.form-require-userid 必須
-              = f.text_field :number, maxlength: "16", placeholder: "半角数字のみ",class: "sell-card-number" 
+              = f.text_field :number, maxlength: "16", placeholder: "半角数字のみ",class: "sell-card-number"
               .info-creditcard_contents_form_field-cards
-                %img.card{:src => "/assets/visa.svg"}/
-                %img.card{:src => "/assets/master-card.svg"}/
-                %img.card{:src => "/assets/saison-card.svg"}/
-                %img.card{:src => "/assets/jcb.svg"}/
-                %img.card{:src => "/assets/american_express.svg"}/
-                %img.card{:src => "/assets/dinersclub.svg"}/
-                %img.card{:src => "/assets/discover.svg"}/
+                = image_tag "visa.svg", class: "card"
+                = image_tag "master-card.svg", class: "card"
+                = image_tag "saison-card.svg", class: "card"
+                = image_tag "jcb.svg", class: "card"
+                = image_tag "american_express.svg", class: "card"
+                = image_tag "dinersclub.svg", class: "card"
+                = image_tag "discover.svg", class: "card"
 
         .credit-content
           %label.sell-item-name
