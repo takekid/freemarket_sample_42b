@@ -63,7 +63,7 @@
         padding-left: 22px;
         &-fa{
           width: 280px;
-          margin: 0 auto; 
+          margin: 0 auto;
 
         }
         a {
@@ -318,7 +318,6 @@
 }
 .submit{
   padding: 16px 127px;
-  margin-right:20px;
   margin-top:40px;
   background-color: #ea352d;
   color: white;
@@ -327,7 +326,7 @@
 .info-credit_contents_form_field_date li {
   display: inline-block;
   font-size: 12px;
-  
+
 }
 
 .sentence-blue {
@@ -343,7 +342,6 @@
 
   &_header{
     height: 64px;
-    width:1220px;
     padding: 20px 64px 40px 64px ;
     background-color: white;
     margin: 0 auto;
@@ -353,7 +351,6 @@
   }
     &_contents {
       height: 550px;
-      width:1220px;
       padding: 24px 64px 32px 64px;
       margin: 0 auto;
       background-color: white;
@@ -416,7 +413,7 @@
 
       &-fa{
         width: 280px;
-        
+
         span{
           float: left;
         }
@@ -489,7 +486,7 @@
 }
 
 .select-form{
-  
+
 }
 
 select{
@@ -504,7 +501,7 @@ select{
    -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
-    
+
 }
 select option{
   background-color: #fff;
