@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       new_user_session_path
     end
   end
-  
+
   def signin_form_create
     @user = User.new(user_params)
     if @user.save
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def show
     @search = Item.ransack(params[:q])
     @items = @search.result.includes(:brand, :category)
-  end 
+  end
 
   def profile
     @search = Item.ransack(params[:q])
@@ -80,7 +80,7 @@ class UsersController < ApplicationController
   end
 
   def address_params
-    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber, :first_name, :last_name, :kana_first_name, :kana_last_name)
+    params.permit(:postal_code, :prefectures, :city, :address, :building, :phonenumber, :first_name, :last_name, :kana_first_name, :kana_last_name).merge(user_id: current_user.id)
   end
 
 end
