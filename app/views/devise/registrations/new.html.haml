@@ -13,7 +13,7 @@
             %p
               ニックネーム
               %span 必須
-            = f.text_field :nickname, placeholder: "例) メルカリ太郎",  autofocus: true, value: "#{@user.nickname}"
+            = f.text_field :nickname, placeholder: "例) メルカリ太郎  6文字以内",  autofocus: true, value: "#{@user.nickname}"
             %p
               メールアドレス
               %span 必須

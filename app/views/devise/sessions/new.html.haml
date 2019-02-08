@@ -10,10 +10,13 @@
     .main-login_body
       .main-login_body_bottun
         = link_to user_facebook_omniauth_authorize_path, class: "btn facebook" do
-          %span.fab.fa-facebook>
-          Facebookでログイン
+          .main-login_body_bottun-fa
+            %span.fab.fa-facebook>
+            Facebookでログイン
         = link_to user_google_oauth2_omniauth_authorize_path, class: "btn google" do
-          %span.fab.fa-google &gt;Googleでログイン
+          .main-login_body_bottun-fa
+            %span.fab.fa-google 
+            Googleでログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
       .main-login_body_contents

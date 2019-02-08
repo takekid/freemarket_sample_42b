@@ -9,14 +9,17 @@
     .main-regstration_body
       .main-regstration_body_bottun
         = link_to new_user_registration_path, class: "btn email" do
-          %span.fa.fa-envelope>
-          メールアドレスで登録
+          .main-regstration_body_bottun-fa
+            %span.far.fa-envelope
+            メールアドレスで登録
         = link_to '/users/auth/facebook', class: "btn facebook" do
-          %span.fab.fa-facebook>
-          Facebookで登録
+          .main-regstration_body_bottun-fa
+            %span.fab.fa-facebook>
+            Facebookで登録
         = link_to  "/users/auth/google_oauth2", class: "btn google" do
-          %span.fab.fa-google>
-          Googleで登録
+          .main-regstration_body_bottun-fa
+            %span.fab.fa-google>
+            Googleで登録
   .mercari-footer
     %nav
       %ul

@@ -51,20 +51,29 @@
       margin: 0 auto;
       background-color: white;
       a {
-        font-size: 12px;
+        font-size: 17px;
+        width: 230px;
+        text-decoration: none;
       }
 
       &_bottun {
         height: 182px;
         width: 320px;
-        margin: 0 126px;
+        margin-left: 110px;
         padding-left: 22px;
+        &-fa{
+          width: 280px;
+          margin: 0 auto; 
+
+        }
         a {
          margin-top: 15px;
+         width: 280px;
         }
         span {
         height: 16px;
         width: 20px;
+        float: left;
         }
       }
   }
@@ -226,7 +235,7 @@
   &_header {
     width:668px;
     height: 33px;
-    padding: 32px 16px;
+    padding: 20px 0;
     margin: 0 auto;
     background-color: white;
 
@@ -238,7 +247,7 @@
   &_contents {
     height: 478px;
     width: 572px;
-    padding: 64px;
+    padding: 48px;
     background-color: white;
     margin: 0 auto;
 
@@ -256,12 +265,14 @@
 }
 
 .info-credit_contents_form_field_input {
- padding: 10px 16px;
+ padding: 15px 32px;
  border-radius: 1px;
+ width: 210px;
 
  &-content{
     height: 28px;
     width: 290px;
+    padding: 8px 22px;
  }
 
 
@@ -275,13 +286,17 @@
    border-radius: 10px;
 }
 
+.info-credit_contents_form_field_date{
+  height: 120px;
+  width: 200px;
+}
 
  .info-credit_contents_form_field p {
   margin-top: 10px;
  }
 
 .info-credit_contents_form_field-cards {
-  height: 20px;
+  height: 120px;
   width: 320px;
 }
 
@@ -312,7 +327,7 @@
 .info-credit_contents_form_field_date li {
   display: inline-block;
   font-size: 12px;
-  padding-right: 15px;
+  
 }
 
 .sentence-blue {
@@ -361,7 +376,8 @@
     background-color: white;
     margin: 0 auto;
     a {
-      padding: 9px 72px;
+      padding: 15px 72px;
+      font-size: 16px;
       float: left;
       height: 24px;
       width:160px;
@@ -391,19 +407,28 @@
       margin: 0 auto;
       background-color: white;
       a {
-        font-size: 14px;
+        font-size: 16px;
         text-decoration: none;
       }
     &_bottun {
       height: 182px;
       width: 320px;
+
+      &-fa{
+        width: 280px;
+        
+        span{
+          float: left;
+        }
+      }
       a {
-         margin-top: 15px;
+        width: 260px;
+        margin-top: 15px;
       }
     }
 
     &_contents {
-      height: 400px;
+      height: 270px;
       width:328px;
       padding: 24px 64px 32px 64px;
       margin: 0 auto;
@@ -449,16 +474,40 @@
 }
 
 .btn {
-  padding: 14px 72px;
+  padding: 14px 22px;
   float: left;
   height: 24px;
   width:160px;
 }
 
 .login-form {
-  padding: 16px 127px;
+  padding: 17px 126px;
   margin-right:20px;
-  margin-top:50px;
   background-color: #ea352d;
   color: white;
+  font-size: 15px;
+}
+
+.select-form{
+  
+}
+
+select{
+    outline:none;
+    text-indent: 0.1px;
+    text-overflow: '';
+    background: none transparent;
+    vertical-align: middle;
+    height: 40px;
+    width:120px;
+    font-size: 14px;
+   -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    
+}
+select option{
+  background-color: #fff;
+  color: #333;
+  padding: 6px;
 }
