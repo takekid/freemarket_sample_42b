@@ -4,14 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_many :proceeds
-  has_many :address
+  has_many :addresses
   has_many :creditcards
 
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
   has_many :salling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
 
-  
+
   validates :nickname,                presence: true, length: { maximum: 6 }
   validates :email,                   presence: true, uniqueness: true
   validates :password,                presence: true, length: { in: 6..20 }
@@ -55,8 +55,8 @@ class User < ApplicationRecord
       }},
       {
       'X-Payjp-Direct-Token-Generate': 'true'
-      } 
-    ) 
+      }
+    )
     customer.cards.create(
       card: token.id
     )
